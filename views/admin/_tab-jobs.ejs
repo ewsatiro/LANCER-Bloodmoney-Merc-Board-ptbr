@@ -193,7 +193,7 @@
           <% } %>
           <div class="job-item-actions">
             <button class="btn btn-edit" onclick="editJob('<%= job.id %>')">Editar</button>
-            <% if (job.state === 'Active') { %>
+            <% if (job.state === 'Ativo') { %>
               <button class="btn btn-primary" onclick="markJobComplete('<%= job.id %>')">Marcar como Concluído</button>
               <button class="btn btn-delete" onclick="markJobFailed('<%= job.id %>')">Marcar como Falho</button>
             <% } %>
