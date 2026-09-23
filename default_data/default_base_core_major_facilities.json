@@ -1,209 +1,209 @@
 [
-  {
-    "type": "Core",
-    "facilityName": "Command Center",
-    "facilityDescription": "The beating heart of the base. This is where the company organizes their forces throughout the theater, from active field teams to support efforts to scouts. It's also where players pick, and are briefed on, their Jobs.",
-    "facilityPrice": 0,
-    "isPurchased": true,
-    "upgrades": [
-      {
-        "upgradeName": "Advanced Scout Kits",
-        "upgradeDescription": "The Job Board has 1 more Job to choose from.",
-        "upgradePrice": 3500,
-        "maxPurchases": 1,
-        "upgradeCount": 0
-      },
-      {
-        "upgradeName": "Negotiator Training",
-        "upgradeDescription": "Once per full repair, a Job of the players' choice pays 15% more.",
-        "upgradePrice": 5000,
-        "maxPurchases": 1,
-        "upgradeCount": 0
-      }
-    ]
-  },
-  {
-    "type": "Core",
-    "facilityName": "Schedule-3 Printer",
-    "facilityDescription": "A massive construct that allows the company to build and maintain vehicles, weapons, armaments, and, of course, mechs. A Schedule-3 allows players to print any mech they're licensed for, even the mighty Barbarossa.",
-    "facilityPrice": 0,
-    "isPurchased": true,
-    "upgrades": [
-      {
-        "upgradeName": "Auxiliary Printer",
-        "upgradeDescription": "Every full repair, each player rolls 1D20. On an 16+, that player receives 2 bonus limited item charges.",
-        "upgradePrice": 4000,
-        "maxPurchases": 1,
-        "upgradeCount": 0
-      },
-      {
-        "upgradeName": "Robust Materials",
-        "upgradeDescription": "Every full repair, each player rolls 1D20. On an 18+, that player receives 1 bonus repair point.",
-        "upgradePrice": 5000,
-        "maxPurchases": 1,
-        "upgradeCount": 0
-      }
-    ]
-  },
-  {
-    "type": "Core",
-    "facilityName": "Hangar Bay",
-    "facilityDescription": "This is where dropships and mechs are maintained after printing, and where all adventures start and end.",
-    "facilityPrice": 0,
-    "isPurchased": true,
-    "upgrades": [
-      {
-        "upgradeName": "Gunbirds",
-        "upgradeDescription": "Dropships are outfitted to provide fire support. 1/combat, any player can call in a strafing run as a Protocol. Draw a Line 5 template anywhere on the map. All enemies affected must pass an Agility check or take 1D6 kinetic damage.",
-        "upgradePrice": 5000,
-        "maxPurchases": 1,
-        "upgradeCount": 0
-      },
-      {
-        "upgradeName": "Satbirds",
-        "upgradeDescription": "Dropships are outfitted to provide spotter support. 1/combat, any player can call in a location ping as a Protocol. Draw a Blast 2 template anywhere on the map. All enemies in the affected area must pass a Systems check or receive the Lock On condition. Pass or fail, they lose Invisible and are unable to Hide or regain Invisibility until the start of their next turn.",
-        "upgradePrice": 5000,
-        "maxPurchases": 1,
-        "upgradeCount": 0
-      }
-    ]
-  },
-  {
-    "type": "Major",
-    "facilityName": "Med Bay",
-    "facilityDescription": "A top of the line medical facility, worthy of any Core planet. Every time players return to base from a Job, their pilots recuperate 3HP, or 1 stress if you're using the Bonds system (Field Guide:  The Karrakin Trade Baronies).",
-    "facilityPrice": 10000,
-    "isPurchased": false,
-    "upgrades": [
-      {
-        "upgradeName": "Supplements",
-        "upgradeDescription": "1/job, Each player gets a free +1 accuracy for any check or save during combat.",
-        "upgradePrice": 3500,
-        "maxPurchases": 1,
-        "upgradeCount": 0
-      },
-      {
-        "upgradeName": "Field Triage",
-        "upgradeDescription": "1/full repair, players can call in an emergency medical support craft to their location. This allows them to heal their HP (or stress) as per the Med Bay's normal use, and otherwise gives them access to full medical service. This action can only be taken at a safe area without hostile anti-air defenses.",
-        "upgradePrice": 4000,
-        "maxPurchases": 1,
-        "upgradeCount": 0
-      }
-    ]
-  },
-  {
-    "type": "Major",
-    "facilityName": "Brig",
-    "facilityDescription": "Holding cells for prisoners of war, complete with a sleepy guard. Players can now take prisoners during combat and sell them for ransom to their home faction. The Brig can only hold 2 prisoners at a time by default. Prisoners are also split into 3 tiers, each representing how much they're worth to their home faction:  Wanted Personnel 400m, Important Personnel 600m, and Essential Personnel 800m. The GM has final say on what NPCs qualify as each tier, if at all, and is free to adjust ransom costs to suit the narrative.",
-    "facilityPrice": 12000,
-    "isPurchased": false,
-    "upgrades": [
-      {
-        "upgradeName": "Expanded Cells",
-        "upgradeDescription": "The Brig can hold 1 more prisoner. This upgrade can be purchased twice.",
-        "upgradePrice": 3000,
-        "maxPurchases": 2,
-        "upgradeCount": 0
-      },
-      {
-        "upgradeName": "Background Checks",
-        "upgradeDescription": "Each ransom earns 15% more manna.",
-        "upgradePrice": 5500,
-        "maxPurchases": 1,
-        "upgradeCount": 0
-      }
-    ]
-  },
-  {
-    "type": "Major",
-    "facilityName": "Workshop",
-    "facilityDescription": "An advanced workshop equipped with a crack team of engineers. The workshop team can develop any reserve players want from the complete shop pool, or even custom reserves with GM approval. Set out a 3 segment clock and write down the desired reserve. Every time players return to base from a Job, the clock fills up by one slot automatically. When all slots are filled, the players gets the item.",
-    "facilityPrice": 13000,
-    "isPurchased": false,
-    "upgrades": [
-      {
-        "upgradeName": "Subaltern Assistants",
-        "upgradeDescription": "The Workshop clock now only has 2 slots.",
-        "upgradePrice": 5000,
-        "maxPurchases": 1,
-        "upgradeCount": 0
-      },
-      {
-        "upgradeName": "Diversified Fabricators",
-        "upgradeDescription": "Whenever the workshop manufactures a reserve, it makes one random reserve as a bonus.",
-        "upgradePrice": 4000,
-        "maxPurchases": 1,
-        "upgradeCount": 0
-      }
-    ]
-  },
-  {
-    "type": "Major",
-    "facilityName": "Intelligence Center",
-    "facilityDescription": "A bustling war room filled with monitoring stations, strategy maps, and busy agents. Here, players have a chance to get a partial list of the class and templates of the enemies they'll be encountering on the next Job, as well as a brief summary of their tactical use. Whenever the next Job is selected, players elect someone to roll 1D20. On a 1-9, they only learn about one NPC. On a 10-14, they learn about two NPCs. On a 15-19, they learn about three NPCs. On a 20, they learn about four NPCs. The GM always chooses which NPCs are revealed.",
-    "facilityPrice": 16000,
-    "isPurchased": false,
-    "upgrades": [
-      {
-        "upgradeName": "Schematic Hack",
-        "upgradeDescription": "Players can get a full preemptive scan of one of the researched NPCs.",
-        "upgradePrice": 4000,
-        "maxPurchases": 1,
-        "upgradeCount": 0
-      },
-      {
-        "upgradeName": "SALIERI-Class COMP/CON",
-        "upgradeDescription": "When players select a Job, they will know the exact quantity of individual NPCs they're likely to face.",
-        "upgradePrice": 5000,
-        "maxPurchases": 1,
-        "upgradeCount": 0
-      }
-    ]
-  },
-  {
-    "type": "Major",
-    "facilityName": "Pilot Training Course",
-    "facilityDescription": "An advanced obstacle and live-fire course that can turn your average infantry grunt into a black-blooded mech pilot. Players can train a mercenary from their company to assist them in combat. Set out a 3 segment clock. Every time players return to base from a Job, they elect someone to roll 1D20. Increase the clock by 1 slot on a 10+ to check on the rookie's training progress. When all slots are filled, the party gets to pick any NPC class with 1 optional feature. Players can keep up to 3 allies at a time, but only 1 can ever be deployed at once. Once you bring an ally to a Job, you cannot bring another one until the next full repair.",
-    "facilityPrice": 18000,
-    "isPurchased": false,
-    "upgrades": [
-      {
-        "upgradeName": "Equipment Training",
-        "upgradeDescription": "All NPC allies get +1 optional. This upgrade can be purchased twice.",
-        "upgradePrice": 5000,
-        "maxPurchases": 2,
-        "upgradeCount": 0
-      },
-      {
-        "upgradeName": "Survival Training",
-        "upgradeDescription": "All NPC allies get +1 structure.",
-        "upgradePrice": 6000,
-        "maxPurchases": 1,
-        "upgradeCount": 0
-      }
-    ]
-  },
-  {
-    "type": "Major",
-    "facilityName": "Green Squad Barracks",
-    "facilityDescription": "Another barracks that houses a backup team of mech pilots. Players can send Green Squad out to complete one of the Job offers they didn't take. After players return from a Job, they can roll 1D20 to see how Green Squad did, with +1 difficulty per Job Rank. No bonuses can be applied to this roll except by the Better Training upgrade. On a 10+, Green Squad succeeds and each player gets 25% of the pay offered by that Job. On a 5 or less, Green Squad is wiped out and players cannot take this option again until the next full repair. Don't get attached.",
-    "facilityPrice": 18000,
-    "isPurchased": false,
-    "upgrades": [
-      {
-        "upgradeName": "Better Training",
-        "upgradeDescription": "Green Squad gets +1 Accuracy when rolling to complete a Job. This upgrade can be purchased twice.",
-        "upgradePrice": 5000,
-        "maxPurchases": 2,
-        "upgradeCount": 0
-      },
-      {
-        "upgradeName": "Revolving Door Recruitment",
-        "upgradeDescription": "You no longer have to wait until the next full repair to send out a new Green Squad when the last one is wiped out.",
-        "upgradePrice": 6000,
-        "maxPurchases": 1,
-        "upgradeCount": 0
-      }
-    ]
-  }
+    {
+        "type": "Core",
+        "facilityName": "Centro de Comando",
+        "facilityDescription": "O coração pulsante da base. É aqui que a organização coordena suas forças em todo o teatro de operações, desde equipes de campo ativas e unidades de apoio até batedores. É também onde os jogadores escolhem suas funções e recebem as instruções para elas.",
+        "facilityPrice": 0,
+        "isPurchased": true,
+        "upgrades": [
+            {
+                "upgradeName": "Kits de Batedor Avançado",
+                "upgradeDescription": "O Quadro de Tarefas tem mais 1 Trabalho disponível para escolha.",
+                "upgradePrice": 3500,
+                "maxPurchases": 1,
+                "upgradeCount": 0
+            },
+            {
+                "upgradeName": "Treinamento de Negociador",
+                "upgradeDescription": "Uma vez por reparo completo, um Trabalho à escolha dos jogadores aumenta em Rank por 1 para fins de recompensa.",
+                "upgradePrice": 5000,
+                "maxPurchases": 1,
+                "upgradeCount": 0
+            }
+        ]
+    },
+    {
+        "type": "Core",
+        "facilityName": "Impressora Escala 3",
+        "facilityDescription": "Uma estrutura colossal que permite à companhia construir e manter veículos, armas, armamentos e, é claro, mechs. Uma Escala 3 permite aos jogadores imprimir qualquer mech para o qual possuam licença, inclusive o poderoso Barbarossa.",
+        "facilityPrice": 0,
+        "isPurchased": true,
+        "upgrades": [
+            {
+                "upgradeName": "Impressora Auxiliar",
+                "upgradeDescription": "A cada Reparo Completo, cada jogador rola 1d20. Em um resultado de 16 ou mais, esse jogador recebe 2 cargas bônus para itens limitados.",
+                "upgradePrice": 4000,
+                "maxPurchases": 1,
+                "upgradeCount": 0
+            },
+            {
+                "upgradeName": "Materiais Resistentes",
+                "upgradeDescription": "A cada Reparo Completo, o jogador rola 1d20. Em um resultado de 18 ou mais, esse jogador recebe +1 ponto de Reparo de bônus.",
+                "upgradePrice": 5000,
+                "maxPurchases": 1,
+                "upgradeCount": 0
+            }
+        ]
+    },
+    {
+        "type": "Core",
+        "facilityName": "Estábulos",
+        "facilityDescription": "É aqui que as naves de transporte e os mechs passam por manutenção após a impressão, e onde todas as aventuras começam e terminam.",
+        "facilityPrice": 0,
+        "isPurchased": true,
+        "upgrades": [
+            {
+                "upgradeName": "Apoio de Ataque",
+                "upgradeDescription": "As naves de transporte são equipadas para fornecer apoio de fogo. 1/combate qualquer jogador pode solicitar um ataque de metralhamento como um Protocolo. Trace uma Linha 5 em qualquer lugar do mapa. Todos os inimigos afetados devem passar em um teste de Agilidade ou sofrer 1d6+4 de dano cinético.",
+                "upgradePrice": 5000,
+                "maxPurchases": 1,
+                "upgradeCount": 0
+            },
+            {
+                "upgradeName": "Apoio de Satélite",
+                "upgradeDescription": "As naves de transporte são equipadas para fornecer suporte de observação. 1/combate qualquer jogador pode solicitar uma marcação de localização como um Protocolo. Posicione um gabarito de Explosão 2 em qualquer lugar do mapa. Todos os inimigos na área afetada devem passar em um teste de Sistemas ou receber a condição *Travado* (*Lock On*). Independentemente do resultado, eles perdem a condição *Invisível* e não podem se *Esconder* nem recuperar a *Invisibilidade* até o início de seu próximo turno.",
+                "upgradePrice": 5000,
+                "maxPurchases": 1,
+                "upgradeCount": 0
+            }
+        ]
+    },
+    {
+        "type": "Major",
+        "facilityName": "Enfermaria",
+        "facilityDescription": "Uma instalação médica de ponta, digna de qualquer planeta do Núcleo. Sempre que os jogadores retornam à base após uma missão, seus pilotos recuperam 3 PV — ou 1 ponto de estresse, caso você esteja utilizando o sistema de Vínculos.",
+        "facilityPrice": 10000,
+        "isPurchased": false,
+        "upgrades": [
+            {
+                "upgradeName": "Suplementos",
+                "upgradeDescription": "1/trabalho Cada jogador recebe um bônus gratuito de +1 de Precisão para qualquer teste ou salvaguarda durante o combate.",
+                "upgradePrice": 3500,
+                "maxPurchases": 1,
+                "upgradeCount": 0
+            },
+            {
+                "upgradeName": "Triagem de Campo",
+                "upgradeDescription": "1/reparo completo os jogadores podem solicitar o envio de uma aeronave de suporte médico de emergência para sua localização. Isso lhes permite recuperar PV (ou estresse) conforme o uso normal da Enfermaria, além de oferecer acesso a serviços médicos completos. Essa ação só pode ser realizada em uma área segura, livre de defesas antiaéreas hostis.",
+                "upgradePrice": 4000,
+                "maxPurchases": 1,
+                "upgradeCount": 0
+            }
+        ]
+    },
+    {
+        "type": "Major",
+        "facilityName": "Cadeia",
+        "facilityDescription": "Celas de detenção para prisioneiros de guerra, equipadas com um guarda sonolento. Agora, os jogadores podem capturar prisioneiros durante o combate e vendê-los à sua facção de origem em troca de resgate. Por padrão, a cela comporta apenas 2 prisioneiros de cada vez. Os prisioneiros são divididos em 3 categorias, cada uma representando o valor que possuem para sua facção de origem Pessoal Procurado (1 Avanço), Pessoal Importante (2 Avanços) e Pessoal Essencial (3 Avanços). O Mestre tem a palavra final sobre quais NPCs se enquadram em cada categoria — ou se sequer se enquadram — e tem liberdade para ajustar os valores do resgate conforme a necessidade da narrativa.",
+        "facilityPrice": 12000,
+        "isPurchased": false,
+        "upgrades": [
+            {
+                "upgradeName": "Celas Ampliadas",
+                "upgradeDescription": "A Cadeia pode abrigar mais 1 prisioneiro. Esta melhoria pode ser adquirida duas vezes.",
+                "upgradePrice": 3000,
+                "maxPurchases": 2,
+                "upgradeCount": 0
+            },
+            {
+                "upgradeName": "Verificação de Antecedentes",
+                "upgradeDescription": "Cada recompensa vale 1 Avanço a mais.",
+                "upgradePrice": 5000,
+                "maxPurchases": 1,
+                "upgradeCount": 0
+            }
+        ]
+    },
+    {
+        "type": "Major",
+        "facilityName": "Oficina",
+        "facilityDescription": "Uma oficina avançada, equipada com uma equipe de engenheiros de elite. A equipe da oficina pode desenvolver qualquer item de reserva que os jogadores desejem, a partir da seleção completa disponível, ou até mesmo reservas personalizadas, mediante aprovação do Narrador. Prepare um de três segmentos e anote a reserva desejada. Sempre que os jogadores retornarem à base após uma missão, o ganha automaticamente 1 Avanço, e podem também atribuir Avanços do de Fundos para esse relógio. Quando todas as casas estiverem preenchidas, os jogadores recebem o item.",
+        "facilityPrice": 13000,
+        "isPurchased": false,
+        "upgrades": [
+            {
+                "upgradeName": "Assistentes Subalternos",
+                "upgradeDescription": "O da Oficina agora possui apenas 2 espaços.",
+                "upgradePrice": 5000,
+                "maxPurchases": 1,
+                "upgradeCount": 0
+            },
+            {
+                "upgradeName": "Fabricadores Diversos",
+                "upgradeDescription": "Sempre que a oficina fabrica uma reserva, ela produz uma reserva aleatória adicional como bônus.",
+                "upgradePrice": 4000,
+                "maxPurchases": 1,
+                "upgradeCount": 0
+            }
+        ]
+    },
+    {
+        "type": "Major",
+        "facilityName": "Centro de Inteligência",
+        "facilityDescription": "Uma sala de operações agitada, repleta de estações de monitoramento, mapas estratégicos e agentes em plena atividade. Aqui, os jogadores têm a chance de obter uma lista parcial das classes e dos modelos dos inimigos que encontrarão na próxima Missão, bem como um breve resumo de como eles são empregados taticamente. Sempre que a próxima Missão é selecionada, os jogadores escolhem alguém para rolar 1d20. Em um resultado de 1 a 9, eles obtêm informações sobre apenas um NPC. De 10 a 14, descobrem detalhes sobre dois NPCs. De 15 a 19, sobre três NPCs. Com um 20, descobrem informações sobre quatro NPCs. O Mestre sempre escolhe quais NPCs serão revelados.",
+        "facilityPrice": 16000,
+        "isPurchased": false,
+        "upgrades": [
+            {
+                "upgradeName": "Escaneador Orbital",
+                "upgradeDescription": "Os jogadores podem obter uma varredura preventiva completa de um dos NPCs pesquisados.",
+                "upgradePrice": 4000,
+                "maxPurchases": 1,
+                "upgradeCount": 0
+            },
+            {
+                "upgradeName": "COMP/CON Classe-SALIERI",
+                "upgradeDescription": "Ao selecionar uma missão, os jogadores saberão a quantidade exata de NPCs individuais que provavelmente enfrentarão.",
+                "upgradePrice": 5000,
+                "maxPurchases": 1,
+                "upgradeCount": 0
+            }
+        ]
+    },
+    {
+        "type": "Major",
+        "facilityName": "Curso de Treinamento de Pilotos",
+        "facilityDescription": "Um circuito avançado de obstáculos e tiro real, capaz de transformar um soldado de infantaria comum em um piloto de mecha de sangue frio. Os jogadores podem treinar um mercenário de sua companhia para auxiliá-los em combate. Prepare um de 3 segmentos. Sempre que os jogadores retornarem à base após uma missão, eles escolhem alguém para rolar 1d20; se o resultado for 10 ou mais, o avança uma casa, indicando o progresso do treinamento do recruta. Quando todas as casas estiverem preenchidas, o grupo pode escolher qualquer classe de NPC com uma habilidade opcional. Os jogadores podem manter até 3 aliados, mas apenas um pode ser mobilizado por vez. Uma vez que você leve um aliado a uma missão, não poderá levar outro até a próxima reparação completa.",
+        "facilityPrice": 18000,
+        "isPurchased": false,
+        "upgrades": [
+            {
+                "upgradeName": "Treinamento Adicional",
+                "upgradeDescription": "Todos os aliados NPC recebem +1 sistema opcional. Esta melhoria pode ser comprada duas vezes.",
+                "upgradePrice": 5000,
+                "maxPurchases": 2,
+                "upgradeCount": 0
+            },
+            {
+                "upgradeName": "Treinamento de Sobrevivência",
+                "upgradeDescription": "Todos os aliados NPC recebem +1 de Estrutura.",
+                "upgradePrice": 6000,
+                "maxPurchases": 1,
+                "upgradeCount": 0
+            }
+        ]
+    },
+    {
+        "type": "Major",
+        "facilityName": "Alojamento dos Escudeiros",
+        "facilityDescription": "Outro alojamento que abriga uma equipe de reserva de pilotos de mechs. Os jogadores podem enviar o Esquadrão de Escudeiros para realizar uma das ofertas de trabalho que não aceitaram. Após retornarem de um trabalho, os jogadores podem rolar 1d20 para verificar o desempenho do Esquadrão de Escudeiros, com uma dificuldade de +1 para cada Nível do Trabalho. Nenhum bônus pode ser aplicado a essa rolagem, exceto através da melhoria \"Melhor Treinamento\". Com um resultado de 10 ou mais, o Esquadrão de Escudeiros obtém sucesso e cada jogador recebe 25% do pagamento oferecido pelo trabalho. Com um resultado de 5 ou menos, o Esquadrão de Escudeiros é dizimado, e os jogadores não podem utilizar essa opção novamente até o próximo reparo completo. Não se apegue.",
+        "facilityPrice": 18000,
+        "isPurchased": false,
+        "upgrades": [
+            {
+                "upgradeName": "Treinamento Aprimorado",
+                "upgradeDescription": "O Esquadrão de Escudeiros recebem +1 de Precisão ao rolar para concluir um Trabalho. Esta melhoria pode ser comprada duas vezes.",
+                "upgradePrice": 5000,
+                "maxPurchases": 2,
+                "upgradeCount": 0
+            },
+            {
+                "upgradeName": "Recrutamento Acelerado",
+                "upgradeDescription": "Você não precisa mais esperar até o próximo reparo completo para enviar um novo Esquadrão de Escudeiros quando o anterior for eliminado.",
+                "upgradePrice": 6000,
+                "maxPurchases": 1,
+                "upgradeCount": 0
+            }
+        ]
+    }
 ]
