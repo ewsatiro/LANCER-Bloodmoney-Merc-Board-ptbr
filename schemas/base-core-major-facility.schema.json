@@ -9,7 +9,7 @@
     "type": {
       "type": "string",
       "description": "Facility type (Core or Major)",
-      "enum": ["Core", "Major"]
+      "enum": ["Principal", "Maior"]
     },
     "facilityName": {
       "type": "string",
