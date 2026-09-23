@@ -2,393 +2,393 @@
   {
     "id": "24d0834e-82cc-4236-a70c-868e1bd8c714",
     "rank": 1,
-    "name": "SNAP HOOKS",
+    "name": "Ganchos de Engate",
     "price": 2000,
-    "description": "Quick Action, Limited 1.\nAutomatically grapple an adjacent target.\nCabled hooks launched from exterior-mounted ejection points for rapid, intimate engagement.",
+    "description": "Ação Rápida, Limitada 1.\nAgarra automaticamente um alvo adjacente.\nGanchos com cabos lançados de pontos de ejeção montados externamente para engajamento rápido e a curta distância.",
     "isCustom": false
   },
   {
     "id": "f3ec4d0c-1004-4866-856b-7be954f01162",
     "rank": 1,
-    "name": "MOLECULAR WHETSTONE",
+    "name": "Pedra de Amolar Molecular",
     "price": 1500,
-    "description": "Free Action, 1/round, Limited 1.\nAfter you successfully hit with a melee attack, but before damage is rolled, spend this reserve as a free action to cause the target to become Shredded until the end of the current turn.\nA device installed in a weapon's grip that sends an autophagic pulse up the blade, sharpening it before impact.",
+    "description": "Ação Livre, 1/rodada, Limitada 1.\nDepois de acertar com sucesso um ataque corpo a corpo, mas antes de rolar o dano, gaste esta reserva como uma ação livre para Dilacerar o alvo até o fim do turno atual.\nUm dispositivo instalado no cabo de uma arma que envia um pulso autofágico pela lâmina, afiando-a antes do impacto.",
     "isCustom": false
   },
   {
     "id": "af2fe676-7485-42c2-9dbf-9e6241efa35e",
     "rank": 1,
-    "name": "KINETIC PULSE COIL",
+    "name": "Bobina de Pulso Cinético",
     "price": 2500,
-    "description": "Quick Action, Limited 1.\nRam every character in Burst 1.\nChassis-mounted woofers. Kinetic-absorbant coils gather latent energy from normal actions, such as walking, running, or fighting, until released with explosive force.",
+    "description": "Ação Rápida, Limitada 1.\nColida com todos os personagens em Explosão 1.\nAlto-falantes de graves montados no chassi. Bobinas de absorção cinética acumulam energia latente de ações normais, como andar, correr ou lutar, até serem liberadas com força explosiva.",
     "isCustom": false
   },
   {
     "id": "4c0e4340-b55e-49f3-b4ff-c6232072b391",
     "rank": 1,
-    "name": "ICARUS MULTISTAGE BOOSTER",
+    "name": "Propulsor Multiestágio \"ÍCARO\"",
     "price": 2500,
-    "description": "Free Action, Limited 1.\nWhen you make a standard move, spend this reserve as a free action to move your speed in a straight line.\nDual break-away boosters that help close the distance; or increase it, as needed.",
+    "description": "Ação Livre, Limitada 1.\nQuando você faz um movimento padrão, gaste esta reserva como uma ação livre para mover seu Deslocamento em linha reta.\nPropulsores duplos destacáveis que ajudam a encurtar a distância; ou aumentá-la, conforme necessário.",
     "isCustom": false
   },
   {
     "id": "577cacbe-fc7f-4dd4-80e4-8fe8c1f0bf45",
     "rank": 1,
-    "name": "REDUNDANT CLADDING",
+    "name": "Revestimento Redundante",
     "price": 2000,
-    "description": "Reaction, Limited 1.\nTrigger: You're successfully hit by an attack.\nEffect: You gain resistance to that attack, but are impaired until the end of your next turn.\nRough, but effective, armor plating that can take hits your normal armor might find disagreeable. Won't protect you from cockpit whiplash as a result of said impacts.",
+    "description": "Reação, Limitada 1.\nGatilho: Você é atingido com sucesso por um ataque.\nEfeito: Você ganha resistência a esse ataque, mas fica Impaired até o fim do seu próximo turno.\nBlindagem áspera, mas eficaz, que aguenta impactos que sua armadura normal talvez ache desagradáveis. Não vai proteger você do efeito de chicote no cockpit resultante desses impactos.",
     "isCustom": false
   },
   {
     "id": "d38e97ff-93ac-4ab9-9e5b-c09dc367e7f7",
     "rank": 1,
-    "name": "CONCUSSIVE BRACER",
+    "name": "Braçadeira Concussiva",
     "price": 2000,
-    "description": "Free Action, Limited 2.\nWhen you successfully hit with a Ram, spend this reserve as a free action to give the target Impaired until the end of their next turn.\nAn external-fit gauntlet of extraordinary weight. The stored concussive energy is expended almost as quickly as its victims fall to the ground.",
+    "description": "Ação Livre, Limitada 2.\nQuando você acerta com sucesso com uma Ram, gaste esta reserva como uma ação livre para também Prejudicar o alvo até o fim do próximo turno dele.\nUma manopla de encaixe externo de peso extraordinário. A energia concussiva armazenada é gasta quase tão rápido quanto suas vítimas caem no chão.",
     "isCustom": false
   },
   {
     "id": "c02c8c7e-911a-4a93-92aa-77e4957e47aa",
     "rank": 1,
-    "name": "CUIRASS SHIELD GENERATOR",
+    "name": "Gerador de Escudo \"Couraça\"",
     "price": 2000,
-    "description": "Quick Action, 1/round, Deployable, Shield, Limited 2.\n1/round, Deploy a Cuirass Shield Generator in a free adjacent space.\nCuirass Shield Generator\nSize: 1, HP: 10, Evasion: 5\nCreates a Burst 1 energy field upon deployment. The next 3 attacks that target any character or object within this shield treat each target as having hard cover.\nAn emitter dish mounted on a rudimentary tripod. Its power supply is limited, but consistent enough to see frequent use in the field as a quick means of fortifying positions.",
+    "description": "Ação Rápida, 1/rodada, Desdobrável, Limitada 2.\n1/rodada, Desdobre um Gerador de Escudo Couraça em um espaço adjacente livre.\n\nGerador de Escudo Couraça\nTamanho: 1, PV: 10, Esquiva: 5\n\nCria um campo de energia em Explosão 1 ao ser desdobrado. Os próximos 3 ataques que tiverem como alvo qualquer personagem ou objeto dentro deste escudo tratam cada alvo como se tivesse cobertura dura.\nUm prato emissor montado em um tripé rudimentar. Sua fonte de energia é limitada, mas consistente o bastante para ver uso frequente em campo como um meio rápido de fortificar posições.",
     "isCustom": false
   },
   {
     "id": "45aa66a4-6851-442d-bf8b-3f18f44a172e",
     "rank": 1,
-    "name": "SPARE AMMO",
+    "name": "Munição Reserva",
     "price": 2500,
-    "description": "Quick Action, Limited 1.\nReload any Loading weapon.\nBullet go in, bullet go out.",
+    "description": "Ação Rápida, Limitada 1.\nRecarregue qualquer arma de Recarga.\nBala entra, bala sai.",
     "isCustom": false
   },
   {
     "id": "e07cfe77-20f4-47d5-a31e-4278afbaa0f2",
     "rank": 1,
-    "name": "SAND DISPENSER",
+    "name": "Dispensador de Areia",
     "price": 2000,
-    "description": "Quick Action, Limited 1.\nYou or an allied character within Range 3 immediately clears all Burn.\nSometimes a high tech problem needs a low tech solution.",
+    "description": "Ação Rápida, Limitada 1.\nVocê ou um personagem aliado dentro do Alcance 3 remove imediatamente toda Burn.\nÀs vezes, um problema de alta Tech precisa de uma solução de baixa Tech.",
     "isCustom": false
   },
   {
     "id": "09d52f79-a881-4296-9792-4ced3f0cd2cc",
     "rank": 1,
-    "name": "ADAPTIVE ROUNDS",
+    "name": "Munições Adaptativas",
     "price": 1000,
-    "description": "Protocol, Limited 5.\nChange the damage type of your next ranged attack to either Kinetic, Energy, or Explosive.\nEach shell casing is helpfully color coded to prevent accidental incineration in volatile environments.",
+    "description": "Protocolo, Limitada 5.\nMude o tipo de dano do seu próximo ataque à distância para Cinético, Energia ou Explosivo.\nCada estojo de projétil é codificado por cores de forma útil para evitar incineração acidental em ambientes voláteis.",
     "isCustom": false
   },
   {
     "id": "c56a0d97-1527-49e8-a7d5-9115df3d5706",
     "rank": 1,
-    "name": "OVERPOWERED COILS",
+    "name": "Bobinas Sobrecarregadas",
     "price": 2000,
-    "description": "Reaction, Limited 1.\nTrigger: Your attack deals bonus damage of any kind.\nEffect: The target is knocked back spaces equal to the bonus damage dealt.\nA cartridge mounted in convenient thumb reach for quick activation, bolstering the efficacy of existing weapon modifications. Burns out quick, so pick your moment.",
+    "description": "Reação, Limitada 1.\nGatilho: Seu ataque causa dano bônus de qualquer tipo.\nEfeito: O alvo é empurrado para trás um número de espaços igual ao dano bônus causado.\nUm cartucho montado ao alcance conveniente do polegar para ativação rápida, reforçando a eficácia de modificações de arma existentes. Queima rápido, então escolha seu momento.",
     "isCustom": false
   },
   {
     "id": "6ec6dd1b-91b2-41ce-9144-7cab48708caa",
     "rank": 1,
-    "name": "REACTIVE SHUNT",
+    "name": "Derivação Reativa",
     "price": 1000,
-    "description": "Free Action, Limited 1.\nWhen you brace, automatically clear all heat as a free action. All characters adjacent to you take heat equal to half of what you cleared.\nAn emergency vent built to disseminate excess reactor waste as quickly as possible. Make your choices everyone else's problem.",
+    "description": "Ação Livre, Limitada 1.\nQuando você Brace, remove automaticamente todo o calor como uma ação livre. Todos os personagens adjacentes a você recebem calor igual à metade do que você removeu.\nUma ventoinha de emergência construída para dissipar o excesso de resíduo do reator o mais rápido possível. Faça das suas escolhas o problema de todo mundo.",
     "isCustom": false
   },
   {
     "id": "e1b1b248-11ca-487a-94fc-993a02ef3a26",
     "rank": 1,
-    "name": "THUMB CANNON",
+    "name": "Canhão \"Polegar\"",
     "price": 1500,
-    "description": "Protocol, Limited 2.\nYou may Ram from up to range 5 until the end of this turn.\nArm-mounted, bulky, and thunderous, pilots are recommended to wear ear plugs before they charge it up.",
+    "description": "Protocolo, Limitada 2.\nVocê pode usar Ram a até Alcance 5 até o fim deste turno.\nMontado no braço, volumoso e trovejante, pilotos são recomendados a usar protetores auriculares antes de carregá-lo.",
     "isCustom": false
   },
   {
     "id": "b2046bf1-a3b2-406b-8a01-ce7c6fd6e9a9",
     "rank": 1,
-    "name": "FUEL RESERVES",
+    "name": "Reservas de Combustível",
     "price": 1500,
-    "description": "Protocol, Limited 2.\nAll movement actions (standard move, Boost, etc.) you take this round may move 1 additional space.\nKeep a little extra in the tank.",
+    "description": "Protocolo, Limitada 2.\nTodas as ações de movimento (Movimento Padrão, Boost, etc.) que você realizar nesta rodada podem mover 1 espaço adicional.\nMantenha um pouco a mais no tanque.",
     "isCustom": false
   },
   {
     "id": "af6d95aa-f125-4014-a6fd-74fcf9771c7b",
     "rank": 1,
-    "name": "ACHILLES ROUND",
+    "name": "Projétil Aquiles",
     "price": 2000,
-    "description": "Limited 3.\nWhen you reload any weapon, that weapon's next attack gains the Overkill tag.\nSomeone carved a skull and crossbones into the shell casing.",
+    "description": "Limitada 3.\nQuando você recarrega qualquer arma, o próximo ataque dessa arma ganha a etiqueta Extermínio.\nAlguém entalhou uma caveira e ossos cruzados na cápsula do projétil.",
     "isCustom": false
   },
   {
     "id": "dd2eb7b9-aa46-402e-bbaf-5c0c3bdf27fb",
     "rank": 1,
-    "name": "DEMO CHARGE",
+    "name": "Carga de Demolição",
     "price": 1000,
-    "description": "Quick Action, Limited 1.\nImmediately deal 40 Kinetic damage to an adjacent object or piece of terrain.\nClear the view.",
+    "description": "Ação Rápida, Limitada 1.\nCause imediatamente 40 de dano cinético a um objeto adjacente ou peça de terreno.\nLimpe a visão.",
     "isCustom": false
   },
   {
     "id": "6260fe4a-6d41-49c8-981a-3c3fdb2c5ef2",
     "rank": 1,
-    "name": "EXPENDABLE RIFLING",
+    "name": "Raiamento Descartável",
     "price": 1000,
-    "description": "Protocol, Limited 3.\nYour next ranged attack has its Range extended by 5.\nA long barrel that screws to the end of your gun. Designed to fit all standard GMS munitions.",
+    "description": "Protocolo, Limitada 3.\nSeu próximo ataque à distância tem seu alcance estendido em 5.\nUm cano longo que se parafusa na extremidade da sua arma. Projetado para se encaixar em todas as munições GMS padrão.",
     "isCustom": false
   },
   {
     "id": "4b8dd67e-9084-428a-9b65-1a078e00775a",
     "rank": 1,
-    "name": "MASS-ECHO CHARGE",
+    "name": "Carga de Eco de Massa",
     "price": 1500,
-    "description": "Limited 1.\nWhenever you successfully hit with a tech attack, roll 1D20. On a natural 20, the target is stunned after the attack resolves. This reserve persists until triggered.\nA small, silvery chip installed in your mech's computer core. Contains enough malicious paracode to shut down a city block, so it can only be used in short bursts.",
+    "description": "Limitada 1.\nSempre que você acertar com sucesso com um Tech Attack, role 1D20. Em um 20 natural, o alvo fica Stunned após a resolução do ataque. Esta reserva persiste até ser acionada.\nUm pequeno chip prateado instalado no núcleo do computador do seu mech. Contém paracódigo malicioso suficiente para desligar um quarteirão inteiro, então só pode ser usado em curtos surtos.",
     "isCustom": false
   },
   {
     "id": "21f8cc85-bc8c-44b0-9363-1626003c39b3",
     "rank": 1,
-    "name": "SUPERMUNITIONS",
+    "name": "Supermunições",
     "price": 2500,
-    "description": "Protocol, Limited 1.\nYour next ranged attack that isn't a Cone, Line, or Burst gains Blast 1, in addition to its normal profile. If it's already Blast 1, it becomes Blast 2, and so on.\nVolatile, modular charges that multiply the tactical and geographic scope of all standard munitions.",
+    "description": "Protocolo, Limitada 1.\nSeu próximo ataque à distância que não seja um Cone, Linha ou Rajada ganha Explosão 1, além do seu perfil normal. Se já for Explosão 1, ele se torna Explosão 2, e assim por diante.\nCargas voláteis e modulares que multiplicam o alcance tático e geográfico de todas as munições padrão.",
     "isCustom": false
   },
   {
     "id": "e7557250-d53e-4dd2-990b-bf27ca294d2c",
     "rank": 1,
-    "name": "SILHOUETTE SCRAMBLERS",
+    "name": "Perturbadores de Silhueta",
     "price": 1500,
-    "description": "Protocol, Limited 3.\nAttacks originating from further than Range 3 treat you as having hard cover until the end of your next turn.\nA cyber warfare suite that scatters and distorts your image on all visual wavelengths. You'll be less of a target and more of a cubist suggestion.",
+    "description": "Protocolo, Limitada 3.\nAtaques originados de além do Alcance 3 tratam você como se tivesse cobertura dura até o fim do seu próximo turno.\nUm conjunto de guerra cibernética que dispersa e distorce sua imagem em todos os comprimentos de onda visuais. Você será menos um alvo e mais uma sugestão cubista.",
     "isCustom": false
   },
   {
     "id": "8696e4dd-b079-4b61-8f2f-6afd62da1c19",
     "rank": 1,
-    "name": "AUTO-FLECHETTES",
+    "name": "Auto-Flechetes",
     "price": 2500,
-    "description": "Reaction, Limited 1.\nTrigger: You successfully hit an Immobilized character with an attack.\nEffect: Deal 1D6 bonus damage.\nShoulder-mounted launchers that fire screaming bands of iron at speeds too slow to rely on in the heat of combat, but the trapped prey can do nothing but watch.",
+    "description": "Reação, Limitada 1.\nGatilho: Você acerta com sucesso um personagem Imobilizado com um ataque.\nEfeito: Cause 1D6 de dano bônus.\nLança-flechetes montados nos ombros que disparam faixas sibilantes de ferro a velocidades lentas demais para serem confiáveis no calor do combate, mas a presa encurralada não pode fazer nada além de assistir.",
     "isCustom": false
   },
   {
     "id": "57d1d1af-0f23-4e6d-9f2d-ecd262cf66be",
     "rank": 1,
-    "name": "ICE OUT DEMO DISC",
+    "name": "Disco de Demonstração \"GELO NEGRO\"",
     "price": 2000,
-    "description": "Quick Action, Limited 2.\nSpend this reserve to gain Immunity to all tech actions until the start of your next turn.\nComes free in the mail with a subscription to any one of a number of exciting Smith Shimano services.",
+    "description": "Ação Rápida, Limitada 2.\nGaste esta reserva para ganhar imunidade a todas as ações de Tech até o início do seu próximo turno.\nVem de graça pelo correio com a assinatura de qualquer um dos diversos e empolgantes serviços Smith Shimano.",
     "isCustom": false
   },
   {
     "id": "91e054a3-1ea2-47fe-b0e1-edd4aff1b79c",
     "rank": 1,
-    "name": "SPIDER TRAP",
+    "name": "Armadilha de Aranha",
     "price": 1500,
-    "description": "Quick Action, Deployable, Limited 3.\nDeploy an electrified mesh that encompasses a free Blast 1 area within Range 5. Characters who start their turn in the Spider Trap or who enter it for the first time in a round must make an Engineering save or become Immobilized.\nYour parlor is the effective combat theater of the current engagement and the fly is a six ton somersaulting war robot with a nuclear reactor, but the principle isn't too far off.",
+    "description": "Ação Rápida, Desdobrável, Limitada 3.\nDesdobre uma malha eletrificada que abrange uma área livre de Blast 1 dentro do Alcance 5. Personagens que começam seu turno na Armadilha de Aranha ou que entram nela pela primeira vez em uma rodada devem fazer uma salvaguarda de Engenharia ou ficam Imobilizados.\nSeu salão é o teatro de combate efetivo do engajamento atual e a mosca é um robô de guerra de seis toneladas dando cambalhotas com um reator nuclear, mas o princípio não é tão diferente assim.",
     "isCustom": false
   },
   {
     "id": "27a79d89-a748-4f57-aaaf-d41b2a4043ac",
     "rank": 1,
-    "name": "SERVO LIMITER BYPASS",
+    "name": "Desvio do Limitador de Servo",
     "price": 1500,
-    "description": "Free Action, 1/round, Limited 3.\n1/round, When you successfully hit with a melee attack, spend this reserve as a free action to deal 3 Knockback, in addition to any other knockback effects. After the attack is resolved, roll 1D6; on a 5+, your mech is Impaired until the end of your next turn.\nThis handy plug-n-play override lets you get around the factory-standard failsafes native to the original printing.",
+    "description": "Ação Livre, 1/rodada, Limitada 3.\n1/rodada, quando você acerta com sucesso com um ataque corpo a corpo, gaste esta reserva como uma ação livre para causar 3 de empurrão, além de quaisquer outros efeitos de empurrão. Após o ataque ser resolvido, role 1D6; em um 5 ou menos, seu mech fica Impaired até o fim do seu próximo turno.\nEste prático override plug-and-play permite contornar as proteções de fábrica nativas da impressão original.",
     "isCustom": false
   },
   {
     "id": "52a90796-b145-4007-8e3f-52c6df68cacf",
     "rank": 1,
-    "name": "FREQUENCY ALIGNMENT NODE",
+    "name": "Nó de Alinhamento de Frequência",
     "price": 2000,
-    "description": "Quick Action, Limited 2.\nClear the Jammed condition and gain immunity to Jammed until the end of your next turn.\nAncillary nodes connected to your sensor array that broadcast constantly shifting, synchronistic frequencies. Trick hostile jamming technology into following a ghost of your mech down a dark alley.",
+    "description": "Ação Rápida, Limitada 2.\nRemova a condição Jammed e ganhe imunidade a Jammed até o fim do seu próximo turno.\nNós auxiliares conectados ao seu conjunto de sensores que transmitem frequências sincronísticas em constante mudança. Engane a Tech de interferência hostil para que siga um fantasma do seu mech por um beco escuro.",
     "isCustom": false
   },
   {
     "id": "52efa166-0b69-4d87-af6d-35eae6fb4a89",
     "rank": 1,
-    "name": "EMERGENCY HEAT TRAP",
+    "name": "Armadilha de Calor de Emergência",
     "price": 2000,
-    "description": "Reaction, Quick Action, Limited 1.\nThe next time you would gain Heat from a hostile source, spend this reserve as a reaction to reduce the amount to 0 and gain a Shunt Charge. The Firecracker Charge lasts until used, but expires at the end of the scene.\nAs a quick action on any of your turns, you may lob the Firecracker Charge at a hostile enemy character within Range 5. They must pass an Agility save or take energy damage equal to the Heat that you would have gained by the triggering effect.\n'Yeah, pretty handy. They say some merc invented these in his garage with a box of spare parts 'cause his team kept melting their reactors.'",
+    "description": "Reação, Ação Rápida, Limitada 1.\nNa próxima vez que você ganharia Calor de uma fonte hostil, gaste esta reserva como uma reação para reduzir a quantidade a 0 e ganhar uma Carga Traque. A Carga Traque dura até ser usada, mas expira no fim da cena.\nComo uma ação rápida em qualquer um dos seus turnos, você pode arremessar a Carga Traque em um personagem inimigo hostil dentro do Alcance 5. Ele deve passar em uma salvaguarda de Agilidade ou sofrer dano de energia igual ao calor que você teria ganhado pelo efeito desencadeador.\n—Sim, bem útil. Dizem que um mercenário inventou essas em sua garagem com uma caixa de peças sobressalentes porque sua equipe vivia derretendo os reatores.",
     "isCustom": false
   },
   {
     "id": "dc3a378d-e16f-4971-84b9-397b4068ff60",
     "rank": 1,
-    "name": "KNOCKOUT CHARGE",
+    "name": "Carga Nocaute",
     "price": 1500,
-    "description": "Reaction, Limited 3.\nTrigger: Critically Hit with a ranged or melee weapon.\nEffect: The target of your attack is knocked Prone and becomes Slowed until the end of their next turn.",
+    "description": "Reação, Limitada 3.\nGatilho: Acerto Crítico com uma arma à distância ou corpo a corpo.\nEfeito: O alvo do seu ataque é derrubado no chão e fica Slowed até o fim do próximo turno dele.\nUma carga sensível ao impacto aplicada em lâmina, cabeça de martelo ou bala. Qualquer um atingido por isso vai precisar de um minuto.",
     "isCustom": false
   },
   {
     "id": "aaed362a-b9ee-4cce-8fbf-115efaf0731c",
     "rank": 1,
-    "name": "ACTIVE CAMO",
+    "name": "Camuflagem Ativa",
     "price": 2000,
-    "description": "Quick Action, Limited 1.\nBecome Invisible until the start of your next turn.\nAn emitter device installed right about where your mech's sternum would be. The energy pattern it projects bends the light around you, but the odd, blurry defect can clue the perceptive marksman as to where you might be skulking.",
+    "description": "Ação Rápida, Limitada 1.\nTorne-se Invisible até o início do seu próximo turno.\nUm dispositivo emissor instalado bem onde ficaria o esterno do seu mech. O padrão de energia que ele projeta curva a luz ao seu redor, mas o defeito estranho e embaçado pode dar ao atirador perceptivo uma pista de onde você pode estar se esgueirando.",
     "isCustom": false
   },
   {
     "id": "b3fe2d27-72b1-4af7-911f-ddaa1bf391c5",
     "rank": 1,
-    "name": "HOLO DECOY",
+    "name": "Isca Holográfica",
     "price": 1500,
-    "description": "Quick Action, 1/round, Limited 3.\n1/round, Create a holographic decoy of yourself. This decoy moves your Speed in a straight line from your current position; it is unaffected by difficult terrain but is stopped by obstructions and characters in its path. Hostile characters who start their turn within line of sight and range of the hologram must first make a System save or be forced to attack the decoy.\nThe decoy shares your size, can benefit from cover, and has Evasion 10, E-Defense 10, and 1 HP. It disappears if it takes heat or damage, or at the end of your next turn. If you create a second decoy, the previous one disappears. The decoy can be programmed to execute any number of gestures from a vast library of 'emotes.' Sure to infuriate any and all hostiles from Core to Shore.",
+    "description": "Ação Rápida, 1/rodada, Limitada 3.\n1/rodada, crie uma isca holográfica de você mesmo. Esta isca se move seu Deslocamento em linha reta a partir da sua posição atual; ela não é afetada por terreno difícil, mas é parada por obstruções e personagens em seu caminho. Personagens hostis que começam seu turno em linha de visão e alcance do holograma devem primeiro fazer uma salvaguarda de Sistema ou são forçados a atacar a isca.\nA isca tem o mesmo tamanho que você, pode se beneficiar de cobertura e tem Esquiva 10, E-Defesa 10 e 1 PV. Ela desaparece se sofrer calor ou dano, ou no fim do seu próximo turno. Se você criar uma segunda isca, a anterior desaparece.\nA isca pode ser programada para executar qualquer número de gestos de uma vasta biblioteca de “emotes”. Com certeza vai enfurecer todos os hostis de Core a Shore.",
     "isCustom": false
   },
   {
     "id": "b284d471-a5d0-4a81-bddb-13ac8da1f776",
     "rank": 1,
-    "name": "PUNISHER SYLO",
+    "name": "Sylo Justiceiro",
     "price": 2500,
-    "description": "Free Action, 1/round, Limited 3.\n1/round When you critically hit with any attack, deal 3 Explosive damage to a different target within Range 15 as a free action.\nA quick-launch tube armed with three fire-and-forget rockets.",
+    "description": "Ação Livre, 1/rodada, Limitada 3.\n1/rodada, quando você acerta criticamente com qualquer ataque, cause 3 de dano explosivo a um alvo diferente dentro do Alcance 15 como uma ação livre.\nUm tubo de lançamento rápido equipado com três foguetes de disparar e esquecer.",
     "isCustom": false
   },
   {
     "id": "4595d1a1-6e30-4494-bcba-eae77376c9c7",
     "rank": 1,
-    "name": "BODY FLICKER DRIVE",
+    "name": "Motor de Cintilação Corporal",
     "price": 1000,
-    "description": "Protocol, Limited 3.\nTeleport whenever you Boost until the end of the current turn.\nAn experimental drive plugged right into your reactor. Painfully cold to the touch, so make sure to wear the special protective gloves it came with during installation.",
+    "description": "Protocolo, Limitada 3.\nTeleporte sempre que você usar Boost até o fim do turno atual.\nUm motor experimental conectado diretamente ao seu reator. Dolorosamente frio ao toque, então certifique-se de usar as luvas de proteção especiais que vieram com ele durante a instalação.",
     "isCustom": false
   },
   {
     "id": "a11af018-6a44-490f-aa87-b9b70414e405",
     "rank": 1,
-    "name": "PREDATOR/PREY PING",
+    "name": "Ping Predador/Presa",
     "price": 2000,
-    "description": "Quick Action, Limited 2.\nRemove Hidden and Invisible from one hostile character in Sensors and line of sight. That character cannot regain either Hidden or Invisible until the end of their next turn.\nA chunky power modulator that interfaces directly with your sensor array. Enhances the effective precision of your sensors in quick, powerful bursts, but continuous use will blow them out like a bad fuse.",
+    "description": "Ação Rápida, Limitada 2.\nRemova Oculto e Invisible de um personagem hostil dentro dos sensores e linha de visão. Esse personagem não pode recuperar Oculto nem Invisible até o fim do próximo turno dele.\nUm modulador de energia robusto que se interfaceia diretamente com seu conjunto de sensores. Melhora a precisão efetiva dos seus sensores em surtos rápidos e poderosos, mas o uso contínuo vai queimá-los como um fusível ruim.",
     "isCustom": false
   },
   {
     "id": "2eb214b6-2eda-44e9-9bc8-3b3f77a63469",
     "rank": 1,
-    "name": "JAEGER SHOCKS",
+    "name": "Amortecedores Jaeger",
     "price": 1000,
-    "description": "1/round, Limited 2.\n1/round, If your standard move or Boost ends next to hard cover equal to or greater than your mech's Size, spend this reserve to immediately move 2 spaces in any direction.\nKinetic-absorbant shocks installed in the ankle, knee, and hip joints of your mech. Allows even a multi-ton machine to quickly navigate through tight urban corridors without fear of toppling the whole block.",
+    "description": "1/rodada, Limitada 2.\n1/rodada, se seu movimento padrão ou Boost terminar ao lado de cobertura dura igual ou maior que o tamanho do seu mech, gaste esta reserva para se mover imediatamente 2 espaços em qualquer direção.\nAmortecedores de absorção cinética instalados nas juntas de tornozelo, joelho e quadril do seu mech. Permitem que até uma máquina de várias toneladas navegue rapidamente por corredores urbanos apertados sem medo de derrubar o quarteirão inteiro.",
     "isCustom": false
   },
   {
     "id": "3dc83179-203d-4c64-bd26-37b37cb90ed2",
     "rank": 1,
-    "name": "SHINE-CLASS ENERGY SHIELD",
+    "name": "Escudo de Energia Classe-BRILHO",
     "price": 2000,
-    "description": "Limited 1.\nWhen you're successfully hit by a ranged or melee attack, spend this reserve to gain Overshield equal to your Grit+3 before damage is rolled. These Overshield disappears after the attack is resolved.\nAn energy shield that quickly snaps into place at the instant of violent impact. Popularized by a merc pilot by the name of McCloud, infamous for his quick reflexes and fancy footwork.",
+    "description": "Limitada 1.\nQuando você é atingido com sucesso por um ataque à distância ou corpo a corpo, gaste esta reserva para ganhar Superescudos igual ao seu Grit+3 antes de rolar o dano. Esses superescudos desaparecem após o ataque ser resolvido.\nUm escudo de energia que se encaixa rapidamente no instante do impacto violento. Popularizado por um piloto mercenário chamado McCloud, famoso por seus reflexos rápidos e passos elaborados.",
     "isCustom": false
   },
   {
     "id": "d50add7e-eb95-4b73-8994-fc87c729fe9c",
     "rank": 1,
-    "name": "LIVING PARTICULATE NEXUS",
+    "name": "Nexus de Partículas Vivas",
     "price": 1000,
-    "description": "Quick Action, 1/round, Limited 1.\n1/round, Spend this reserve as a quick action to release a Burst 1 cloud of nanites that lasts until the start of your next turn. Hostile characters who end their turn in this cloud, or who enter it for the first time in a round, take 2AP kinetic damage.\n'Mmmm… no, I'm pretty sure it's just gray-wash.'",
+    "description": "Ação Rápida, 1/rodada, Limitada 1.\n1/rodada, gaste esta reserva como uma ação rápida para liberar uma nuvem de nanites em Explosão 1 que dura até o início do seu próximo turno. Personagens hostis que terminam seu turno nesta nuvem, ou que entram nela pela primeira vez em uma rodada, sofrem 2AP de dano cinético.\n—Mmmm… não, tenho certeza de que é só tinta cinza.",
     "isCustom": false
   },
   {
     "id": "f5ff6bcf-2550-4e43-9020-61de4d0a7ed0",
     "rank": 1,
-    "name": "CASTLE TECH SUITE",
+    "name": "Suíte de Tech \"Castelo\"",
     "price": 1500,
-    "description": "Quick Action, Limited 1.\nSpend this reserve as a quick action. Gain a +3 bonus to System saves, a +3 bonus to your e-defense, and a +3 bonus to tech attacks. This effect lasts until the end of your next turn.\nAn advanced firewall program that drastically increases your computer's combat efficacy.",
+    "description": "Ação Rápida, Limitada 1.\nGaste esta reserva como uma ação rápida. Ganhe um bônus de +3 em salvaguardas de Sistema, um bônus de +3 na sua E-Defesa e um bônus de +3 em ataques de Tech. Este efeito dura até o fim do seu próximo turno.\nUm programa de firewall avançado que aumenta drasticamente a eficácia de combate do seu computador.",
     "isCustom": false
   },
   {
     "id": "7c5f8a86-404f-4a51-a361-8ab79a250884",
     "rank": 1,
-    "name": "PREDICTIVE FIRE ARRAY",
+    "name": "Matriz de Tiro Preditivo",
     "price": 2500,
-    "description": "Limited 1.\nAfter you hit with Overwatch, spend this reserve to immediately Overwatch against a different character in range with the same weapon. You cannot attack the same character twice.\nA modification to your sensors that populates your HUD with predictive-analysis targets before you even see them.",
+    "description": "Limitada 1.\nDepois de acertar com Overwatch, gaste esta reserva para imediatamente usar Overwatch contra um personagem diferente dentro do alcance com a mesma arma. Você não pode atacar o mesmo personagem duas vezes.\nUma modificação nos seus sensores que preenche seu HUD com alvos de análise preditiva antes mesmo de você vê-los.",
     "isCustom": false
   },
   {
     "id": "91aeb79a-5604-489d-8ded-6551410044d3",
     "rank": 1,
-    "name": "ANAGUMA-CLASS SUBALTERN",
+    "name": "Subalterno Classe ANAGUMA",
     "price": 1500,
-    "description": "Quick Action, Drone, Limited 1.\nSpend this reserve to deploy a Anaguma combat subaltern within Sensors and line of sight.\nAnaguma-Class Subaltern\nSize: 1/2, HP: 10, Evasion: 5\nWhenever you successfully attack, the Anaguma deals 3 Energy damage to the same target as long as it's within Range 5 of the target when the attack hits. When the Anaguma is destroyed, it detonates in a Burst 2 explosion. Characters caught in the explosion must make an Agility save or take 1D6+2 Explosive damage. They take half of that on success. The Anaguma cannot be recalled, but it can be moved with talents and abilities. It expires at the end of the scene.\nIt's programmed with a friendly, cheerful persona package that nevertheless comes off as disturbingly enthusiastic about its own imminent self-destruction.",
+    "description": "Ação Rápida, Desdobrável, Drone, Limitada 1.\nGaste esta reserva para desdobrar um subalterno de combate Anaguma dentro dos Sensores e linha de visão.\n\nSubalterno Classe Anaguma\nTamanho: 1/2, PV: 10, Esquiva: 5\n- Sempre que você atacar com sucesso, o Anaguma causa 3 de dano de energia ao mesmo alvo, desde que esteja dentro do alcance 5 do alvo quando o ataque acertar.\n- Quando o Anaguma é destruído, ele detona em uma explosão em Explosão 2. Personagens pegos na explosão devem fazer uma salvaguarda de Agilidade ou sofrem 1D6+2 de dano explosivo. Eles sofrem metade disso em caso de sucesso.\n- O Anaguma não pode ser recolhido, mas pode ser movido com talentos e habilidades. Ele expira no fim da cena.\nEle é programado com um pacote de personalidade amigável e alegre que, ainda assim, soa perturbadoramente entusiasmado com sua própria autodestruição iminente.",
     "isCustom": false
   },
   {
     "id": "1ea98d47-8252-4aa1-8eaa-d79bf6c35306",
     "rank": 1,
-    "name": "AIM COMPENSATOR",
+    "name": "Compensador de Mira",
     "price": 2000,
-    "description": "Reaction, Limited 1.\nTrigger: You miss with any ranged or melee attack.\nEffect: Deal 2 Reliable damage.\nA hydraulic brace installed at your mech's shoulder and elbow that corrects your aim in the heat of combat.",
+    "description": "Reação, Limitada 1.\nGatilho: Você erra com qualquer ataque à distância ou corpo a corpo.\nEfeito: Cause 2 de dano Reliable.\nUma braçadeira hidráulica instalada no ombro e no cotovelo do seu mech que corrige sua mira no calor do combate.",
     "isCustom": false
   },
   {
     "id": "5a9ac1e0-87e2-4145-9fe0-523b430fd156",
     "rank": 1,
-    "name": "TROJAN REBOUND",
+    "name": "Ricochete Troiano",
     "price": 1500,
-    "description": "Reaction, Limited 2.\nTrigger: A hostile character within Range 10 is Slowed.\nEffect: That character is now Immobilized for the same duration as the triggering effect.\nA hungry, aggressive paracode that tugs on the leash it's been given.",
+    "description": "Reação, Limitada 2.\nGatilho: Um personagem hostil dentro do alcance 10 fica Slowed.\nEfeito: Esse personagem agora fica Imobilizado pela mesma duração do efeito desencadeador.\nUm paracódigo faminto e agressivo que puxa a coleira que lhe foi dada.",
     "isCustom": false
   },
   {
     "id": "4ec59699-9d2f-48da-8550-fb1621f37575",
     "rank": 1,
-    "name": "SUBSPACE FIRING CHAMBER",
+    "name": "Câmara de Disparo Subespacial",
     "price": 1000,
-    "description": "Free Action, 1/round, Limited 3.\n1/round, spend this reserve as a free action during any character's turn to deal 1 damage to any character on the map regardless of range or line of sight. This damage cannot be reduced in any way.\nIt looks like a typical sidearm, except it has no muzzle; only a sheer, flat surface where bullets ought to exit. Looking at the gun too long after firing it might give some pilots motion sickness.",
+    "description": "Ação Livre, 1/rodada, Limitada 3.\n1/rodada, gaste esta reserva como uma ação livre durante o turno de qualquer personagem para causar 1 de dano a qualquer personagem no mapa, independentemente de alcance ou linha de visão. Este dano não pode ser reduzido de forma alguma.\nParece uma arma lateral típica, exceto que não tem boca; apenas uma superfície plana e cortante onde as balas deveriam sair. Olhar para a arma por muito tempo depois de disparar pode dar enjoo em alguns pilotos.",
     "isCustom": false
   },
   {
     "id": "002e369b-b893-4dda-a482-7a7ca9319f4e",
     "rank": 1,
-    "name": "SONIC EMITTER",
+    "name": "Emissor Sônico",
     "price": 2000,
-    "description": "Quick Action, Limited 1.\nSpend this reserve as a quick action to detonate a Size 1 object or piece of hard cover within Range 10 and line of sight. Characters within Burst 1 of the detonation must make an Agility save or take 1D6 explosive damage and 2 Burn. On success, they take no explosive damage and 1 Burn.\nA dish made out of a series of concentric, hollow rings. Tension can be adjusted for concentrated frequencies.",
+    "description": "Ação Rápida, Limitada 1.\nGaste esta reserva como uma ação rápida para detonar um objeto de Tamanho 1 ou peça de cobertura dura dentro do Alcance 10 e linha de visão. Personagens dentro de Explosão 1 da detonação devem fazer uma salvaguarda de Agilidade ou sofrem 1D6 de dano explosivo e 2 de Burn. Em caso de sucesso, não sofrem dano explosivo e sofrem 1 de Burn.\nUm prato feito de uma série de anéis concêntricos e ocos. A tensão pode ser ajustada para frequências concentradas.",
     "isCustom": false
   },
   {
     "id": "e1097f3f-3884-4abd-8239-8967cee38bf8",
     "rank": 1,
-    "name": "DETRITUS LAUNCHER",
+    "name": "Lançador de Detritos",
     "price": 1000,
-    "description": "Quick Action, Limited 1.\nLaunch a cloud of obstructive micro-debris in Cone 7. This zone counts as difficult terrain and soft cover until the end of the current round. Characters who start their turn in this cloud or enter it for the first time in the round become Impaired.\nA rattling, makeshift hunk of iron with a design philosophy closer to Queen Victoria than John Creighton Harrison.",
+    "description": "Ação Rápida, Limitada 1.\nLance uma nuvem de microdetritos obstrutivos em Cone 7. Esta zona conta como terreno difícil e cobertura leve até o fim da rodada atual. Personagens que começam seu turno nesta nuvem ou entram nela pela primeira vez na rodada ficam Impaired.\nUm pedaço de ferro improvisado e barulhento com uma filosofia de design mais próxima da Rainha Vitória do que de John Creighton Harrison.",
     "isCustom": false
   },
   {
     "id": "3a507a40-e0e5-42aa-ab09-fe4ce4bc3175",
     "rank": 1,
-    "name": "THERMAL TRANSFER CHAMBER",
+    "name": "Câmara de Transferência Térmica",
     "price": 1000,
-    "description": "Quick Action, Limited 2.\n1/round, spend this reserve as a quick action to add bonus energy damage equal to your current Burn to your next successful attack.\nA weapon mod that looks a bit like an old water radiator. It gathers energy from ambient local temperature.",
+    "description": "Ação Rápida, Limitada 2.\n1/rodada, gaste esta reserva como uma ação rápida para adicionar dano de energia bônus igual à sua Burn atual ao seu próximo ataque bem-sucedido.\nUm mod de arma que se parece um pouco com um radiador de água antigo. Ele coleta energia da temperatura ambiente local.",
     "isCustom": false
   },
   {
     "id": "c919e25d-458f-4787-8f79-08dd3b5579c7",
     "rank": 1,
-    "name": "EMERGENCY BACKUP MINE",
+    "name": "Mina de Reserva de Emergência",
     "price": 1000,
-    "description": "Free Action, Limited 2.\nSpend this reserve whenever you place a mine to place a second mine as a free action. This second mine does not count against that system's Limited item count.\nA couple of spare mines you found at the bottom of a crate.",
+    "description": "Ação Livre, Limitada 2.\nGaste esta reserva sempre que você posicionar uma mina para posicionar uma segunda mina como uma ação livre. Esta segunda mina não conta para o limite de itens Limitados desse sistema.\nAlgumas minas sobressalentes que você encontrou no fundo de um caixote.",
     "isCustom": false
   },
   {
     "id": "4397b455-2d55-4fad-ba39-8cfea0f28c40",
     "rank": 1,
-    "name": "WIDE AREA IMPACT DISTRIBUTOR",
+    "name": "Distribuidor de Impacto de Área Ampla",
     "price": 1000,
-    "description": "Reaction, Limited 1.\nTrigger: You take any damage from a ranged or melee attack.\nEffect: The damage of that attack is immediately reduced to 1 and is applied to you and all characters within Range 5. This single point of damage cannot be reduced in any way.\nA peculiar energy shield that relies on expanded surface area to lessen the impact of hostile munitions. One mech's surface alone is rarely enough, so it uses instantaneous substatic pings to borrow the rest.",
+    "description": "Reação, Limitada 1.\nGatilho: Você sofre qualquer dano de um ataque à distância ou corpo a corpo.\nEfeito: O dano desse ataque é imediatamente reduzido a 1 e é aplicado a você e a todos os personagens dentro do Alcance 5. Este único ponto de dano não pode ser reduzido de forma alguma.\nUm escudo de energia peculiar que depende de área de superfície expandida para diminuir o impacto de munições hostis. A superfície de um mech sozinha raramente é suficiente, então ele usa pings subestáticos instantâneos para pegar o restante emprestado.",
     "isCustom": false
   },
   {
     "id": "ea1bd471-f175-4f35-9449-5f99b707fcae",
     "rank": 1,
-    "name": "MAG LASSO",
+    "name": "Laço Magnético",
     "price": 1500,
-    "description": "Reaction, Limited 2.\nTrigger: An allied character within Range 5 takes Kinetic or Explosive damage.\nEffect: You may deal half of that damage to a hostile character within Range 5.\nA hollow, high-tech node installed somewhere in your mech's hand. Many pilots prefer the palm for dramatic effect, but anywhere will do. Catches bullets and missiles as easy as dandelions.",
+    "description": "Reação, Limitada 2.\nGatilho: Um personagem aliado dentro do Alcance 5 sofre dano cinético ou explosivo.\nEfeito: Você pode causar metade desse dano a um personagem hostil dentro do Alcance 5.\nUm nó oco e de alta Tech instalado em algum lugar na mão do seu mech. Muitos pilotos preferem a palma para efeito dramático, mas qualquer lugar serve. Pega balas e mísseis tão facilmente quanto dentes-de-leão.",
     "isCustom": false
   },
   {
     "id": "0c410dcb-3dba-4dd3-a050-394fa1f28e16",
     "rank": 1,
-    "name": "REACTOR BLUFF",
+    "name": "Blefe de Reator",
     "price": 2500,
-    "description": "Quick Action, Limited 2.\nSpend this reserve as a quick action to immediately enter the Danger Zone with no heat gain. This lasts until the end of the current turn. You may still gain heat through other means normally.\nReactors aren't smart. They don't think, they don't reason, they don't solve problems. But they can be tricked.",
+    "description": "Ação Rápida, Limitada 2.\nGaste esta reserva como uma ação rápida para entrar imediatamente na Zona de Perigo sem ganho de calor. Isso dura até o fim do turno atual. Você ainda pode ganhar calor por outros meios normalmente.\nReatores não são inteligentes. Eles não pensam, não raciocinam, não resolvem problemas. Mas podem ser enganados.",
     "isCustom": false
   },
   {
     "id": "62bf252b-37fc-40c3-ae43-67a8c8080318",
     "rank": 1,
-    "name": "VOLATILE ENERGY CELL",
+    "name": "Célula de Energia Volátil",
     "price": 1000,
-    "description": "Limited 2.\nWhen you deal any Energy damage, spend this reserve to deal 2 Burn as bonus damage.\n'There's a little tab you can rip off at the end of the cell. Yeah, right there, that's the–Woah, woah, woah! Don't do it NOW you idiot!!!'",
+    "description": "Limitada 2.\nQuando você causa qualquer dano de Energia, gaste esta reserva para causar 2 de Burn como dano bônus.\n—Tem uma abinha que você pode arrancar no fim da célula. Sim, bem ali, é a—Opa, opa, opa! Não faça isso AGORA, seu idiota!!!",
     "isCustom": false
   },
   {
@@ -396,407 +396,407 @@
     "rank": 1,
     "name": "KINGS_FOLLOWUP.EXE",
     "price": 1000,
-    "description": "Full Action, Limited 2.\nSpend this reserve to target a hostile unit in line of sight and sensors that has any Burn. That character immediately takes damage as if they had failed the end of turn Engineering check to clear Burn.\nA sinister invasion package that interferes with a mech's fire suppression features.",
+    "description": "Ação Completa, Limitada 2.\nGaste esta reserva para mirar uma unidade hostil em linha de visão e sensores que tenha qualquer Burn. A Burn desse personagem é acionada imediatamente.\nUm pacote de invasão sinistro que interfere nos recursos de supressão de incêndio de um mech.",
     "isCustom": false
   },
   {
     "id": "bee345fb-b12c-4e47-ac1d-768e227a1aa0",
     "rank": 2,
-    "name": "SLINGSHOT PORTAL",
+    "name": "Portal Estilingue",
     "price": 3500,
-    "description": "1/scene, Quick Action.\nPlace a marker on your current space, then immediately teleport to any free space within Range 20 and line of sight. You automatically teleport back to that marker at the end of your next turn unless you're Stunned or Immobilized.\nThe Slingshot Portal was originally designed for clandestine scouting maneuvers, but field captains quickly discovered its offensive potential.",
+    "description": "1/cena, Ação Rápida.\nColoque um marcador no seu espaço atual e imediatamente teletransporte-se para qualquer espaço livre dentro do Alcance 20 e linha de visão. Você automaticamente se teletransporta de volta para esse marcador no fim do seu próximo turno, a menos que esteja Stunned ou Imobilizado.\nO Portal Estilingue foi originalmente projetado para manobras clandestinas de reconhecimento, mas capitães de campo rapidamente descobriram seu potencial ofensivo.",
     "isCustom": false
   },
   {
     "id": "fc9bc430-6132-4639-9bed-2efde7e4ee70",
     "rank": 2,
-    "name": "PURVIEW-GRADE DUCT TAPE",
+    "name": "Fita Adesiva de Grau Purview",
     "price": 4000,
-    "description": "1/mission or operation.\nRepair a destroyed weapon or system without spending your Repair Cap.\nSometimes the best solutions in life are cheap. Unfortunately, Harrison Armory doesn't make anything cheap.",
+    "description": "1/missão ou operação.\nRepare uma arma ou sistema destruído sem gastar seu Limite de Reparos.\nÀs vezes, as melhores soluções da vida são baratas. Infelizmente, a Harrison Armory não fabrica nada barato.",
     "isCustom": false
   },
   {
     "id": "c63db599-fb7a-447f-8293-1dc3bc2a9439",
     "rank": 2,
-    "name": "COOLANT RIG",
+    "name": "Sistema de Refrigeração",
     "price": 3500,
-    "description": "Each time you gain heat from a hostile source, the total amount of heat is reduced by 1.\nA complex network of pipes, tubes, and pads strategically set up around your reactor to ensure that you can push it a little harder than usual.",
+    "description": "1/cena, Ação Livre.\nCada vez que você ganha calor de uma fonte hostil, a quantidade total de calor é reduzida em 1 ponto.\nUma complexa rede de tubos, canos e placas estrategicamente dispostos ao redor do seu reator para garantir que você possa forçá-lo um pouco mais que o normal.",
     "isCustom": false
   },
   {
     "id": "9d457f59-2edd-4c13-9651-b637204df109",
     "rank": 2,
-    "name": "INSIGHT-CLASS COMP/CON",
+    "name": "Comp/Con Classe INTUIÇÃO",
     "price": 5000,
-    "description": "1/scene, Free Action.\n1/scene, perform one quick action as a free action. It cannot be an attack and it cannot force a save.\nThe Insight-Class is designed to help you maintain a tactical advantage while you focus on more aggressive maneuvers.",
+    "description": "1/cena, Ação Livre.\n1/cena, realize uma ação rápida como uma ação livre. Ela não pode ser um ataque e não pode forçar uma salvaguarda.\nO can do Classe INTUIÇÃO é projetado para ajudar você a manter uma vantagem tática enquanto foca em manobras mais agressivas.",
     "isCustom": false
   },
   {
     "id": "43e883f9-d78e-41e3-98f5-4a2de26ce332",
     "rank": 2,
-    "name": "RADIANT TARGET ACTUATOR",
+    "name": "Atuador de Alvo Radiante",
     "price": 3000,
-    "description": "1/round.\n1/round, If you don't move before firing a Launcher, you get +1 Accuracy.\nA software update that improves each missile's ability to maintain target priority. They just need a second or two to make a lock.",
+    "description": "1/rodada.\n1/rodada, se você não se mover antes de disparar um Launcher, você ganha 1 de precisão.\nUma atualização de software que melhora a capacidade de cada míssil de manter prioridade de alvo. Eles só precisam de um segundo ou dois para Lock On.",
     "isCustom": false
   },
   {
     "id": "9a779369-1548-4f23-96ab-8189d361fcb4",
     "rank": 2,
-    "name": "COUNTERWEIGHT POMMEL",
+    "name": "Pomo de Contrapeso",
     "price": 4000,
-    "description": "If your melee weapons don't have the Reliable tag, they gain Reliable 1. If they already have the Reliable tag, its value increases by 1.\nA pommel printed to the exact weight and specifications of your weapon allowing for field-optimal balance.",
+    "description": "Se suas armas corpo a corpo não tiverem a etiqueta Reliable, elas ganham Reliable 1. Se já tiverem a etiqueta Reliable, seu valor aumenta em 1.\nUm pomo impresso com o peso e as especificações exatas da sua arma, permitindo equilíbrio ideal em campo.",
     "isCustom": false
   },
   {
     "id": "f600ca1d-2a82-42a2-b6f4-60592c970239",
     "rank": 2,
-    "name": "PISTON BRACE",
+    "name": "Braçadeira de Pistão",
     "price": 3000,
-    "description": "1/round, Reaction.\nTrigger: An enemy knocks you back.\nEffect: You may ignore that movement.\nEmergency-launch pistons installed in the calves or feet of your mech. Whenever you find yourself stumbling, they'll be there to catch your fall.",
+    "description": "1/rodada, Reação.\nGatilho: Um inimigo empurra você para trás.\nEfeito: Você pode ignorar esse movimento.\nPistões de lançamento de emergência instalados nas panturrilhas ou nos pés do seu mech. Sempre que você estiver tropeçando, eles estarão lá para amortecer sua queda.",
     "isCustom": false
   },
   {
     "id": "1ecba7b0-dfa8-44af-bbf8-b8c108adb1f2",
     "rank": 2,
-    "name": "FORCED REBOOT PACKAGE",
+    "name": "Pacote de Reinicialização Forçada",
     "price": 4000,
-    "description": "1/scene, Quick Action.\n1/scene, you may clear the Stunned condition for you or an adjacent allied character as a quick action. This can be used even while Stunned. You or your ally then become Impaired and Slowed until the end of their next turn.\nBeing stunned is considered by many pilots to be a worst-case scenario, but it's nothing a little software can't fix.",
+    "description": "1/cena, Ação Rápida.\n1/cena, você pode remover a condição Stunned de você ou de qualquer personagem aliado adjacente no seu turno como uma ação rápida. Esse aliado então fica Impaired e Slowed até o fim do próximo turno dele.\nSer atordoado é considerado por muitos pilotos o pior cenário possível, mas não é nada que um pouco de software não possa consertar.",
     "isCustom": false
   },
   {
     "id": "5683832e-b11e-4e7e-abb1-862ac1eca9fd",
     "rank": 2,
-    "name": "CHIP SHIELDS",
+    "name": "Escudos de Lasca",
     "price": 3500,
-    "description": "1/round.\n1/round, If you would only take 1 damage from a ranged or melee attack, reduce it to 0 damage.\nAn overshield with an extremely low energy draw. It isn't strong enough to ward off direct attacks, but it's sufficient enough to let you ignore ambient wear and tear.",
+    "description": "1/rodada.\n1/rodada, se você fosse sofrer apenas 1 de dano de um ataque à distância ou corpo a corpo, reduza para 0 de dano.\nUm superescudo com consumo de energia extremamente baixo. Não é forte o suficiente para afastar ataques diretos, mas é suficiente para permitir que você ignore desgaste ambiente.",
     "isCustom": false
   },
   {
     "id": "dc09e38c-6ba1-4871-a179-cd8c5d7b3612",
     "rank": 2,
-    "name": "TREMOR CHARGE",
+    "name": "Carga de Tremor",
     "price": 4000,
-    "description": "1/scene.\n1/scene, any knockback effect you inflict on a hostile character also knocks them prone, if it doesn't already.\nAn explosive charge that detonates upon impact with the target. While it doesn't do any physical damage, it will knock them off their feet.",
+    "description": "1/cena.\n1/cena, qualquer efeito de empurrão que você infligir a um personagem hostil também o derruba no chão, se ainda não o fizer.\nUma carga explosiva que detona ao impactar o alvo. Embora não cause dano físico, vai derrubá-los no chão.",
     "isCustom": false
   },
   {
     "id": "f8e0aa96-4413-4392-992f-d20ed007064a",
     "rank": 2,
-    "name": "EMERGENCY FOAM DISPENCER",
+    "name": "Dispensador de Espuma de Emergência",
     "price": 3500,
-    "description": "1/scene.\n1/scene, automatically clear any burn you have at the end of your turn.\nFor untold thousands of years, fire has remained one of mankind's cruelest and most effective weapons. You'd be a fool not to expect it.",
+    "description": "1/cena.\n1/cena, remova automaticamente qualquer Burn que você tenha no fim do seu turno.\nPor incontáveis milhares de anos, o fogo permaneceu uma das armas mais cruéis e eficazes da humanidade. Você seria um tolo se não esperasse por ele.",
     "isCustom": false
   },
   {
     "id": "b80cdfcc-34ae-4a53-b0f1-6c8914c7eb5e",
     "rank": 2,
-    "name": "PLIABLE EXPLOSIVE CASING",
+    "name": "Invólucro Explosivo Flexível",
     "price": 3000,
-    "description": "All grenades can be thrown an additional 1 space.\nGives your grenades a little extra bounce.",
+    "description": "Todas as granadas podem ser arremessadas 1 espaço adicional.\nDá às suas granadas um pouco de Boost extra.",
     "isCustom": false
   },
   {
     "id": "62c61808-5c80-4b39-a1b0-d82eb370f9ed",
     "rank": 2,
-    "name": "GHILLIE MANTLE",
+    "name": "Manto Ghillie",
     "price": 4500,
-    "description": "1/scene, Reaction.\nTrigger: You're targeted by a ranged attack while benefiting from hard cover.\nEffect: You count as Invisible until the attack resolves.\nMost combat theorists will tell you that mundane camouflage is useless in this era of high tech weaponry, but experienced mercenaries know that there's a big difference between theory and praxis.",
+    "description": "1/cena, Reação.\nGatilho: Você é alvo de um ataque à distância enquanto se beneficia de cobertura dura.\nEfeito: Você conta como Invisible até o ataque ser resolvido.\nA maioria dos teóricos de combate dirá que camuflagem comum é inútil nesta era de armamentos de alta Tech, mas mercenários experientes sabem que há uma grande diferença entre teoria e prática.",
     "isCustom": false
   },
   {
     "id": "1a5429fa-d2e0-494a-869c-14fa068db704",
     "rank": 2,
-    "name": "USHTABI ROUND",
+    "name": "Projétil Ushtabi",
     "price": 5000,
-    "description": "1/scene, Protocol.\n1/scene, the next successful attack you make with a ranged weapon deals the average of its total damage based on the number of dice rolled, as follows: 1d3 (2), 1d6 (4), 2d6 (7), 3d6 (11), 4d6 (14).\nTry not to look at this bullet too hard.",
+    "description": "1/cena, Protocolo.\n1/cena, o próximo ataque bem-sucedido que você fizer com uma arma à distância causa a média do dano total com base no número de dados rolados, como segue: 1d3 (2), 1d6 (4), 2d6 (7), 3d6 (11), 4d6 (14).\nTente não olhar muito fixamente para esta bala.",
     "isCustom": false
   },
   {
     "id": "ae3c8d90-4d3e-4740-bb5f-dd9c62a6d069",
     "rank": 2,
-    "name": "EXTENDED BARREL",
+    "name": "Cano Estendido",
     "price": 3500,
-    "description": "All Rifle weapons have their maximum Range increased by 1.\nEvery meter counts.",
+    "description": "Todas as armas de Fuzil têm seu alcance máximo aumentado em 1.\nCada metro conta.",
     "isCustom": false
   },
   {
     "id": "49fc1f4e-f39c-40cb-ab91-2df25d6a6e16",
     "rank": 2,
-    "name": "DEVASTATOR SHELLS",
+    "name": "Projéteis Devastadores",
     "price": 4000,
-    "description": "All Cannon weapons ignore soft cover.\nAt a certain point, the amount of damage a gun can dole out will nullify any opposing terrain advantage.",
+    "description": "Todas as armas de Canhão ignoram cobertura leve.\nEm certo ponto, a quantidade de dano que uma arma pode causar anula qualquer vantagem de terreno do oponente.",
     "isCustom": false
   },
   {
     "id": "7ad19476-c488-4505-8237-222019a2668c",
     "rank": 2,
-    "name": "BREACHER DOCTRINE",
+    "name": "Doutrina de Arrombamento",
     "price": 4500,
-    "description": "1/round.\n1/round, before skirmishing with a CQB weapon, you may move 1 space. This movement ignores engagement and does not provoke reactions.\nA software package that allows your mech finer motor control in high-collision environments.",
+    "description": "1/rodada.\n1/rodada, antes de escaramuçar com uma arma de CQB, você pode mover 1 espaço. Este movimento ignora engajamento e não provoca reações.\nUm pacote de software que permite ao seu mech controle motor mais fino em ambientes de alta Ram.",
     "isCustom": false
   },
   {
     "id": "316c36ca-2db3-40c0-b490-f11a54b6f2e0",
     "rank": 2,
-    "name": "HEAVY SHIELD",
+    "name": "Escudo Pesado",
     "price": 3500,
-    "description": "Adjacent allied characters can use you for hard cover.\nInstalls on forearm-mounted hardpoints, leaving your off-hand free for more offensive tasks.",
+    "description": "Personagens aliados adjacentes podem usar você como cobertura dura. Não acumula com Guardião.\nInstala-se em pontos rígidos montados no antebraço, deixando sua mão secundária livre para tarefas mais ofensivas.",
     "isCustom": false
   },
   {
     "id": "4c215ccb-0611-46a9-b94d-8f4f7a08fed2",
     "rank": 2,
-    "name": "VOLATILE CATALYST",
+    "name": "Catalisador Volátil",
     "price": 4000,
-    "description": "1/round.\n1/round, whenever you deal energy damage to a hostile character, deal 1 Energy damage to one other hostile character adjacent to the target.\nA moderately sized deck charger that allows you to overclock your weapon's energy cells.",
+    "description": "1/rodada.\n1/rodada, sempre que você causar dano de energia a um personagem hostil, cause 1 de dano de energia a outro personagem hostil adjacente ao alvo.\nUm carregador de tamanho moderado que permite sobrecarregar as células de energia da sua arma.",
     "isCustom": false
   },
   {
     "id": "92cccb51-ef69-40cc-9d02-4fe95ea83fb4",
     "rank": 2,
-    "name": "ADVANCED PRINTING MATERIALS",
+    "name": "Materiais de Impressão Avançados",
     "price": 4000,
-    "description": "All of your drones and deployables have +1 Armor.\nFigure that the cost of drone repair ends up being more in the long run than the cost of a little extra armor.",
+    "description": "Todos os seus drones e desdobráveis têm 1 de armadura.\nConsidere que o custo de reparo de drones acaba sendo maior a longo prazo do que o custo de um pouco de armadura extra.",
     "isCustom": false
   },
   {
     "id": "f593a30d-33a8-4f70-9dba-d718f893142f",
     "rank": 2,
-    "name": "SCATTER MALWARE",
+    "name": "Malware de Dispersão",
     "price": 3000,
-    "description": "1/round, Reaction.\nTrigger: You trigger an enemy's Overwatch.\nEffect: You count as having soft cover until the attack is resolved.\nA reactive invasion package that distorts your profile on the enemy's HUD just enough to make you annoying to hit.",
+    "description": "1/rodada, Reação.\nGatilho: Você aciona a Overwatch de um inimigo.\nEfeito: Você conta como tendo cobertura leve até o ataque ser resolvido.\nUm pacote de invasão reativo que distorce seu perfil no HUD inimigo o suficiente para torná-lo irritante de acertar.",
     "isCustom": false
   },
   {
     "id": "2325e53e-7803-40fa-830a-8f1e45da4677",
     "rank": 2,
-    "name": "DONKEY BRACE",
+    "name": "Braçadeira Burro",
     "price": 4000,
-    "description": "1/scene.\n1/scene, you may ignore the Ordnance tag for one attack.\nA back-mounted brace that allows you to bring heavier munitions to bear without sacrificing mobility. As robust as this brace is, however, it can only be used a limited number of times before snapping clean in half.",
+    "description": "1/cena.\n1/cena, você pode ignorar a etiqueta Ordenança para um ataque.\nUma braçadeira montada nas costas que permite empunhar munições mais pesadas sem sacrificar mobilidade. Por mais robusta que seja, só pode ser usada um número limitado de vezes antes de se partir ao meio.",
     "isCustom": false
   },
   {
     "id": "53393435-a88d-46d6-a243-3ca6b1a5a4a4",
     "rank": 2,
-    "name": "EFFICIENT ENERGY EMMITERS",
+    "name": "Emissores de Energia Eficientes",
     "price": 3500,
-    "description": "1/round.\n1/round, When you gain any Overshields, gain 1 extra point of Overshields.\nYou'd be amazed how much energy goes to waste in most contemporary shielding systems.",
+    "description": "1/rodada.\n1/rodada, quando você ganha quaisquer Superescudos, ganhe 1 ponto extra de Superescudos.\nVocê se surpreenderia com quanta energia é desperdiçada na maioria dos Systems de escudo contemporâneos.",
     "isCustom": false
   },
   {
     "id": "270aec39-9192-44e6-975d-ea214f91faa5",
     "rank": 2,
-    "name": "FIELD PATCH",
+    "name": "Remendo de Campo",
     "price": 5000,
-    "description": "1/scene, Protocol.\n1/scene, remove the Shredded condition as a protocol, but become Slowed until the end of your next turn.\nA quick-seal adhesive slab of metal that slaps over any damage your outer chassis may receive. A bit cumbersome to use in the heat of battle, however.",
+    "description": "1/cena, Protocolo.\n1/cena, remova a condição Dilacerado como um Protocolo, mas fique Slowed até o fim do seu próximo turno.\nUma placa de metal adesiva de vedação rápida que cobre qualquer dano que seu chassi externo possa receber. Um pouco desajeitada de usar no calor da batalha, no entanto.",
     "isCustom": false
   },
   {
     "id": "09bfdd34-6264-4193-97d6-ffd808ca9ee8",
     "rank": 2,
-    "name": "BULL EXO-FRAME",
+    "name": "Exo-Moldura Touro",
     "price": 3500,
-    "description": "Moving adjacent to characters the same size as you does not stop your movement. Larger characters can still stop you as normal, however.\nA bulky mantle that fits over your mech's shoulders, allowing you to quite literally charge past whatever hostile may stand in your way.",
+    "description": "Mover-se para adjacente a personagens do mesmo tamanho que você não interrompe seu movimento. Personagens maiores ainda podem interromper você normalmente, no entanto.\nUm manto volumoso que se encaixa sobre os ombros do seu mech, permitindo que você literalmente avance por cima de qualquer hostil que esteja no seu caminho.",
     "isCustom": false
   },
   {
     "id": "8e3290d1-24f0-403c-88ca-2fd03ac4bcb8",
     "rank": 2,
-    "name": "XC HARDPOINTS",
+    "name": "Pontos Rígidos XC",
     "price": 4000,
-    "description": "1/scene, Reaction.\nTrigger: You're successfully hit by a weapon with the Armor-Piercing tag.\nEffect: You may ignore that tag for this attack only, allowing your Armor to reduce the damage dealt as normal.\nStrategically placed support hardpoints that increase the effective longevity of your chassis armor.",
+    "description": "1/cena, Reação.\nGatilho: Você é atingido com sucesso por uma arma com a etiqueta Perfuração de Armadura.\nEfeito: Você pode ignorar essa etiqueta apenas para este ataque, permitindo que sua armadura reduza o dano causado normalmente.\nPontos de suporte estrategicamente posicionados que aumentam a longevidade efetiva da armadura do seu chassi.",
     "isCustom": false
   },
   {
     "id": "4896ff4f-26fb-48a5-ac18-44cd52f4364d",
     "rank": 2,
-    "name": "TACTICAL SENSOR SUITE",
+    "name": "Suíte de Sensores Táticos",
     "price": 4500,
-    "description": "Your sensors get +5 Range when you use the Lock On or Scan quick tech actions.\nA software update that boosts your short-range sensors, but only if you keep your finger off the trigger for once in your life.",
+    "description": "Seus sensores ganham 5 de alcance quando você usa as ações rápidas de Tech Lock On ou Escanear.\nUma atualização de software que melhora seus sensores de curto alcance, mas só se você mantiver o dedo longe do gatilho pelo menos uma vez na vida.",
     "isCustom": false
   },
   {
     "id": "0ba0962f-2ac5-4020-bc7c-002acd07b735",
     "rank": 2,
-    "name": "LOCKJAW VIRUS",
+    "name": "Vírus TRIS_MO",
     "price": 4500,
-    "description": "1/round.\n1/round, whenever you successfully hit a hostile character with a tech attack, that character gets +1 Difficulty to the next ranged, melee, or tech attack they make against you.\nIt's just good strategy to prioritize enemy hackers on the field of battle. But what do you do if you are the enemy hacker?",
+    "description": "1/rodada.\n1/rodada, sempre que você acertar com sucesso um personagem hostil com um Tech Attack, esse personagem ganha 1 de Dificuldade no próximo ataque à Distância, Corpo a Corpo ou de Tech que ele fizer contra você.\nÉ apenas uma boa estratégia priorizar hackers inimigos no campo de batalha. Mas o que você faz se você for o hacker inimigo?",
     "isCustom": false
   },
   {
     "id": "ce99dfb9-7cab-45e1-95ec-b60f21bb334d",
     "rank": 2,
-    "name": "ADAPTABLE FIREWALL",
+    "name": "Firewall Adaptável",
     "price": 3500,
-    "description": "1/scene, Reaction.\nTrigger: You're successfully hit by a hostile tech attack.\nEffect: You count as Invisible for the next tech attack that targets you.\nA defense package that rapidly reprograms itself to keep up with enemy cyber-doctrine.",
+    "description": "1/cena, Reação.\nGatilho: Você é atingido com sucesso por um Tech Attack hostil.\nEfeito: Você conta como Invisible para o próximo Tech Attack que tiver você como alvo.\nUm pacote de defesa que se reprograma rapidamente para acompanhar a ciberdoutrina inimiga.",
     "isCustom": false
   },
   {
     "id": "c12f6ff3-b018-460d-b931-c07d63804c38",
     "rank": 2,
-    "name": "BLACK EYE FUEL CANISTER",
+    "name": "Cilindro de Combustível \"Olho Negro\"",
     "price": 4000,
-    "description": "1/round, Protocol.\n1/round, the first attack you make that deals any amount of Burn damage gains the Reliable 2 tag. This reliable damage is applied as Burn.\nDon't look directly at the flames. They've been known to cause the careless eye to bleed.",
+    "description": "1/rodada, Protocolo.\n1/rodada, o primeiro ataque que você fizer que cause qualquer quantidade de dano de Burn ganha a etiqueta Reliable 2. Este dano Reliable é aplicado como Burn.\nNão olhe diretamente para as chamas. Elas são conhecidas por fazer o olho descuidado sangrar.",
     "isCustom": false
   },
   {
     "id": "2dd5912c-0256-405d-9aee-6d25fea35c19",
     "rank": 2,
-    "name": "DEFENSIVE EMP",
+    "name": "EMP Defensivo",
     "price": 5000,
-    "description": "When you Brace, all adjacent characters are Jammed until the end of their next turn.\nA core-mounted emitter that releases an electro-magnetic pulse strong enough to scramble anyone breathing down your neck. Just don't use it around your friends, or they'll give you an earful… as soon as their comms are back up, anyway.",
+    "description": "Quando você usa Brace, todos os personagens adjacentes ficam Jammed até o fim do próximo turno deles.\nUm emissor montado no núcleo que libera um pulso eletromagnético forte o suficiente para interferir em qualquer um respirando no seu cangote. Só não use perto dos seus amigos, ou eles vão te dar uma bronca… assim que as comunicações deles voltarem, de qualquer forma.",
     "isCustom": false
   },
   {
     "id": "b2232a99-e4cb-400b-bd04-9e988a8af86d",
     "rank": 2,
-    "name": "TATTLETALE SCOPE",
+    "name": "Mira Dedodura",
     "price": 3000,
-    "description": "1/round.\n1/round, when you hit with a ranged or tech attack, you learn the target's HP and Heat.\nMost pilots can estimate how much damage an enemy can take with a bit of napkin math, but why guess?",
+    "description": "1/rodada.\n1/rodada, quando você acerta com um ataque à distância ou de Tech, você descobre os PV e o Calor do alvo.\nA maioria dos pilotos consegue estimar quanto dano um inimigo aguenta com um pouco de matemática de guardanapo, mas por que adivinhar?",
     "isCustom": false
   },
   {
     "id": "a1ce92b3-fe8a-4d81-9b9a-1f3e0b65eb11",
     "rank": 2,
-    "name": "RESPONSIVE MOBILITY PACKAGE",
+    "name": "Pacote de Mobilidade Responsiva",
     "price": 4000,
-    "description": "1/scene, Quick Action.\n1/scene, when you Boost while adjacent to an allied character, that character may also Boost their speed in any direction.\nA software package that links your maneuvering systems with a friendly computer, allowing for synchronized assaults.",
+    "description": "1/cena, Ação Rápida.\n1/cena, quando você usa Boost enquanto adjacente a um personagem aliado, esse personagem também pode usar Boost com o Deslocamento dele em qualquer direção.\nUm pacote de software que conecta seus Systems de manobra a um computador aliado, permitindo assaltos sincronizados.",
     "isCustom": false
   },
   {
     "id": "a8115a22-295f-4d06-b9b1-ab105bd8e24d",
     "rank": 2,
-    "name": "CHRONOMETRIC SCRAMBLER",
+    "name": "Embaralhador Cronométrico",
     "price": 4000,
-    "description": "1/scene, Reaction.\nTrigger: Any hostile character successfully attacks, passes a save or check, or otherwise successfully rolls a die. (including NPC feature recharging).\nEffect: The attack misses, the save or check is failed, or the dice successfully rolled is now a failure, etc. You immediately take 3 heat and become Impaired until the end of your next turn.\n'Whew, that was a close one.'\n'What was?'",
+    "description": "1/cena, Reação.\nGatilho: Qualquer personagem hostil ataca com sucesso, passa em uma salvaguarda ou teste, ou de outra forma rola um dado com sucesso (incluindo recarga de recurso de NPC).\nEfeito: O ataque erra, a salvaguarda ou teste falha, ou o dado rolado com sucesso agora é uma falha, etc. Você imediatamente sofre 3 de calor e fica Impaired até o fim do seu próximo turno.\n—Ufa, essa foi por pouco.\n—O que foi?",
     "isCustom": false
   },
   {
     "id": "c1ba91fe-05d4-4463-9726-56002da7d5a1",
     "rank": 2,
-    "name": "LOCUST PROJECTOR",
+    "name": "Projetor Gafanhoto",
     "price": 3000,
-    "description": "1/round, Drone, Quick Action.\nDeploy the Locust Projector within sensors and line of sight as a quick action. Once deployed, the Locust Projector emits a Burst 1 field.\nLocust Projector\nSize: 1/2, HP 5, Evasion 10, E-Def 10\nAll characters in this field gain soft cover and have Immunity to all damage and effects from missed attacks.\nA crab-like drone about the size of a dumpster. It's equipped with a suite of point-defense armaments that can intercept anything short of a direct hit.",
+    "description": "1/rodada, Drone, Ação Rápida.\nDesdobre o Projetor Gafanhoto dentro dos sensores e linha de visão como uma ação rápida. Uma vez desdobrado, o Projetor Gafanhoto emite um campo em Explosão 1.\n\nProjetor Gafanhoto\nTamanho: 1/2, PV: 5, Esquiva: 10, E-Def: 10\n\nTodos os personagens neste campo ganham cobertura leve e têm imunidade a todo dano e efeitos de ataques que erram.\nUm drone parecido com um caranguejo, mais ou menos do tamanho de uma caçamba de entulho. É equipado com um conjunto de armamentos de defesa pontual que podem interceptar qualquer coisa que não seja um acerto direto.",
     "isCustom": false
   },
   {
     "id": "7ef408dd-5cca-470a-a002-7005d309807d",
     "rank": 2,
-    "name": "REBOUND FIREWALL",
+    "name": "Firewall de Ricochete",
     "price": 3000,
-    "description": "1/scene.\n1/scene, if you gain the Jammed condition from a hostile character, that character is immediately Jammed, as well.\n\"Oh yeah? Screw you, too, buddy! … I said–uhhh, I said, 'screw you, too.' Do you copy? … Hello?\"",
+    "description": "1/cena.\n1/cena, se você ganhar a condição Jammed de um personagem hostil, esse personagem fica imediatamente Jammed também.\n—Ah é? Vá se danar também, amigão! … Eu disse—uhhh, eu disse, ‘vá se danar também’. Você copiou? … Alô?",
     "isCustom": false
   },
   {
     "id": "8684624e-3a91-4162-8c6f-5cc50381578e",
     "rank": 2,
-    "name": "FIELD PATTERN IDENTIFIER",
+    "name": "Identificador de Padrão de Campo",
     "price": 4000,
-    "description": "1/round.\n1/round, Whenever you push or pull a hostile character, you may move 1 space. This movement ignores engagement and does not provoke reactions.\nAn upgrade to your sensors that allows you to analyze the rapidly evolving variables of any battlefield, plotting the best possible maneuvers to capitalize on an already good situation.",
+    "description": "1/rodada.\n1/rodada, sempre que você empurrar ou puxar um personagem hostil, você pode mover 1 espaço. Este movimento ignora engajamento e não provoca reações.\nUma melhoria nos seus sensores que permite analisar as variáveis em rápida evolução de qualquer campo de batalha, planejando as melhores manobras possíveis para capitalizar em uma situação já boa.",
     "isCustom": false
   },
   {
     "id": "a601e50d-7b32-412c-9813-34bf4b40c38e",
     "rank": 2,
-    "name": "SELF-DETONATING DEBRIS CANNISTER",
+    "name": "Cilindro de Detritos Autodetonador",
     "price": 3000,
-    "description": "1/scene, Quick Action.\n1/scene, create a Blast 1 zone of difficult terrain in a free adjacent space as a quick action. This zone lasts for the rest of the scene.\nA canister full of shrapnel, razor-wire, caltrops, and other similarly hazardous traps. No-man's land on demand.",
+    "description": "1/cena, Ação Rápida.\n1/cena, crie uma zona de Blast 1 de terreno difícil em um espaço adjacente livre como uma ação rápida. Esta zona dura pelo resto da cena.\nUm cilindro cheio de estilhaços, arame farpado, estrepes e outras armadilhas similarmente perigosas. Terra de ninguém sob demanda.",
     "isCustom": false
   },
   {
     "id": "718202d6-3382-482b-be6a-b8f8e2169c9c",
     "rank": 2,
-    "name": "CO-PILOT ASSISTANCE SUITE",
+    "name": "Suíte de Assistência de Copiloto",
     "price": 4000,
-    "description": "Your Overwatch attacks can never suffer from Difficulty.\nA targeting suite developed from IPS-N's WATCHDOG program, but with a greatly reduced cerebral load.",
+    "description": "Seus ataques de Overwatch nunca podem sofrer de Dificuldade.\nUma suíte de mira desenvolvida a partir do programa WATCHDOG da IPS-N, mas com uma carga cerebral muito reduzida.",
     "isCustom": false
   },
   {
     "id": "7bfcfe99-a999-489b-be56-d8579399fc63",
     "rank": 2,
-    "name": "FIRE SUPPORT APPENDAGES",
+    "name": "Apêndices de Apoio de Fogo",
     "price": 4000,
-    "description": "1/scene, Free Action.\n1/scene, when you Critically Hit with any ranged or melee attack, you may reload one Loading weapon as a free action.\nA pair of externally mounted arms that handle the more mundane tasks you don't have the time to bother with.",
+    "description": "1/cena, Ação Livre.\n1/cena, quando você acerta criticamente com qualquer ataque à distância ou corpo a corpo, você pode recarregar uma arma de Recarga como uma ação livre.\nUm par de braços montados externamente que lidam com as tarefas mais mundanas com as quais você não tem tempo de se preocupar.",
     "isCustom": false
   },
   {
     "id": "a47d2cab-ee8a-4cab-80f7-a5c594835f75",
     "rank": 2,
-    "name": "REDLINE THRUSTERS",
+    "name": "Propulsores Linha Rubra",
     "price": 4000,
-    "description": "1/scene, Quick Action.\n1/scene, you may Boost as a free action. You cannot Boost again on this turn except through Overcharge.\nA pair of back-mounted thrusters that allow you to push your mech beyond factory-recommended speeds.",
+    "description": "1/cena, Ação Livre.\n1/cena, você pode usar Boost como uma ação livre. Você não pode usar Boost novamente neste turno, exceto por meio de Overcharge.\nUm par de propulsores montados nas costas que permitem empurrar seu mech além das velocidades recomendadas de fábrica.",
     "isCustom": false
   },
   {
     "id": "dd5ca317-e793-44a4-9024-903b3765c066",
     "rank": 2,
-    "name": "FULL SERVICE EXO-DRONES",
+    "name": "Exo-Drones de Serviço Completo",
     "price": 4500,
-    "description": "Your Stabilize full action now clears one additional condition that wasn't caused by one of your own systems, talents, etc. This can be applied to either yourself or an adjacent allied character.\nA pair of small, spider-like drones that excel in quick repairs in the heat of combat.",
+    "description": "Sua ação completa Estabilizar agora remove uma condição adicional que não foi causada por um dos seus próprios Systems, talentos, etc. Isso pode ser aplicado a você mesmo ou a um personagem aliado adjacente.\nUm par de pequenos drones parecidos com aranhas que se destacam em reparos rápidos no calor do combate.",
     "isCustom": false
   },
   {
     "id": "40c1ba7b-7f90-420b-a7a3-61b88cf93e8a",
     "rank": 2,
-    "name": "BLOODWATER CHAFF LAUNCHER",
+    "name": "Lançador de Chamariz \"Água Sangrenta\"",
     "price": 5000,
-    "description": "1/round, whenever you inflict Impaired on a hostile character, they must also pass a Hull save or become Slowed.\nA shoulder-mounted launcher that automatically fires a volley of exploding chaff at weakened hostiles. Does negligible damage, but keeps the target effectively neutered.",
+    "description": "1/rodada.\n1/rodada, sempre que você infligir Impaired a um personagem hostil, ele também deve passar em uma salvaguarda de HULL ou fica Slowed.\nUm Lançador montado no ombro que dispara automaticamente uma salva de chamariz explosivo em hostis enfraquecidos. Causa dano insignificante, mas mantém o alvo efetivamente neutralizado.",
     "isCustom": false
   },
   {
     "id": "9418549e-c78d-48b2-ad97-f97713b2de8b",
     "rank": 2,
-    "name": "POWER FIST",
+    "name": "Punho de Força",
     "price": 3500,
-    "description": "The first Grapple or Ram you make in a round has +1 Accuracy.\nA large, oversized gauntlet that fits over one of your mech's hands. Grants the wearer uncontested dominance in close-quarters sparring.",
+    "description": "O primeiro Grapple ou Ram que você fizer em uma rodada tem 1 de Precisão.\nUma manopla grande e superdimensionada que se encaixa sobre uma das mãos do seu mech. Concede ao usuário domínio incontestável em combate corpo a corpo.",
     "isCustom": false
   },
   {
     "id": "b242a194-47d3-49da-96e6-0b99cabd9018",
     "rank": 2,
-    "name": "CLUTTER PACKAGE",
+    "name": "Pacote de Entulho",
     "price": 5000,
-    "description": "Your Invade quick tech action deals 1 additional heat.\nQuadruples the size of your basic cyber invasion package with useless data, forcing the enemy computer to draw an equivalent amount of power just to keep all of it out.",
+    "description": "Sua ação rápida de Tech Invade causa 1 de calor adicional.\nQuadruplica o tamanho do seu pacote básico de ciberinvasão com dados inúteis, forçando o computador inimigo a consumir uma quantidade equivalente de energia só para manter tudo isso fora.",
     "isCustom": false
   },
   {
     "id": "1891473b-e83b-401f-a6b6-96c6b1306b23",
     "rank": 2,
-    "name": "BLINDSIGHT TARGETING LASER",
+    "name": "Laser de Mira às Cegas",
     "price": 5000,
-    "description": "1/round, When you Lock On to a hostile character, they must pass a Systems save or become unable to make voluntarily movements that bring them closer to you until the end of their next turn. Cannot be used on the same character more than 1/scene.\nA head-mounted laser that paints a hostile for local target acquisition. As a side benefit, it triggers the enemy mech's danger-proximity sensors, effectively treating you as if you were an active supernova.",
+    "description": "1/rodada.\n1/rodada, quando você Lock On em um personagem hostil, ele deve passar em uma salvaguarda de Systems ou fica incapaz de fazer movimentos voluntários que o aproximem de você até o fim do próximo turno dele. Não pode ser usado no mesmo personagem mais de 1/cena.\nUm laser montado na cabeça que marca um hostil para aquisição de alvo local. Como benefício adicional, aciona os sensores de proximidade de perigo do mech inimigo, tratando você efetivamente como se fosse uma supernova ativa.",
     "isCustom": false
   },
   {
     "id": "97172284-220f-4d27-b5ed-d7d3230ff3b0",
     "rank": 2,
-    "name": "CONTACT BOOSTERS",
+    "name": "Propulsores de Contato",
     "price": 4000,
-    "description": "Trigger: A hostile character ends movement adjacent to you.\nEffect: You move 1 space in any direction. This movement ignores engagement and does not provoke reactions.\nAncillary boosters that are programmed to activate when they detect the immediate proximity of hostile units.",
+    "description": "1/rodada.\nGatilho: Um personagem hostil termina uma ação de movimento adjacente a você.\nEfeito: Você se move 1 espaço em qualquer direção. Este movimento ignora engajamento e não provoca reações.\nPropulsores auxiliares programados para ativar quando detectam a proximidade imediata de unidades hostis.",
     "isCustom": false
   },
   {
     "id": "57728af0-52bb-430f-9306-0db52df48bca",
     "rank": 2,
-    "name": "IFF SMART MUNITIONS",
+    "name": "Munições Inteligentes IFF",
     "price": 3000,
-    "description": "You and your allies gain Immunity to damage from your own Blast and Cone attacks.\nBecome the most popular guy in the hangar.",
+    "description": "Você e seus aliados são imunes a dano dos seus próprios ataques de Blast e Cone.\nTorne-se o cara mais popular do hangar.",
     "isCustom": false
   },
   {
     "id": "fe1613d0-4ccf-40bb-b89a-0ef143b9eced",
     "rank": 2,
-    "name": "REFLECTIVE COATING",
+    "name": "Revestimento Reflexivo",
     "price": 4000,
-    "description": "1/scene, you may Hide as a free action.\nA special coat of paint made from reflective alloys. A cheaper, if less reliable, stealth doctrine.",
+    "description": "1/cena.\n1/cena, você pode usar Hide como uma ação livre.\nUma camada especial de tinta feita de ligas refletivas. Uma doutrina de furtividade mais barata, ainda que menos Reliable.",
     "isCustom": false
   },
   {
     "id": "9de4b126-7d4c-44e4-b992-8cad32debfac",
     "rank": 2,
-    "name": "OH CRAP BUTTON",
+    "name": "Botão \"Ah, Merda\"",
     "price": 4000,
-    "description": "1/scene, If you miss with a Superheavy weapon, you may immediately Boost your speed in any direction.\nA big red button that, when pressed, activates your mech's boosters. Good way to get out of a bad play.",
+    "description": "1/cena.\nSe você errar com uma arma Superpesada, você pode imediatamente usar Boost com o seu Deslocamento em qualquer direção.\nUm grande botão vermelho que, quando pressionado, ativa os propulsores do seu mech. Uma boa maneira de sair de uma jogada ruim.",
     "isCustom": false
   }
 ]
