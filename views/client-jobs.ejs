@@ -115,10 +115,10 @@
       <div class="job-status-filters">
         <span class="filter-label">STATUS_DO_TRABALHO:</span>
         <button class="filter-pill-status active" data-status="all" onclick="filterByStatus('all')">[TODOS]</button>
-        <button class="filter-pill-status" data-status="Active" onclick="filterByStatus('Active')">[ATIVO]</button>
-        <button class="filter-pill-status" data-status="Complete" onclick="filterByStatus('Complete')">[CONCLUIDO]</button>
-        <button class="filter-pill-status" data-status="Failed" onclick="filterByStatus('Failed')">[FALHOU]</button>
-        <button class="filter-pill-status" data-status="Ignored" onclick="filterByStatus('Ignored')">[IGNORADO]</button>
+        <button class="filter-pill-status" data-status="Ativo" onclick="filterByStatus('Ativo')">[ATIVO]</button>
+        <button class="filter-pill-status" data-status="Completo" onclick="filterByStatus('Completo')">[CONCLUIDO]</button>
+        <button class="filter-pill-status" data-status="Fracasso" onclick="filterByStatus('Fracasso')">[FRACASSO]</button>
+        <button class="filter-pill-status" data-status="Ignorado" onclick="filterByStatus('Ignorado')">[IGNORADO]</button>
       </div>
     </div>
     
@@ -327,7 +327,7 @@
       }
       
       // Filter to show only Active jobs for CLIENT interface
-      const activeJobs = jobs.filter(job => job.state === 'Active');
+      const activeJobs = jobs.filter(job => job.state === 'Ativo');
       
       jobsCount.textContent = activeJobs.length;
       
