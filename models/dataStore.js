@@ -1030,7 +1030,7 @@ async function archiveOngoingVotingPeriod(reason) {
     if (ongoingPeriod) {
       const periodIndex = votingPeriodsData.periods.findIndex(p => p.id === ongoingPeriod.id);
       if (periodIndex !== -1) {
-        votingPeriodsData.periods[periodIndex].state = 'Archived';
+        votingPeriodsData.periods[periodIndex].state = 'Arquivado';
         writeVotingPeriods(votingPeriodsData);
         
         // Broadcast voting period update
