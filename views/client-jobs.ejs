@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LANCER Job Board - Jobs</title>
+  <title>Quadro de Empregos LANCER - Trabalhos</title>
   <link rel="stylesheet" href="/css/terminal.css">
   <link rel="stylesheet" href="/css/client.css">
   <link rel="stylesheet" href="/css/currency.css">
@@ -11,17 +11,17 @@
 <body class="<%= colorScheme %>">
   <div class="terminal-header">
     <div class="terminal-header-left">
-      <h1>> <span id="portal-heading"><%= settings.portalHeading %></span> - JOB BOARD_</h1>
-      <p>> USER_GROUP: <span id="user-group"><%= settings.userGroup %></span>_</p>
-      <p>> AVAILABLE MISSIONS: <span id="jobs-count"><%= jobs.length %></span>_</p>
-      <a href="/client/overview" class="terminal-link">[OVERVIEW]</a>
+      <h1>> <span id="portal-heading"><%= settings.portalHeading %></span> - QUADRO_DE_TRABALHOS_</h1>
+      <p>> GRUPO_DE_USUARIO: <span id="user-group"><%= settings.userGroup %></span>_</p>
+      <p>> MISSOES_DISPONIVEIS: <span id="jobs-count"><%= jobs.length %></span>_</p>
+      <a href="/client/overview" class="terminal-link">[VISAO_GERAL]</a>
     </div>
     <div class="terminal-header-right">
-      <p class="terminal-info">> UNT: <span id="unt"><%= settings.unt %></span>U</p>
-      <p class="terminal-info">> CURRENT_GALACTIC_POS: <span id="galactic-pos"><%= settings.currentGalacticPos %></span></p>
+      <p class="terminal-info">> UNID: <span id="unt"><%= settings.unt %></span>U</p>
+      <p class="terminal-info">> POSICAO_GALACTICA_ATUAL: <span id="galactic-pos"><%= settings.currentGalacticPos %></span></p>
       <% if (!settings.openTable) { %>
       <div class="operation-progress">
-        <div class="operation-progress-label">> OPERATION_PROGRESS:</div>
+        <div class="operation-progress-label">> PROGRESSO_DA_OPERACAO:</div>
         <div class="progress-bar-container">
           <div class="progress-segment <%= settings.operationProgress >= 1 ? 'filled' : '' %>" id="progress-segment-1"></div>
           <div class="progress-segment <%= settings.operationProgress >= 2 ? 'filled' : '' %>" id="progress-segment-2"></div>
@@ -42,7 +42,7 @@
       <div class="job-card" data-job-id="<%= job.id %>">
         <% if (job.emblem) { %>
           <div class="job-emblem">
-            <img src="/emblems/<%= job.emblem %>" alt="Emblem">
+            <img src="/emblems/<%= job.emblem %>" alt="Emblema">
           </div>
         <% } %>
         <div class="job-card-header">
@@ -54,34 +54,34 @@
         </div>
         
         <div class="job-field">
-          <span class="field-label">CLIENT:</span>
-          <span class="field-value"><%= job.faction ? job.faction.title : 'FIELD_NULL' %></span>
+          <span class="field-label">CLIENTE:</span>
+          <span class="field-value"><%= job.faction ? job.faction.title : 'CAMPO_NULO' %></span>
         </div>
         
         <div class="job-field">
-          <span class="field-label">JOB_TYPE:</span>
+          <span class="field-label">TIPO_DE_TRABALHO:</span>
           <span class="field-value"><%= job.jobType %></span>
         </div>
         
         <div class="job-field">
-          <span class="field-label">OBJECTIVE:</span>
+          <span class="field-label">OBJETIVO:</span>
           <span class="field-value"><%= job.description %></span>
         </div>
         
         <div class="job-field">
-          <span class="field-label">CLIENT_BRIEF:</span>
+          <span class="field-label">RESUMO_DO_CLIENTE:</span>
           <span class="field-value"><%= job.clientBrief %></span>
         </div>
         
         <div class="job-field">
-          <span class="field-label">PAYMENT:</span>
-          <span class="field-value field-value--payment"><%= job.currencyPay.replace(/m$/i, '') %><img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon">
+          <span class="field-label">PAGAMENTO:</span>
+          <span class="field-value field-value--payment"><%= job.currencyPay.replace(/m$/i, '') %><img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Ícone de Moeda" class="currency-icon">
           </span>
         </div>
         
         <% if (job.additionalPay) { %>
         <div class="job-field">
-          <span class="field-label">ADDITIONAL_PAY:</span>
+          <span class="field-label">PAGAMENTO_ADICIONAL:</span>
           <span class="field-value"><%= job.additionalPay %></span>
         </div>
         <% } %>
@@ -91,34 +91,34 @@
   
   <!-- Global Job History Section -->
   <div class="job-history-section">
-    <h2 class="job-history-title">> GLOBAL_JOB_HISTORY_</h2>
+    <h2 class="job-history-title">> HISTORICO_GLOBAL_DE_TRABALHOS_</h2>
     
     <!-- Search Bar -->
     <div class="pilot-search-container">
-      <input type="text" id="job-history-search-input" class="pilot-search-input" aria-label="Search job history" placeholder="> FILTER_JOBS_" onkeypress="if(event.key === 'Enter') searchJobHistory()">
+      <input type="text" id="job-history-search-input" class="pilot-search-input" aria-label="Search job history" placeholder="> FILTRAR_TRABALHOS_" onkeypress="if(event.key === 'Enter') searchJobHistory()">
       <select id="job-history-search-field" class="job-history-search-dropdown" aria-label="Select search field">
-        <option value="all">ALL</option>
-        <option value="name">NAME</option>
-        <option value="faction">FACTION</option>
-        <option value="description">DESCRIPTION</option>
-        <option value="pilot">PILOT</option>
+        <option value="all">TUDO</option>
+        <option value="name">NOME</option>
+        <option value="faction">FACCAO</option>
+        <option value="description">DESCRICAO</option>
+        <option value="pilot">PILOTO</option>
       </select>
-      <button id="job-history-search-button" class="pilot-search-button" onclick="searchJobHistory()">[SEARCH]</button>
-      <button id="job-history-clear-button" class="pilot-clear-button" onclick="clearJobHistorySearch()">[CLEAR]</button>
+      <button id="job-history-search-button" class="pilot-search-button" onclick="searchJobHistory()">[BUSCAR]</button>
+      <button id="job-history-clear-button" class="pilot-clear-button" onclick="clearJobHistorySearch()">[LIMPAR]</button>
     </div>
     
     <!-- Filter Pills -->
     <div class="job-history-filters">
       <button id="pilot-filter-toggle" class="filter-pill-toggle" onclick="togglePilotFilter()">
-        <span id="pilot-filter-text">[ACTIVE PILOTS]</span>
+        <span id="pilot-filter-text">[PILOTOS_ATIVOS]</span>
       </button>
       <div class="job-status-filters">
-        <span class="filter-label">JOB STATUS:</span>
-        <button class="filter-pill-status active" data-status="all" onclick="filterByStatus('all')">[ALL]</button>
-        <button class="filter-pill-status" data-status="Active" onclick="filterByStatus('Active')">[ACTIVE]</button>
-        <button class="filter-pill-status" data-status="Complete" onclick="filterByStatus('Complete')">[COMPLETE]</button>
-        <button class="filter-pill-status" data-status="Failed" onclick="filterByStatus('Failed')">[FAILED]</button>
-        <button class="filter-pill-status" data-status="Ignored" onclick="filterByStatus('Ignored')">[IGNORED]</button>
+        <span class="filter-label">STATUS_DO_TRABALHO:</span>
+        <button class="filter-pill-status active" data-status="all" onclick="filterByStatus('all')">[TODOS]</button>
+        <button class="filter-pill-status" data-status="Active" onclick="filterByStatus('Active')">[ATIVO]</button>
+        <button class="filter-pill-status" data-status="Complete" onclick="filterByStatus('Complete')">[CONCLUIDO]</button>
+        <button class="filter-pill-status" data-status="Failed" onclick="filterByStatus('Failed')">[FALHOU]</button>
+        <button class="filter-pill-status" data-status="Ignored" onclick="filterByStatus('Ignored')">[IGNORADO]</button>
       </div>
     </div>
     
@@ -268,7 +268,7 @@
       const pendingPilots = activePilots.filter(p => !votedPilotIds.has(p.id));
       const pendingCallsigns = pendingPilots.map(p => `"${p.callsign}"`).join(', ');
       const pendingVotesLine = pendingCallsigns 
-        ? `<div class="voting-banner-pending">> PENDING VOTES: ${pendingCallsigns}</div>` 
+        ? `<div class="voting-banner-pending">> VOTOS_PENDENTES: ${pendingCallsigns}</div>` 
         : '';
       
       if (!endTime || now <= endTime) {
@@ -280,26 +280,26 @@
           
           // Show minutes if less than 60 minutes, otherwise show hours
           const timeDisplay = diffMinutes < 60 
-            ? `${diffMinutes} MINUTES` 
-            : `${Math.ceil(diffMinutes / 60)} HOURS`;
+            ? `${diffMinutes} MINUTOS` 
+            : `${Math.ceil(diffMinutes / 60)} HORAS`;
           
           banner.innerHTML = `
             <div class="voting-banner-text">
               <div class="voting-banner-left">
-                <div>> JOB VOTE LIVE - VOTE ENDS IN ${timeDisplay} AT ${formattedEndTime}</div>
+                <div>> VOTACAO_DE_TRABALHO_ATIVA - VOTACAO_TERMINA_EM ${timeDisplay} AS ${formattedEndTime}</div>
                 ${pendingVotesLine}
               </div>
-              <div class="voting-banner-right">> VOTES CAST: ${totalVotes}</div>
+              <div class="voting-banner-right">> VOTOS_REGISTRADOS: ${totalVotes}</div>
             </div>
           `;
         } else {
           banner.innerHTML = `
             <div class="voting-banner-text">
               <div class="voting-banner-left">
-                <div>> JOB VOTE LIVE - NO END TIME SET</div>
+                <div>> VOTACAO_DE_TRABALHO_ATIVA - SEM_HORARIO_DE_TERMINO_DEFINIDO</div>
                 ${pendingVotesLine}
               </div>
-              <div class="voting-banner-right">> VOTES CAST: ${totalVotes}</div>
+              <div class="voting-banner-right">> VOTOS_REGISTRADOS: ${totalVotes}</div>
             </div>
           `;
         }
@@ -309,8 +309,8 @@
         
         banner.innerHTML = `
           <div class="voting-banner-text">
-            <div class="voting-banner-left">> VOTING CONCLUDED AT ${formattedEndTime}</div>
-            <div class="voting-banner-right">> TOTAL VOTES: ${totalVotes}</div>
+            <div class="voting-banner-left">> VOTACAO_CONCLUIDA_EM ${formattedEndTime}</div>
+            <div class="voting-banner-right">> TOTAL_DE_VOTOS: ${totalVotes}</div>
           </div>
         `;
       }
@@ -336,7 +336,7 @@
         if (job.emblem) {
           emblemHtml = `
             <div class="job-emblem">
-              <img src="/emblems/${job.emblem}" alt="Emblem">
+              <img src="/emblems/${job.emblem}" alt="Emblema">
             </div>
           `;
         }
@@ -353,7 +353,7 @@
         if (job.additionalPay) {
           additionalPayHtml = `
             <div class="job-field">
-              <span class="field-label">ADDITIONAL_PAY:</span>
+              <span class="field-label">PAGAMENTO_ADICIONAL:</span>
               <span class="field-value">${job.additionalPay}</span>
             </div>
           `;
@@ -369,7 +369,7 @@
           }
           votesHtml = `
             <div class="job-field job-votes">
-              <span class="field-label">> VOTES:</span>
+              <span class="field-label">> VOTOS:</span>
               <span class="field-value">${voteIcons || '-'}</span>
             </div>
           `;
@@ -389,32 +389,32 @@
             </div>
             
             <div class="job-field">
-              <span class="field-label">CLIENT:</span>
+              <span class="field-label">CLIENTE:</span>
               <span class="field-value">${
                 (job.faction && typeof job.faction === 'object' && job.faction.title)
                   ? job.faction.title
-                  : 'FIELD_NULL'
+                  : 'CAMPO_NULO'
               }</span>
             </div>
             
             <div class="job-field">
-              <span class="field-label">JOB_TYPE:</span>
+              <span class="field-label">TIPO_DE_TRABALHO:</span>
               <span class="field-value">${job.jobType}</span>
             </div>
             
             <div class="job-field">
-              <span class="field-label">OBJECTIVE:</span>
+              <span class="field-label">OBJETIVO:</span>
               <span class="field-value">${job.description}</span>
             </div>
             
             <div class="job-field">
-              <span class="field-label">CLIENT_BRIEF:</span>
+              <span class="field-label">RESUMO_DO_CLIENTE:</span>
               <span class="field-value">${job.clientBrief}</span>
             </div>
             
             <div class="job-field">
-              <span class="field-label">PAYMENT:</span>
-              <span class="field-value field-value--payment">${job.currencyPay.replace(/m$/i, '')}<img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon">
+              <span class="field-label">PAGAMENTO:</span>
+              <span class="field-value field-value--payment">${job.currencyPay.replace(/m$/i, '')}<img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Ícone de Moeda" class="currency-icon">
               </span>
             </div>
             
@@ -512,7 +512,7 @@
     function togglePilotFilter() {
       currentPilotFilter = currentPilotFilter === 'active' ? 'all' : 'active';
       const toggleButton = document.getElementById('pilot-filter-text');
-      toggleButton.textContent = currentPilotFilter === 'active' ? '[ACTIVE PILOTS]' : '[ALL PILOTS]';
+      toggleButton.textContent = currentPilotFilter === 'active' ? '[PILOTOS_ATIVOS]' : '[TODOS_OS_PILOTOS]';
       renderJobHistory(applyAllFilters(currentAllJobs));
     }
     
@@ -575,7 +575,7 @@
       }
       
       if (jobs.length === 0) {
-        jobHistoryList.innerHTML = '<p style="text-align: center; opacity: 0.7; margin-top: 20px;">> NO_JOBS_FOUND_</p>';
+        jobHistoryList.innerHTML = '<p style="text-align: center; opacity: 0.7; margin-top: 20px;">> NENHUM_TRABALHO_ENCONTRADO_</p>';
         return;
       }
       
@@ -598,13 +598,13 @@
           p.relatedJobs && p.relatedJobs.includes(job.id)
         );
         const pilotCallsigns = relatedPilots.map(p => p.callsign).join(', ');
-        const pilotsDisplay = pilotCallsigns || 'NO_PILOTS';
+        const pilotsDisplay = pilotCallsigns || 'NENHUM_PILOTO';
         
         // Remove "m" suffix from currencyPay
         const payment = (job.currencyPay || '0').replace(/m$/i, '');
         
         // Get faction name for job title
-        const factionName = job.faction && job.faction.title ? job.faction.title : 'NO_FACTION';
+        const factionName = job.faction && job.faction.title ? job.faction.title : 'SEM_FACCAO';
         const jobTitleWithFaction = `${job.name} - ${factionName}`;
         
         return `
@@ -613,8 +613,8 @@
               ${jobEmblemHtml}
               <div class="job-list-info">
                 <div class="job-list-name">${escapeHtml(jobTitleWithFaction)}</div>
-                <div class="job-list-pilots">PILOTS: ${escapeHtml(pilotsDisplay)}</div>
-                <div class="job-list-payment">PAYMENT: ${escapeHtml(payment)}<img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon" style="width: 12px; height: 12px; margin-left: 3px;"></div>
+                <div class="job-list-pilots">PILOTOS: ${escapeHtml(pilotsDisplay)}</div>
+                <div class="job-list-payment">PAGAMENTO: ${escapeHtml(payment)}<img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Ícone de Moeda" class="currency-icon" style="width: 12px; height: 12px; margin-left: 3px;"></div>
               </div>
             </div>
             <div class="job-list-status ${job.state.toLowerCase()}">${job.state.toUpperCase()}</div>
@@ -697,7 +697,7 @@
       
       // Display warning if pilot has voted for another job
       if (hasVoted) {
-        voteWarning.textContent = "THIS PILOT'S PREVIOUS VOTE WILL BE OVERWRITTEN";
+        voteWarning.textContent = "O VOTO ANTERIOR DESTE PILOTO SERA SOBRESCRITO";
         voteWarning.style.display = 'block';
       } else {
         voteWarning.style.display = 'none';
@@ -728,13 +728,13 @@
         if (data.success) {
           closeVotingModal();
         } else {
-          alert('Error casting vote: ' + (data.message || 'Unknown error'));
+          alert('Erro ao registrar voto: ' + (data.message || 'Erro desconhecido'));
           castVoteBtn.disabled = false;
         }
       })
       .catch(err => {
         console.error('Error casting vote:', err);
-        alert('Error casting vote. Please try again.');
+        alert('Erro ao registrar voto. Por favor, tente novamente.');
         castVoteBtn.disabled = false;
       });
     }
@@ -747,7 +747,7 @@
   <div id="job-details-modal" class="modal-overlay">
     <div class="modal-content">
       <div class="modal-header">
-        <h2>JOB DETAILS</h2>
+        <h2>DETALHES DO TRABALHO</h2>
         <button class="modal-close" onclick="closeModal('job-details-modal')">[X]</button>
       </div>
       <div class="modal-body">
@@ -760,22 +760,22 @@
   <div id="voting-modal" class="modal-overlay">
     <div class="modal-content">
       <div class="modal-header">
-        <h2>VOTING INTERFACE</h2>
+        <h2>INTERFACE DE VOTACAO</h2>
         <button class="modal-close" onclick="closeVotingModal()">[X]</button>
       </div>
       <div class="modal-body">
-        <p class="voting-instruction">> EACH PILOT MAY ONLY VOTE FOR ONE JOB.</p>
-        <p class="voting-instruction">> SELECT A PILOT TO CAST THEIR VOTE:</p>
+        <p class="voting-instruction">> CADA PILOTO PODE VOTAR EM APENAS UM TRABALHO.</p>
+        <p class="voting-instruction">> SELECIONE UM PILOTO PARA REGISTRAR SEU VOTO:</p>
         <div class="pilots-list" id="voting-pilots-list">
           <!-- Populated by JavaScript -->
         </div>
         <p id="vote-warning" class="vote-warning" style="display: none;"></p>
         <div class="modal-actions">
           <button class="modal-button confirm-button" id="cast-vote-btn" onclick="confirmVote()" disabled>
-            [CAST_VOTE]
+            [REGISTRAR_VOTO]
           </button>
           <button class="modal-button cancel-button" onclick="closeVotingModal()">
-            [CANCEL]
+            [CANCELAR]
           </button>
         </div>
       </div>
