@@ -69,7 +69,7 @@ router.get('/client/finances', requireClientAuth, (req, res) => {
 router.get('/client/jobs', requireClientAuth, (req, res) => {
   const allJobs = dataStore.readJobs();
   // Filter to show only Active jobs for clients
-  const jobs = allJobs.filter(job => job.state === 'Active');
+  const jobs = allJobs.filter(job => job.state === 'Ativo');
   const settings = dataStore.readSettings();
   const factions = dataStore.readFactions();
   
@@ -211,7 +211,7 @@ router.get('/admin', requireAdminAuth, (req, res) => {
   })).reverse();
   
   // Get active job IDs for voting period creation
-  const activeJobIds = jobs.filter(j => j.state === 'Active').map(j => j.id);
+  const activeJobIds = jobs.filter(j => j.state === 'Ativo').map(j => j.id);
   
   // Get ongoing voting period
   const ongoingPeriod = helpers.getOngoingVotingPeriod(votingPeriodsData.periods);
