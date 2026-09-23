@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LANCER Job Board - Shop</title>
+  <title>Quadro de Empregos LANCER - Loja</title>
   <link rel="stylesheet" href="/css/terminal.css">
   <link rel="stylesheet" href="/css/currency.css">
   <link rel="stylesheet" href="/css/client.css">
@@ -11,17 +11,17 @@
 <body class="<%= colorScheme %>">
   <div class="terminal-header">
     <div class="terminal-header-left">
-      <h1>> <span id="portal-heading"><%= settings.portalHeading %></span> - SHOP_</h1>
-      <p>> USER_GROUP: <span id="user-group"><%= settings.userGroup %></span>_</p>
-      <p>> AVAILABLE_ITEMS: <span id="items-count"><%= stockReserves.length + resupplyItems.filter(item => item.enabled).length %></span>_</p>
-      <a href="/client/overview" class="terminal-link">[OVERVIEW]</a>
+      <h1>> <span id="portal-heading"><%= settings.portalHeading %></span> - LOJA_</h1>
+      <p>> GRUPO_DE_USUARIO: <span id="user-group"><%= settings.userGroup %></span>_</p>
+      <p>> ITENS_DISPONIVEIS: <span id="items-count"><%= stockReserves.length + resupplyItems.filter(item => item.enabled).length %></span>_</p>
+      <a href="/client/overview" class="terminal-link">[VISAO_GERAL]</a>
     </div>
     <div class="terminal-header-right">
-      <p class="terminal-info">> UNT: <span id="unt"><%= settings.unt %></span>U</p>
-      <p class="terminal-info">> CURRENT_GALACTIC_POS: <span id="galactic-pos"><%= settings.currentGalacticPos %></span></p>
+      <p class="terminal-info">> DATA: <span id="unt"><%= settings.unt %></span>U</p>
+      <p class="terminal-info">> POSICAO_GALACTICA_ATUAL: <span id="galactic-pos"><%= settings.currentGalacticPos %></span></p>
       <% if (!settings.openTable) { %>
       <div class="operation-progress">
-        <div class="operation-progress-label">> OPERATION_PROGRESS:</div>
+        <div class="operation-progress-label">> PROGRESSO_DA_OPERACAO:</div>
         <div class="progress-bar-container">
           <div class="progress-segment <%= settings.operationProgress >= 1 ? 'filled' : '' %>" id="progress-segment-1"></div>
           <div class="progress-segment <%= settings.operationProgress >= 2 ? 'filled' : '' %>" id="progress-segment-2"></div>
@@ -36,7 +36,7 @@
     <!-- Resupply Items Section -->
     <% if (resupplyItems.some(item => item.enabled)) { %>
     <div class="resupply-section">
-      <h2>> RESUPPLY_ITEMS_</h2>
+      <h2>> ITENS_DE_REABASTECIMENTO_</h2>
       <div class="resupply-grid">
         <% resupplyItems.filter(item => item.enabled).forEach(item => { %>
           <div class="reserve-card resupply-card" data-resupply-id="<%= item.id %>" data-item-type="resupply">
@@ -46,16 +46,16 @@
             </div>
             <div class="reserve-description">
               <% if (item.id === 'limited-restock') { %>
-                One additional charge for a single Limited Weapon or System. This may not result in the exceeding of that Weapon or System's Limited cap.
+                Uma carga adicional para uma única Arma ou Sistema Limitado. Isso não pode resultar na superação do limite de Armas ou Sistemas Limitados.
               <% } else if (item.id === 'repair') { %>
-                One additional Repair Point. This may not result in the exceeding of your chassis' maximum number of Repair Points.
+                Um Ponto de Reparo adicional. Isso não pode resultar na superação do número máximo de Pontos de Reparo do seu chassi.
               <% } else if (item.id === 'core-battery') { %>
-                Recharge of a chassis' Core Power. This may not result in holding more than one charge of Core Power.
+                Recarga da Energia de Núcleo de um chassi. Isso não pode resultar em manter mais de uma carga de Energia de Núcleo.
               <% } %>
             </div>
             <div class="reserve-price">
               <%= item.price %>
-              <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon">
+              <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Ícone de Moeda" class="currency-icon">
             </div>
           </div>
         <% }); %>
@@ -65,9 +65,9 @@
     
     <!-- Reserve Stock Section -->
     <div class="reserves-section">
-      <h2>> RESERVE_STOCK_</h2>
+      <h2>> ESTOQUE_DE_RESERVAS_</h2>
       <% if (stockReserves.length === 0) { %>
-        <p class="empty-message">> NO_RESERVES_IN_STOCK_</p>
+        <p class="empty-message">> NENHUMA_RESERVA_EM_ESTOQUE_</p>
       <% } else { %>
         <div class="reserves-grid" id="reserves-grid">
           <% stockReserves.forEach(reserve => { %>
@@ -78,7 +78,7 @@
               </div>
               <div class="reserve-description">
                 <% 
-                  const description = reserve.description || 'NO_DESCRIPTION';
+                  const description = reserve.description || 'SEM_DESCRICAO';
                   const firstNewlineIndex = description.indexOf('\n');
                   if (firstNewlineIndex !== -1) {
                     const firstLine = description.substring(0, firstNewlineIndex);
@@ -92,7 +92,7 @@
               </div>
               <div class="reserve-price">
                 <%= reserve.price %>
-                <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon">
+                <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Ícone de Moeda" class="currency-icon">
               </div>
             </div>
           <% }); %>
@@ -106,11 +106,11 @@
     <div class="modal-content purchase-modal-content">
       <div class="purchase-modal-layout">
         <div class="purchase-modal-left">
-          <h3>> PURCHASE_INTERFACE_</h3>
+          <h3>> INTERFACE_DE_COMPRA_</h3>
           
           <!-- Expense To Section -->
           <div class="purchase-section">
-            <h4>> EXPENSE_TO:</h4>
+            <h4>> CUSTEAR_PARA:</h4>
             <div class="pilots-list" id="expense-pilots-list">
               <!-- Populated by JavaScript -->
             </div>
@@ -118,17 +118,17 @@
           
           <!-- Transaction Per Pilot -->
           <div class="purchase-section">
-            <h4>> TRANSACTION_PER_PILOT:</h4>
+            <h4>> TRANSACAO_POR_PILOTO:</h4>
             <div class="transaction-amount" id="transaction-amount">
               <span id="amount-per-pilot">0</span>
-              <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon">
+              <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Ícone de Moeda" class="currency-icon">
             </div>
             <div class="warning-message" id="warning-message" style="display: none;"></div>
           </div>
           
           <!-- Assign To Section -->
           <div class="purchase-section" id="assign-to-section" style="display: none;">
-            <h4>> ASSIGN_TO:</h4>
+            <h4>> ATRIBUIR_A:</h4>
             <div class="assignee-pills" id="assignee-pills">
               <!-- Populated by JavaScript -->
             </div>
@@ -137,10 +137,10 @@
           <!-- Action Buttons -->
           <div class="modal-actions">
             <button class="modal-button purchase-button" id="purchase-button" disabled>
-              [PURCHASE]
+              [COMPRAR]
             </button>
             <button class="modal-button cancel-button" id="cancel-button">
-              [CANCEL]
+              [CANCELAR]
             </button>
           </div>
         </div>
@@ -283,14 +283,14 @@
     function getItemDescription(item, itemType) {
       if (itemType === 'resupply') {
         if (item.id === 'limited-restock') {
-          return 'One additional charge for a single Limited Weapon or System. This may not result in the exceeding of that Weapon or System\'s Limited cap.';
+          return 'Uma carga adicional para uma única Arma ou Sistema Limitado. Isso não pode resultar na superação do limite de Armas ou Sistemas Limitados.';
         } else if (item.id === 'repair') {
-          return 'One additional Repair Point. This may not result in the exceeding of your chassis\' maximum number of Repair Points.';
+          return 'Um Ponto de Reparo adicional. Isso não pode resultar na superação do número máximo de Pontos de Reparo do seu chassi.';
         } else if (item.id === 'core-battery') {
-          return 'Recharge of a chassis\' Core Power. This may not result in holding more than one charge of Core Power.';
+          return 'Recarga da Energia de Núcleo de um chassi. Isso não pode resultar em manter mais de uma carga de Energia de Núcleo.';
         }
       }
-      return item.description || 'NO_DESCRIPTION';
+      return item.description || 'SEM_DESCRICAO';
     }
     
     /**
@@ -395,7 +395,7 @@
       
       // Show error if no valid expense selection
       if (!hasValidExpense) {
-        assigneePills.innerHTML = '<p class="empty-message" style="color: #ff4444;">> ERROR: EXPENSE REQUIRES ASSIGNMENT TO PILOTS WITH SUFFICIENT FUNDS.</p>';
+        assigneePills.innerHTML = '<p class="empty-message" style="color: #ff4444;">> ERRO: CUSTO_REQUER_ATRIBUICAO_A_PILOTOS_COM_FUNDOS_SUFICIENTES.</p>';
         return;
       }
       
@@ -473,7 +473,7 @@
         });
         
         if (hasInsufficientFunds) {
-          warningMessage.textContent = `>> WARNING: INSUFFICIENT_FUNDS for ${insufficientPilots.join(', ')}`;
+          warningMessage.textContent = `>> AVISO: FUNDOS_INSUFICIENTES para ${insufficientPilots.join(', ')}`;
           warningMessage.style.display = 'block';
         } else {
           warningMessage.style.display = 'none';
@@ -520,13 +520,13 @@
         } else {
           // Show error
           const warningMessage = document.getElementById('warning-message');
-          warningMessage.textContent = `>> ERROR: ${result.message}`;
+          warningMessage.textContent = `>> ERRO: ${result.message}`;
           warningMessage.style.display = 'block';
         }
       } catch (error) {
         console.error('Purchase error:', error);
         const warningMessage = document.getElementById('warning-message');
-        warningMessage.textContent = `>> ERROR: Purchase failed`;
+        warningMessage.textContent = `>> ERRO: Falha na compra`;
         warningMessage.style.display = 'block';
       }
     }
