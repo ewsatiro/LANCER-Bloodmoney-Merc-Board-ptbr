@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LANCER Job Board - Base</title>
+  <title>Quadro de Empregos LANCER - Base</title>
   <link rel="stylesheet" href="/css/terminal.css">
   <link rel="stylesheet" href="/css/currency.css">
   <link rel="stylesheet" href="/css/client.css">
@@ -12,16 +12,16 @@
   <div class="terminal-header">
     <div class="terminal-header-left">
       <h1>> <span id="portal-heading"><%= settings.portalHeading %></span> - BASE MANAGEMENT_</h1>
-      <p>> USER_GROUP: <span id="user-group"><%= settings.userGroup %></span>_</p>
-      <p>> FACILITY_STATUS: OPERATIONAL_</p>
-      <a href="/client/overview" class="terminal-link">[OVERVIEW]</a>
+      <p>> GRUPO_USUÁRIO: <span id="user-group"><%= settings.userGroup %></span>_</p>
+      <p>> STATUS_INSTALAÇÃO: OPERACIONAL_</p>
+      <a href="/client/overview" class="terminal-link">[VISÃO GERAL]</a>
     </div>
     <div class="terminal-header-right">
-      <p class="terminal-info">> UNT: <span id="unt"><%= settings.unt %></span>U</p>
-      <p class="terminal-info">> CURRENT_GALACTIC_POS: <span id="galactic-pos"><%= settings.currentGalacticPos %></span></p>
+      <p class="terminal-info">> DATA: <span id="unt"><%= settings.unt %></span>U</p>
+      <p class="terminal-info">> POS_GALATICA_ATUAL: <span id="galactic-pos"><%= settings.currentGalacticPos %></span></p>
       <% if (!settings.openTable) { %>
       <div class="operation-progress">
-        <div class="operation-progress-label">> OPERATION_PROGRESS:</div>
+        <div class="operation-progress-label">> PROGRESSO_OPERACAO:</div>
         <div class="progress-bar-container">
           <div class="progress-segment <%= settings.operationProgress >= 1 ? 'filled' : '' %>" id="progress-segment-1"></div>
           <div class="progress-segment <%= settings.operationProgress >= 2 ? 'filled' : '' %>" id="progress-segment-2"></div>
@@ -35,7 +35,7 @@
   <div class="base-container">
     <!-- Core Facilities Section -->
     <div class="modules-section">
-      <h2>> CORE_FACILITIES:</h2>
+      <h2>> INSTALACOES_PRINCIPAIS:</h2>
       <div class="modules-grid core" id="core-facilities">
         <!-- Rendered by JavaScript -->
       </div>
@@ -43,7 +43,7 @@
     
     <!-- Major Facilities Section -->
     <div class="modules-section">
-      <h2>> MAJOR_FACILITIES:</h2>
+      <h2>> INSTALACOES_MAIORES:</h2>
       <div class="modules-grid major" id="major-facilities">
         <!-- Rendered by JavaScript -->
       </div>
@@ -51,7 +51,7 @@
     
     <!-- Minor Facilities Section -->
     <div class="modules-section">
-      <h2>> MINOR_FACILITIES:</h2>
+      <h2>> INSTALACOES_MENORES:</h2>
       <div class="modules-grid minor" id="minor-facilities">
         <!-- Rendered by JavaScript -->
       </div>
