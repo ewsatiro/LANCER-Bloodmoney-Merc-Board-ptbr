@@ -1382,9 +1382,9 @@
     async function markJobFailed(id) {
       return updateJobState(
         id,
-        'Failed',
-        'Marcar este trabalho como Falho?',
-        'Trabalho marcado como Falho!'
+        'Fracasso',
+        'Marcar este trabalho como Fracasso?',
+        'Trabalho marcado como Fracasso!'
       );
     }
     
@@ -2057,7 +2057,7 @@
       }
       
       // Filter out Pending jobs
-      const availableJobs = allJobs.filter(job => job.state !== 'Pending');
+      const availableJobs = allJobs.filter(job => job.state !== 'Pendente');
       const pilotRelatedJobs = new Set(pilotData.relatedJobs || []);
       
       const listHtml = availableJobs.map(job => {
@@ -2773,7 +2773,7 @@
       const allJobs = <%- JSON.stringify(jobs) %>;
       
       // Filter jobs that will be affected (Active → Ignored, Pending → Active)
-      const affectedJobs = allJobs.filter(job => job.state === 'Active' || job.state === 'Pending');
+      const affectedJobs = allJobs.filter(job => job.state === 'Ativo' || job.state === 'Pendente');
       
       // Populate the job list
       const jobListDiv = document.getElementById('progressAllJobsList');
@@ -2781,8 +2781,8 @@
         jobListDiv.innerHTML = '<p style="color: #999; text-align: center;">Nenhum trabalho será afetado.</p>';
       } else {
         jobListDiv.innerHTML = affectedJobs.map(job => {
-          const currentState = job.state || 'Pending';
-          const newState = currentState === 'Active' ? 'Ignored' : 'Active';
+          const currentState = job.state || 'Pendente';
+          const newState = currentState === 'Ativo' ? 'Ignorado' : 'Ativo';
           const currentStateClass = currentState.toLowerCase();
           const newStateClass = newState.toLowerCase();
           const factionName = job.faction ? job.faction.title : 'FIELD_NULL';
