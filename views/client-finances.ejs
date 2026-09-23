@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LANCER Job Board - Finances</title>
+  <title>Quadro de Empregos LANCER - Finanças</title>
   <link rel="stylesheet" href="/css/terminal.css">
   <link rel="stylesheet" href="/css/currency.css">
   <link rel="stylesheet" href="/css/client.css">
@@ -11,17 +11,17 @@
 <body class="<%= colorScheme %>">
   <div class="terminal-header">
     <div class="terminal-header-left">
-      <h1>> <span id="portal-heading"><%= settings.portalHeading %></span> - FINANCES_</h1>
-      <p>> USER_GROUP: <span id="user-group"><%= settings.userGroup %></span>_</p>
-      <p>> FINANCIAL_STATUS: ACTIVE_</p>
-      <a href="/client/overview" class="terminal-link">[OVERVIEW]</a>
+      <h1>> <span id="portal-heading"><%= settings.portalHeading %></span> - FINANCAS_</h1>
+      <p>> GRUPO_DE_USUARIO: <span id="user-group"><%= settings.userGroup %></span>_</p>
+      <p>> STATUS_FINANCEIRO: ATIVO_</p>
+      <a href="/client/overview" class="terminal-link">[VISAO_GERAL]</a>
     </div>
     <div class="terminal-header-right">
-      <p class="terminal-info">> UNT: <span id="unt"><%= settings.unt %></span>U</p>
-      <p class="terminal-info">> CURRENT_GALACTIC_POS: <span id="galactic-pos"><%= settings.currentGalacticPos %></span></p>
+      <p class="terminal-info">> DATA: <span id="unt"><%= settings.unt %></span>U</p>
+      <p class="terminal-info">> POSICAO_GALACTICA_ATUAL: <span id="galactic-pos"><%= settings.currentGalacticPos %></span></p>
       <% if (!settings.openTable) { %>
       <div class="operation-progress">
-        <div class="operation-progress-label">> OPERATION_PROGRESS:</div>
+        <div class="operation-progress-label">> PROGRESSO_DA_OPERACAO:</div>
         <div class="progress-bar-container">
           <div class="progress-segment <%= settings.operationProgress >= 1 ? 'filled' : '' %>" id="progress-segment-1"></div>
           <div class="progress-segment <%= settings.operationProgress >= 2 ? 'filled' : '' %>" id="progress-segment-2"></div>
@@ -35,15 +35,15 @@
   <div class="content">
     <div class="finances-container">
       <div class="balance-overview">
-        <h2>> CURRENT_BALANCE:</h2>
+        <h2>> SALDO_ATUAL:</h2>
         <div class="balance-display" id="balance-display">
           <%= totalBalance %>
-          <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon">
+          <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Ícone de Moeda" class="currency-icon">
         </div>
       </div>
 
       <div class="transactions-history">
-        <h2>> TRANSACTION_HISTORY:</h2>
+        <h2>> HISTORICO_DE_TRANSACÕES:</h2>
         <div id="transactions-container">
           <% if (allTransactions.length > 0) { %>
             <div class="transactions-table" id="transactions-table">
@@ -60,24 +60,24 @@
                   </div>
                   <div class="transaction-amount <%= transaction.totalAmount >= 0 ? 'positive' : 'negative' %>">
                     <%= transaction.totalAmount >= 0 ? '+' : '' %><%= transaction.totalAmount %>
-                    <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon">
+                    <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Ícone de Moeda" class="currency-icon">
                   </div>
                   <div class="transaction-description"><%= transaction.description %></div>
                   <div class="transaction-pilots">
-                    Pilots: 
+                    Pilotos: 
                     <%= transaction.relatedPilotCallsigns && transaction.relatedPilotCallsigns.length > 0
                           ? transaction.relatedPilotCallsigns.join(', ')
-                          : 'None' %>
+                          : 'Nenhum' %>
                   </div>
                   <div class="transaction-balance">
-                    Balance: <%= transaction.cumulativeBalance %>
-                    <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon">
+                    Saldo: <%= transaction.cumulativeBalance %>
+                    <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Ícone de Moeda" class="currency-icon">
                   </div>
                 </div>
               <% }); %>
             </div>
           <% } else { %>
-            <p id="no-transactions">> NO_TRANSACTIONS_RECORDED_</p>
+            <p id="no-transactions">> NENHUMA_TRANSACAO_REGISTRADA_</p>
           <% } %>
         </div>
       </div>
@@ -101,7 +101,7 @@
         if (balanceDisplay) {
           balanceDisplay.innerHTML = `
             ${data.balances.activeBalance}
-            <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon">
+            <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Ícone de Moeda" class="currency-icon">
           `;
         }
       }
