@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LANCER Job Board - Pilots</title>
+  <title>Quadro de Empregos LANCER - Pilotos</title>
   <link rel="stylesheet" href="/css/terminal.css">
   <link rel="stylesheet" href="/css/currency.css">
   <link rel="stylesheet" href="/css/client.css">
@@ -11,17 +11,17 @@
 <body class="<%= colorScheme %>">
   <div class="terminal-header">
     <div class="terminal-header-left">
-      <h1>> <span id="portal-heading"><%= settings.portalHeading %></span> - PILOT_LIST_</h1>
-      <p>> USER_GROUP: <span id="user-group"><%= settings.userGroup %></span>_</p>
-      <p>> REGISTERED_PILOTS: <span id="pilots-count"><%= pilots.length %></span>_</p>
-      <a href="/client/overview" class="terminal-link">[OVERVIEW]</a>
+      <h1>> <span id="portal-heading"><%= settings.portalHeading %></span> - LISTA_DE_PILOTOS_</h1>
+      <p>> GRUPO_DE_USUARIO: <span id="user-group"><%= settings.userGroup %></span>_</p>
+      <p>> PILOTOS_REGISTRADOS: <span id="pilots-count"><%= pilots.length %></span>_</p>
+      <a href="/client/overview" class="terminal-link">[VISAO_GERAL]</a>
     </div>
     <div class="terminal-header-right">
-      <p class="terminal-info">> UNT: <span id="unt"><%= settings.unt %></span>U</p>
-      <p class="terminal-info">> CURRENT_GALACTIC_POS: <span id="galactic-pos"><%= settings.currentGalacticPos %></span></p>
+      <p class="terminal-info">> DATA: <span id="unt"><%= settings.unt %></span>U</p>
+      <p class="terminal-info">> POSICAO_GALACTICA_ATUAL: <span id="galactic-pos"><%= settings.currentGalacticPos %></span></p>
       <% if (!settings.openTable) { %>
       <div class="operation-progress">
-        <div class="operation-progress-label">> OPERATION_PROGRESS:</div>
+        <div class="operation-progress-label">> PROGRESSO_DA_OPERACAO:</div>
         <div class="progress-bar-container">
           <div class="progress-segment <%= settings.operationProgress >= 1 ? 'filled' : '' %>" id="progress-segment-1"></div>
           <div class="progress-segment <%= settings.operationProgress >= 2 ? 'filled' : '' %>" id="progress-segment-2"></div>
@@ -34,14 +34,14 @@
   
   <!-- Search Bar -->
   <div class="pilot-search-container">
-    <input type="text" id="pilot-search-input" class="pilot-search-input" aria-label="Search pilots by name, callsign, or license level" placeholder="> FILTER_BY_NAME/CALLSIGN/LL_" onkeypress="if(event.key === 'Enter') searchPilots()">
-    <button id="pilot-search-button" class="pilot-search-button" onclick="searchPilots()">[SEARCH]</button>
-    <button id="pilot-clear-button" class="pilot-clear-button" onclick="clearSearch()">[CLEAR]</button>
+    <input type="text" id="pilot-search-input" class="pilot-search-input" aria-label="Buscar pilotos por nome, codinome ou nivel de licenca" placeholder="> FILTRAR_POR_NOME/CODINOME/LL_" onkeypress="if(event.key === 'Enter') searchPilots()">
+    <button id="pilot-search-button" class="pilot-search-button" onclick="searchPilots()">[BUSCAR]</button>
+    <button id="pilot-clear-button" class="pilot-clear-button" onclick="clearSearch()">[LIMPAR]</button>
   </div>
   
   <% if (pilots.length === 0) { %>
     <div class="pilots-empty" id="pilots-empty">
-      <p>> NO_PILOT_DATA_AVAILABLE_</p>
+      <p>> NENHUM_DADO_DE_PILOTO_DISPONIVEL_</p>
     </div>
   <% } else { %>
     <div class="pilots-grid" id="pilots-grid">
@@ -59,13 +59,13 @@
       %>
         <div class="pilot-card <%= pilot.active ? 'active' : 'inactive' %>" data-pilot-id="<%= pilot.id %>">
           <button class="pilot-status-button <%= pilot.active ? 'active' : 'inactive' %>" onclick="openToggleActiveModal('<%= pilot.id %>', '<%= pilot.name.replace(/'/g, "\\'") %>', <%= pilot.active %>)">
-            [<%= pilot.active ? 'ACTIVE' : 'INACTIVE' %>]
+            [<%= pilot.active ? 'ATIVO' : 'INATIVO' %>]
             <img src="/emblems/power-symbol.svg" alt="Power" class="power-icon">
           </button>
           
           <% if (settings.openTable) { %>
           <div class="pilot-personal-progress">
-            <div class="pilot-progress-label">OPERATION:</div>
+            <div class="pilot-progress-label">OPERACAO:</div>
             <div class="pilot-progress-bar-container">
               <div class="pilot-progress-segment <%= (pilot.personalOperationProgress || 0) >= 3 ? 'filled' : '' %>" data-segment="3"></div>
               <div class="pilot-progress-segment <%= (pilot.personalOperationProgress || 0) >= 2 ? 'filled' : '' %>" data-segment="2"></div>
@@ -76,29 +76,29 @@
           
           <div class="pilot-card-header">
             <h2>> <%= pilot.name %></h2>
-            <div class="pilot-callsign">CALLSIGN: <%= pilot.callsign %></div>
-            <div class="pilot-ll">LICENSE_LEVEL: <%= pilot.ll %></div>
+            <div class="pilot-callsign">CODINOME: <%= pilot.callsign %></div>
+            <div class="pilot-ll">NIVEL_DE_LICENCA: <%= pilot.ll %></div>
           </div>
           
           <div class="pilot-field pilot-balance-field">
             <div class="pilot-balance-left">
-              <span class="field-label">BALANCE:</span>
-              <span class="field-value"><%= pilotBalance %> <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon"></span>
+              <span class="field-label">SALDO:</span>
+              <span class="field-value"><%= pilotBalance %> <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Ícone de Moeda" class="currency-icon"></span>
             </div>
-            <button class="balance-history-link" onclick="openPilotBalanceHistory('<%= pilot.id %>', event)">[BALANCE_HISTORY]</button>
+            <button class="balance-history-link" onclick="openPilotBalanceHistory('<%= pilot.id %>', event)">[HISTORICO_DE_SALDO]</button>
           </div>
           
           <div class="pilot-field">
-            <span class="field-label">NOTES:</span>
-            <span class="field-value" style="white-space: pre-line;"><%= pilot.notes || 'NO_DATA' %></span>
+            <span class="field-label">NOTAS:</span>
+            <span class="field-value" style="white-space: pre-line;"><%= pilot.notes || 'SEM_DADOS' %></span>
           </div>
           
           <div class="pilot-actions">
             <button class="pilot-button" data-pilot-id="<%= pilot.id %>" data-pilot-name="<%= pilot.name %>" data-pilot-notes-b64="<%= Buffer.from(pilot.notes || '').toString('base64') %>" onclick="openEditNotes(this.dataset.pilotId, this.dataset.pilotName, atob(this.dataset.pilotNotesB64))">
-              [EDIT_NOTES]
+              [EDITAR_NOTAS]
             </button>
             <button class="pilot-button" onclick="openPilotJobHistory('<%= pilot.id %>', '<%= pilot.name.replace(/'/g, "\\'") %>')">
-              [JOB_HISTORY]
+              [HISTORICO_DE_TRABALHOS]
             </button>
           </div>
         </div>
@@ -213,7 +213,7 @@
           const newEmpty = document.createElement('div');
           newEmpty.id = 'pilots-empty';
           newEmpty.className = 'pilots-empty';
-          newEmpty.innerHTML = '<p>> NO_PILOT_DATA_AVAILABLE_</p>';
+          newEmpty.innerHTML = '<p>> NENHUM_DADO_DE_PILOTO_DISPONIVEL_</p>';
           document.body.appendChild(newEmpty);
         } else {
           pilotsEmpty.style.display = 'block';
@@ -239,7 +239,7 @@
           const notesB64 = btoa(pilot.notes || '');
           const escapedName = escapeHtml(pilot.name);
           const escapedCallsign = escapeHtml(pilot.callsign);
-          const escapedNotes = escapeHtml(pilot.notes || 'NO_DATA');
+          const escapedNotes = escapeHtml(pilot.notes || 'SEM_DADOS');
           const escapedNameForOnclick = pilot.name.replace(/'/g, "\\'");
           const personalProgress = pilot.personalOperationProgress || 0;
           const pilotBalance = getPilotBalance(pilot);
@@ -249,7 +249,7 @@
           if (currentSettings.openTable) {
             personalProgressHtml = `
               <div class="pilot-personal-progress">
-                <div class="pilot-progress-label">OPERATION:</div>
+                <div class="pilot-progress-label">OPERACAO:</div>
                 <div class="pilot-progress-bar-container">
                   <div class="pilot-progress-segment ${personalProgress >= 3 ? 'filled' : ''}" data-segment="3"></div>
                   <div class="pilot-progress-segment ${personalProgress >= 2 ? 'filled' : ''}" data-segment="2"></div>
@@ -262,7 +262,7 @@
           return `
             <div class="pilot-card ${pilot.active ? 'active' : 'inactive'}" data-pilot-id="${pilot.id}">
               <button class="pilot-status-button ${pilot.active ? 'active' : 'inactive'}" onclick="openToggleActiveModal('${pilot.id}', '${escapedNameForOnclick}', ${pilot.active})">
-                [${pilot.active ? 'ACTIVE' : 'INACTIVE'}]
+                [${pilot.active ? 'ATIVO' : 'INATIVO'}]
                 <img src="/emblems/power-symbol.svg" alt="Power" class="power-icon">
               </button>
               
@@ -270,29 +270,29 @@
               
               <div class="pilot-card-header">
                 <h2>> ${escapedName}</h2>
-                <div class="pilot-callsign">CALLSIGN: ${escapedCallsign}</div>
-                <div class="pilot-ll">LICENSE_LEVEL: ${pilot.ll}</div>
+                <div class="pilot-callsign">CODINOME: ${escapedCallsign}</div>
+                <div class="pilot-ll">NIVEL_DE_LICENCA: ${pilot.ll}</div>
               </div>
               
               <div class="pilot-field pilot-balance-field">
                 <div class="pilot-balance-left">
-                  <span class="field-label">BALANCE:</span>
-                  <span class="field-value">${pilotBalance} <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon"></span>
+                  <span class="field-label">SALDO:</span>
+                  <span class="field-value">${pilotBalance} <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Ícone de Moeda" class="currency-icon"></span>
                 </div>
-                <button class="balance-history-link" onclick="openPilotBalanceHistory('${escapeHtml(pilot.id)}', event)">[BALANCE_HISTORY]</button>
+                <button class="balance-history-link" onclick="openPilotBalanceHistory('${escapeHtml(pilot.id)}', event)">[HISTORICO_DE_SALDO]</button>
               </div>
               
               <div class="pilot-field">
-                <span class="field-label">NOTES:</span>
+                <span class="field-label">NOTAS:</span>
                 <span class="field-value" style="white-space: pre-line;">${escapedNotes}</span>
               </div>
               
               <div class="pilot-actions">
                 <button class="pilot-button" data-pilot-id="${escapeHtml(pilot.id)}" data-pilot-name="${escapedName}" data-pilot-notes-b64="${notesB64}" onclick="openEditNotes(this.dataset.pilotId, this.dataset.pilotName, atob(this.dataset.pilotNotesB64))">
-                  [EDIT_NOTES]
+                  [EDITAR_NOTAS]
                 </button>
                 <button class="pilot-button" onclick="openPilotJobHistory('${escapeHtml(pilot.id)}', '${escapedNameForOnclick}')">
-                  [JOB_HISTORY]
+                  [HISTORICO_DE_TRABALHOS]
                 </button>
               </div>
             </div>
@@ -308,7 +308,7 @@
       const textarea = document.getElementById('notes-textarea');
       const form = document.getElementById('notes-form');
       
-      title.textContent = `${pilotName} - EDIT NOTES`;
+      title.textContent = `${pilotName} - EDITAR NOTAS`;
       textarea.value = currentNotes || '';
       
       form.onsubmit = async (e) => {
@@ -328,11 +328,11 @@
             closeModal('edit-notes-modal');
             // Update will come via SSE
           } else {
-            alert('Error: ' + (result.message || 'Failed to update notes'));
+            alert('Erro: ' + (result.message || 'Falha ao atualizar as notas'));
           }
         } catch (err) {
           console.error('Error updating notes:', err);
-          alert('Error: Failed to update notes');
+          alert('Erro: Falha ao atualizar as notas');
         }
       };
       
@@ -354,10 +354,10 @@
       const jobListTitle = document.getElementById('job-list-title');
       const jobListContainer = document.getElementById('job-list-container');
       
-      jobListTitle.textContent = `${pilotName} - JOB HISTORY`;
+      jobListTitle.textContent = `${pilotName} - HISTORICO DE TRABALHOS`;
       
       if (pilotJobs.length === 0) {
-        jobListContainer.innerHTML = '<p style="text-align: center; opacity: 0.7;">> NO_JOBS_FOUND_</p>';
+        jobListContainer.innerHTML = '<p style="text-align: center; opacity: 0.7;">> NENHUM_TRABALHO_ENCONTRADO_</p>';
       } else {
         jobListContainer.innerHTML = pilotJobs.map(job => {
           const faction = currentFactions.find(f => f.id === job.factionId);
@@ -398,7 +398,7 @@
       const pilot = currentPilots.find(p => p.id === pilotId);
       if (!pilot) return;
       
-      const pilotName = pilot.name || 'Unknown Pilot';
+      const pilotName = pilot.name || 'Piloto Desconhecido';
       
       // Filter transactions for this pilot with null checks
       const pilotTransactionIds = pilot.personalTransactions || [];
@@ -408,8 +408,8 @@
         const balanceHistoryTitle = document.getElementById('balance-history-title');
         const balanceHistoryContainer = document.getElementById('balance-history-container');
         
-        balanceHistoryTitle.textContent = `${pilotName} - BALANCE HISTORY`;
-        balanceHistoryContainer.innerHTML = '<p style="text-align: center; opacity: 0.7;">> NO_TRANSACTIONS_FOUND_</p>';
+        balanceHistoryTitle.textContent = `${pilotName} - HISTORICO DE SALDO`;
+        balanceHistoryContainer.innerHTML = '<p style="text-align: center; opacity: 0.7;">> NENHUMA_TRANSACAO_ENCONTRADA_</p>';
         balanceHistoryModal.classList.add('active');
         return;
       }
@@ -432,10 +432,10 @@
       const balanceHistoryTitle = document.getElementById('balance-history-title');
       const balanceHistoryContainer = document.getElementById('balance-history-container');
       
-      balanceHistoryTitle.textContent = `${pilotName} - BALANCE HISTORY`;
+      balanceHistoryTitle.textContent = `${pilotName} - HISTORICO DE SALDO`;
       
       if (transactionsWithBalance.length === 0) {
-        balanceHistoryContainer.innerHTML = '<p style="text-align: center; opacity: 0.7;">> NO_TRANSACTIONS_FOUND_</p>';
+        balanceHistoryContainer.innerHTML = '<p style="text-align: center; opacity: 0.7;">> NENHUMA_TRANSACAO_ENCONTRADA_</p>';
       } else {
         balanceHistoryContainer.innerHTML = transactionsWithBalance.map(transaction => {
           const date = new Date(transaction.date).toLocaleString();
@@ -445,9 +445,9 @@
           return `
             <div class="transaction-item-horizontal">
               <span class="transaction-date">${date}</span>
-              <span class="transaction-amount ${amountClass}">${amountPrefix}${transaction.amount} <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon"></span>
+              <span class="transaction-amount ${amountClass}">${amountPrefix}${transaction.amount} <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Ícone de Moeda" class="currency-icon"></span>
               <span class="transaction-description">${transaction.description}</span>
-              <span class="transaction-balance">BALANCE: ${transaction.pilotBalance} <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon"></span>
+              <span class="transaction-balance">SALDO: ${transaction.pilotBalance} <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Ícone de Moeda" class="currency-icon"></span>
             </div>
           `;
         }).join('');
@@ -472,10 +472,10 @@
       // Update modal content
       const modal = document.getElementById('toggle-active-modal');
       const modalMessage = document.getElementById('toggle-active-message');
-      const newState = currentActiveState ? 'INACTIVE' : 'ACTIVE';
-      const currentStateText = currentActiveState ? 'ACTIVE' : 'INACTIVE';
+      const newState = currentActiveState ? 'INATIVO' : 'ATIVO';
+      const currentStateText = currentActiveState ? 'ATIVO' : 'INATIVO';
       
-      modalMessage.textContent = `Change ${pilotName} from ${currentStateText} to ${newState}?`;
+      modalMessage.textContent = `Alterar ${pilotName} de ${currentStateText} para ${newState}?`;
       
       // Show modal
       modal.classList.add('active');
@@ -486,7 +486,7 @@
      */
     function confirmToggleActive() {
       if (!toggleActivePilotId) {
-        alert('No pilot selected');
+        alert('Nenhum piloto selecionado');
         return;
       }
       
@@ -502,12 +502,12 @@
           closeToggleActiveModal();
           // SSE will update the UI
         } else {
-          alert('Error: ' + (data.message || 'Failed to toggle pilot state'));
+          alert('Erro: ' + (data.message || 'Falha ao alternar o estado do piloto'));
         }
       })
       .catch(err => {
         console.error('Error toggling pilot state:', err);
-        alert('Error: Failed to toggle pilot state');
+        alert('Erro: Falha ao alternar o estado do piloto');
       });
     }
     
@@ -535,13 +535,13 @@
   <div id="edit-notes-modal" class="modal-overlay">
     <div class="modal-content">
       <div class="modal-header">
-        <h2 id="edit-notes-title">EDIT NOTES</h2>
+        <h2 id="edit-notes-title">EDITAR NOTAS</h2>
         <button class="modal-close" onclick="closeModal('edit-notes-modal')">[X]</button>
       </div>
       <div class="modal-body">
         <form id="notes-form" class="notes-form">
-          <textarea id="notes-textarea" placeholder="Enter notes..."></textarea>
-          <button type="submit">[SAVE_NOTES]</button>
+          <textarea id="notes-textarea" placeholder="Digite as notas..."></textarea>
+          <button type="submit">[SALVAR_NOTAS]</button>
         </form>
       </div>
     </div>
@@ -551,7 +551,7 @@
   <div id="job-list-modal" class="modal-overlay">
     <div class="modal-content">
       <div class="modal-header">
-        <h2 id="job-list-title">JOB HISTORY</h2>
+        <h2 id="job-list-title">HISTORICO DE TRABALHOS</h2>
         <button class="modal-close" onclick="closeModal('job-list-modal')">[X]</button>
       </div>
       <div class="modal-body">
@@ -564,7 +564,7 @@
   <div id="job-details-modal" class="modal-overlay">
     <div class="modal-content">
       <div class="modal-header">
-        <h2>JOB DETAILS</h2>
+        <h2>DETALHES DO TRABALHO</h2>
         <button class="modal-close" onclick="closeModal('job-details-modal')">[X]</button>
       </div>
       <div class="modal-body">
@@ -577,7 +577,7 @@
   <div id="balance-history-modal" class="modal-overlay">
     <div class="modal-content">
       <div class="modal-header">
-        <h2 id="balance-history-title">BALANCE HISTORY</h2>
+        <h2 id="balance-history-title">HISTORICO DE SALDO</h2>
         <button class="modal-close" onclick="closeModal('balance-history-modal')">[X]</button>
       </div>
       <div class="modal-body">
@@ -590,17 +590,17 @@
   <div id="toggle-active-modal" class="modal-overlay">
     <div class="modal-content">
       <div class="modal-header">
-        <h2>> CONFIRM_STATE_CHANGE_</h2>
+        <h2>> CONFIRMAR_MUDANCA_DE_ESTADO_</h2>
         <button class="modal-close" onclick="closeToggleActiveModal()">[X]</button>
       </div>
       <div class="modal-body">
         <p class="toggle-active-message" id="toggle-active-message"></p>
         <div class="modal-actions">
           <button class="modal-button confirm-button" onclick="confirmToggleActive()">
-            [CONFIRM]
+            [CONFIRMAR]
           </button>
           <button class="modal-button cancel-button" onclick="closeToggleActiveModal()">
-            [CANCEL]
+            [CANCELAR]
           </button>
         </div>
       </div>
