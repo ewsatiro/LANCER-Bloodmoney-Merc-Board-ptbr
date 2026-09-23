@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LANCER Job Board - Access</title>
+  <title>Quadro de Empregos LANCER - Acesso</title>
   <link rel="stylesheet" href="/css/terminal.css">
   <style>
     .landing-container {
@@ -44,16 +44,16 @@
 <body class="<%= colorScheme %>">
   <div class="landing-container">
     <h1>> <%= settings.portalHeading %>_</h1>
-    <p>> ENTER ACCESS CODE TO CONTINUE_</p>
+    <p>> DIGITE O CODIGO DE ACESSO PARA CONTINUAR_</p>
     <form class="landing-form" method="POST" action="/authenticate">
-      <input type="password" name="password" placeholder="ACCESS CODE" required autofocus>
-      <button type="submit">> AUTHENTICATE</button>
+      <input type="password" name="password" placeholder="CODIGO DE ACESSO" required autofocus>
+      <button type="submit">> AUTENTICAR</button>
     </form>
     <% if (typeof error !== 'undefined' && error) { %>
       <% if (error === 'invalid') { %>
-        <p class="error-message">> ACCESS DENIED: INVALID CODE_</p>
+        <p class="error-message">> ACESSO NEGADO: CODIGO INVALIDO_</p>
       <% } else if (error === 'unauthorized') { %>
-        <p class="error-message">> ACCESS DENIED: UNAUTHORIZED_</p>
+        <p class="error-message">> ACESSO NEGADO: NAO AUTORIZADO_</p>
       <% } %>
     <% } %>
   </div>
