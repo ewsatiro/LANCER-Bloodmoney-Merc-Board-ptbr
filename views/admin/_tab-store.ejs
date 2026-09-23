@@ -1,8 +1,8 @@
-  <div id="store-tab" class="tab-content">
+<div id="store-tab" class="tab-content">
     <!-- Resupply Item Settings Section -->
     <div class="settings-section">
-      <h2>Resupply Item Settings</h2>
-      <p style="color: #b0b0b0; margin-bottom: 20px;">Configure pricing and availability for static resupply items.</p>
+      <h2>Configurações de Itens de Reabastecimento</h2>
+      <p style="color: #b0b0b0; margin-bottom: 20px;">Configure preços e disponibilidade para itens estáticos de reabastecimento.</p>
       <form id="resupplyItemsForm">
         <% if (storeConfig && storeConfig.resupplyItems) { %>
           <% storeConfig.resupplyItems.forEach((item, index) => { %>
@@ -10,13 +10,13 @@
               <h3 style="color: #66BB6A; margin-bottom: 10px;"><%= item.name %></h3>
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                 <div class="form-group" style="margin-bottom: 0;">
-                  <label for="resupply-<%= index %>-price">Price</label>
+                  <label for="resupply-<%= index %>-price">Preço</label>
                   <input type="number" id="resupply-<%= index %>-price" name="items[<%= index %>][price]" value="<%= item.price %>" min="0" required>
                 </div>
                 <div class="form-group" style="margin-bottom: 0; display: flex; align-items: center; padding-top: 25px;">
                   <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; margin: 0;">
                     <input type="checkbox" id="resupply-<%= index %>-enabled" name="items[<%= index %>][enabled]" <%= item.enabled ? 'checked' : '' %> style="width: auto;">
-                    <span>Enabled</span>
+                    <span>Ativado</span>
                   </label>
                 </div>
               </div>
@@ -25,23 +25,23 @@
             </div>
           <% }); %>
         <% } %>
-        <button type="submit" class="btn btn-primary">Save Resupply Settings</button>
+        <button type="submit" class="btn btn-primary">Salvar Configurações de Reabastecimento</button>
       </form>
     </div>
 
     <!-- Reserve Stock Management Section -->
     <div class="settings-section">
-      <h2>Reserve Stock Management</h2>
-      <p style="color: #b0b0b0; margin-bottom: 15px;">Current reserves available for purchase in the store.</p>
+      <h2>Gerenciamento de Estoque de Reservas</h2>
+      <p style="color: #b0b0b0; margin-bottom: 15px;">Reservas atuais disponíveis para compra na loja.</p>
       
       <div style="margin-bottom: 15px;">
-        <button class="btn btn-delete" id="removeSelectedBtn" onclick="removeSelectedReserves(false)">Remove Selected</button>
-        <button class="btn btn-delete" id="removeAllSelectedBtn" onclick="removeSelectedReserves(true)">Remove All Selected</button>
+        <button class="btn btn-delete" id="removeSelectedBtn" onclick="removeSelectedReserves(false)">Remover Selecionadas</button>
+        <button class="btn btn-delete" id="removeAllSelectedBtn" onclick="removeSelectedReserves(true)">Remover Todas as Selecionadas</button>
       </div>
       
       <div id="reserveStockGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; min-height: 50px;">
         <% if (!storeConfig || !storeConfig.currentStock || storeConfig.currentStock.length === 0) { %>
-          <p style="color: #888; font-style: italic; margin: 20px 0;">No Reserves currently stocked.</p>
+          <p style="color: #888; font-style: italic; margin: 20px 0;">Nenhuma Reserva em estoque no momento.</p>
         <% } else { %>
           <%
             // Get reserve details from stock IDs and sort by rank then name
@@ -59,13 +59,13 @@
                 <input type="checkbox" class="stock-reserve-checkbox" value="<%= reserve.id %>" onclick="event.stopPropagation(); toggleStockReserveSelection(this.parentElement.parentElement, '<%= reserve.id %>')" style="width: auto; margin: 0;">
                 <span><%= reserve.name %></span>
               </h3>
-              <div class="job-item-field"><strong>Rank:</strong> R<%= reserve.rank %></div>
-              <div class="job-item-field"><strong>Price:</strong> <%= reserve.price %> <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon"></div>
+              <div class="job-item-field"><strong>Nível:</strong> R<%= reserve.rank %></div>
+              <div class="job-item-field"><strong>Preço:</strong> <%= reserve.price %> <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Ícone de Moeda" class="currency-icon"></div>
               <% if (reserve.description) { %>
-                <div class="job-item-field"><strong>Description:</strong><br><%= reserve.description %></div>
+                <div class="job-item-field"><strong>Descrição:</strong><br><%= reserve.description %></div>
               <% } %>
               <% if (reserve.adminLog) { %>
-                <div class="job-item-field"><strong>Admin Log:</strong> <%= reserve.adminLog %></div>
+                <div class="job-item-field"><strong>Registro do Administrador:</strong> <%= reserve.adminLog %></div>
               <% } %>
             </div>
           <% }); %>
@@ -75,35 +75,35 @@
 
     <!-- Available Reserves Section -->
     <div class="settings-section">
-      <h2>Available Reserves</h2>
-      <p style="color: #b0b0b0; margin-bottom: 15px;">Manage all reserve items. Create, edit, delete, or add to stock.</p>
+      <h2>Reservas Disponíveis</h2>
+      <p style="color: #b0b0b0; margin-bottom: 15px;">Gerencie todos os itens de reserva. Crie, edite, exclua ou adicione ao estoque.</p>
       
       <!-- Add Random Reserve and Add Selected to Stock Buttons -->
       <div style="margin-bottom: 15px;">
-        <button class="btn btn-primary" onclick="addRandomReserve()">Add random Reserve from current view</button>
-        <button class="btn btn-neutral" id="addToStockBtn" onclick="addSelectedToStock()" disabled>Add Selected to Stock</button>
+        <button class="btn btn-primary" onclick="addRandomReserve()">Adicionar Reserva aleatória da visualização atual</button>
+        <button class="btn btn-neutral" id="addToStockBtn" onclick="addSelectedToStock()" disabled>Adicionar Selecionada ao Estoque</button>
       </div>
       
       <!-- CRUD Buttons -->
       <div style="margin-bottom: 20px;">
-        <button class="btn btn-primary" onclick="openCreateReserveModal()">Create Reserve</button>
-        <button class="btn btn-edit" id="editReserveBtn" onclick="openEditReserveModal()" disabled>Edit Selected</button>
-        <button class="btn btn-delete" id="deleteReserveBtn" onclick="deleteSelectedReserve()" disabled>Delete Selected</button>
+        <button class="btn btn-primary" onclick="openCreateReserveModal()">Criar Reserva</button>
+        <button class="btn btn-edit" id="editReserveBtn" onclick="openEditReserveModal()" disabled>Editar Selecionada</button>
+        <button class="btn btn-delete" id="deleteReserveBtn" onclick="deleteSelectedReserve()" disabled>Excluir Selecionada</button>
       </div>
       
       <!-- Filter Pills -->
       <div class="filter-pills" style="margin-bottom: 20px;">
-        <button class="filter-pill active" data-rank="all" onclick="filterAvailableReserves('all', event)">All</button>
-        <button class="filter-pill" data-rank="1" onclick="filterAvailableReserves('1', event)">Rank 1</button>
-        <button class="filter-pill" data-rank="2" onclick="filterAvailableReserves('2', event)">Rank 2</button>
-        <button class="filter-pill" data-rank="3" onclick="filterAvailableReserves('3', event)">Rank 3</button>
-        <button class="filter-pill" data-hide-default="false" onclick="toggleHideDefaultReserves(event)" id="hideDefaultPill">Hide Default Reserves</button>
+        <button class="filter-pill active" data-rank="all" onclick="filterAvailableReserves('all', event)">Todas</button>
+        <button class="filter-pill" data-rank="1" onclick="filterAvailableReserves('1', event)">Nível 1</button>
+        <button class="filter-pill" data-rank="2" onclick="filterAvailableReserves('2', event)">Nível 2</button>
+        <button class="filter-pill" data-rank="3" onclick="filterAvailableReserves('3', event)">Nível 3</button>
+        <button class="filter-pill" data-hide-default="false" onclick="toggleHideDefaultReserves(event)" id="hideDefaultPill">Ocultar Reservas Padrão</button>
       </div>
       
       <!-- Search Field -->
       <div class="form-group" style="margin-bottom: 20px;">
-        <label for="reserveSearchInput">Search Reserves</label>
-        <input type="text" id="reserveSearchInput" placeholder="Search by name..." oninput="searchAvailableReserves(this.value)" style="max-width: 400px;">
+        <label for="reserveSearchInput">Buscar Reservas</label>
+        <input type="text" id="reserveSearchInput" placeholder="Buscar por nome..." oninput="searchAvailableReserves(this.value)" style="max-width: 400px;">
       </div>
       
       <!-- Available Reserves Grid -->
@@ -123,14 +123,14 @@
                style="cursor: pointer; transition: all 0.2s;" 
                onclick="selectAvailableReserve(this, '<%= reserve.id %>')">
             <h3 style="color: #e0e0e0; margin-bottom: 10px;"><%= reserve.name %></h3>
-            <div class="job-item-field"><strong>Rank:</strong> R<%= reserve.rank %></div>
-            <div class="job-item-field"><strong>Price:</strong> <%= reserve.price %> <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon"></div>
+            <div class="job-item-field"><strong>Nível:</strong> R<%= reserve.rank %></div>
+            <div class="job-item-field"><strong>Preço:</strong> <%= reserve.price %> <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Ícone de Moeda" class="currency-icon"></div>
             <% if (reserve.description) { %>
-              <div class="job-item-field"><strong>Description:</strong><br><%= reserve.description %></div>
+              <div class="job-item-field"><strong>Descrição:</strong><br><%= reserve.description %></div>
             <% } %>
-            <div class="job-item-field"><strong>Type:</strong> <%= reserve.isCustom ? 'Custom' : 'Default' %></div>
+            <div class="job-item-field"><strong>Tipo:</strong> <%= reserve.isCustom ? 'Personalizada' : 'Padrão' %></div>
             <% if (reserve.adminLog) { %>
-              <div class="job-item-field"><strong>Admin Log:</strong><br><%= reserve.adminLog %></div>
+              <div class="job-item-field"><strong>Registro do Administrador:</strong><br><%= reserve.adminLog %></div>
             <% } %>
           </div>
         <% }); %>
