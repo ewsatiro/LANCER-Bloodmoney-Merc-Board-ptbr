@@ -9,7 +9,7 @@
     "type": {
       "type": "string",
       "description": "Module type",
-      "enum": ["Core", "Major", "Minor"]
+      "enum": ["Principal", "Maior", "Menor"]
     },
     "title": {
       "type": "string",
