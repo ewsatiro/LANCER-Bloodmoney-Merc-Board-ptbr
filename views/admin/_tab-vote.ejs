@@ -9,7 +9,7 @@
       <%
         // ongoingPeriod is provided by the server
         // Archive periods are filtered from votingPeriods
-        const archivedPeriods = votingPeriods.filter(p => p.state === 'Archived').reverse();
+        const archivedPeriods = votingPeriods.filter(p => p.state === 'Arquivado').reverse();
       %>
       
       <% if (ongoingPeriod) { %>
@@ -113,7 +113,7 @@
           <div>
             <h4 style="color: #e0e0e0; margin-bottom: 15px;">Trabalhos Ativos</h4>
             <% 
-              const activeJobs = jobs.filter(j => j.state === 'Active');
+              const activeJobs = jobs.filter(j => j.state === 'Ativo');
               if (activeJobs.length === 0) {
             %>
               <p style="color: #888;">Nenhum trabalho Ativo disponível para incluir no período de votação.</p>
