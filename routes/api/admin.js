@@ -15,14 +15,14 @@ router.post('/jobs/progress-all', requireAdminAuth, async (req, res) => {
   let hasActiveToIgnored = false;
   
   const updatedJobs = jobs.map(job => {
-    if (job.state === 'Active') {
+    if (job.state === 'Ativo') {
       jobsModified++;
       hasActiveToIgnored = true;
-      return { ...job, state: 'Ignored' };
-    } else if (job.state === 'Pending') {
+      return { ...job, state: 'Ignorado' };
+    } else if (job.state === 'Pendente') {
       jobsModified++;
       newlyActiveJobIds.push(job.id);
-      return { ...job, state: 'Active' };
+      return { ...job, state: 'Ativo' };
     }
     return job;
   });
