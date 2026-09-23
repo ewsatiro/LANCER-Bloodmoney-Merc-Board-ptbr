@@ -63,11 +63,11 @@
     <div class="modal-content purchase-modal-content">
       <div class="purchase-modal-layout">
         <div class="purchase-modal-left">
-          <h3>> PURCHASE_FACILITY_</h3>
+          <h3>> COMPRAR_INSTALACAO_</h3>
           
           <!-- Expense To Section -->
           <div class="purchase-section">
-            <h4>> EXPENSE_TO:</h4>
+            <h4>> ATRIBUIR_DESPESA:</h4>
             <div class="pilots-list" id="facility-expense-pilots-list">
               <!-- Populated by JavaScript -->
             </div>
@@ -75,7 +75,7 @@
           
           <!-- Transaction Per Pilot -->
           <div class="purchase-section">
-            <h4>> TRANSACTION_PER_PILOT:</h4>
+            <h4>> TRANSACOES_POR_PILOTO:</h4>
             <div class="transaction-amount" id="facility-transaction-amount">
               <span id="facility-amount-per-pilot">0</span>
               <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon">
@@ -86,10 +86,10 @@
           <!-- Action Buttons -->
           <div class="modal-actions">
             <button class="modal-button purchase-button" id="facility-purchase-button" disabled>
-              [PURCHASE]
+              [COMPRAR]
             </button>
             <button class="modal-button cancel-button" id="facility-cancel-button">
-              [CANCEL]
+              [CANCELAR]
             </button>
           </div>
         </div>
@@ -108,7 +108,7 @@
     <div class="modal-content purchase-modal-content">
       <div class="purchase-modal-layout">
         <div class="purchase-modal-left">
-          <h3>> PURCHASE_UPGRADE_</h3>
+          <h3>> COMPRAR_UPGRADE_</h3>
           
           <!-- Expense To Section -->
           <div class="purchase-section">
@@ -120,7 +120,7 @@
           
           <!-- Transaction Per Pilot -->
           <div class="purchase-section">
-            <h4>> TRANSACTION_PER_PILOT:</h4>
+            <h4>> TRANSACOES_POR_PILOTO:</h4>
             <div class="transaction-amount" id="upgrade-transaction-amount">
               <span id="upgrade-amount-per-pilot">0</span>
               <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon">
@@ -131,10 +131,10 @@
           <!-- Action Buttons -->
           <div class="modal-actions">
             <button class="modal-button purchase-button" id="upgrade-purchase-button" disabled>
-              [PURCHASE]
+              [COMPRAR]
             </button>
             <button class="modal-button cancel-button" id="upgrade-cancel-button">
-              [CANCEL]
+              [CANCELAR]
             </button>
           </div>
         </div>
@@ -151,13 +151,13 @@
   <!-- Assign Minor Facility Modal -->
   <div class="modal-overlay" id="assign-minor-facility-modal">
     <div class="modal-content purchase-modal-content">
-      <h3>> SELECT_MINOR_FACILITY_</h3>
+      <h3>> SELECIONAR_INSTALACAO_MENOR_</h3>
       <div class="minor-facilities-list" id="minor-facilities-options">
         <!-- Populated by JavaScript -->
       </div>
       <div class="modal-actions">
         <button class="modal-button cancel-button" id="assign-cancel-button">
-          [CANCEL]
+          [CANCELAR]
         </button>
       </div>
     </div>
@@ -168,11 +168,11 @@
     <div class="modal-content purchase-modal-content">
       <div class="purchase-modal-layout">
         <div class="purchase-modal-left">
-          <h3>> PURCHASE_MINOR_FACILITY_</h3>
+          <h3>> COMPRAR_INSTALACAO_MENOR_</h3>
           
           <!-- Expense To Section -->
           <div class="purchase-section">
-            <h4>> EXPENSE_TO:</h4>
+            <h4>> ATRIBUIR_DESPESA:</h4>
             <div class="pilots-list" id="minor-expense-pilots-list">
               <!-- Populated by JavaScript -->
             </div>
@@ -180,7 +180,7 @@
           
           <!-- Transaction Per Pilot -->
           <div class="purchase-section">
-            <h4>> TRANSACTION_PER_PILOT:</h4>
+            <h4>> TRANSACOES_POR_PILOTO:</h4>
             <div class="transaction-amount" id="minor-transaction-amount">
               <span id="minor-amount-per-pilot">0</span>
               <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon">
@@ -191,10 +191,10 @@
           <!-- Action Buttons -->
           <div class="modal-actions">
             <button class="modal-button purchase-button" id="minor-purchase-button" disabled>
-              [PURCHASE]
+              [COMPRAR]
             </button>
             <button class="modal-button cancel-button" id="minor-cancel-button">
-              [CANCEL]
+              [CANCELAR]
             </button>
           </div>
         </div>
@@ -211,14 +211,14 @@
   <!-- Demolish Confirmation Modal -->
   <div class="modal-overlay" id="demolish-modal">
     <div class="modal-content">
-      <h3>> CONFIRM_DEMOLISH_</h3>
-      <p id="demolish-message">Are you sure you want to demolish this facility?</p>
+      <h3>> CONFIRMAR_DEMOLICAO_</h3>
+      <p id="demolish-message">Você tem certeza que quer demolir essa instalação?</p>
       <div class="modal-actions">
         <button class="modal-button delete-button" id="demolish-confirm-button">
-          [CONFIRM]
+          [CONFIRMAR]
         </button>
         <button class="modal-button cancel-button" id="demolish-cancel-button">
-          [CANCEL]
+          [CANCELAR]
         </button>
       </div>
     </div>
@@ -459,13 +459,13 @@
         const modifiedPrice = applyFacilityCostModifier(5000, modifier);
         return `
           <div class="module-card facility-card ${disabledClass}">
-            <div class="module-type">MINOR ${slot.slotNumber}</div>
-            <div class="module-empty">[SLOT_DISABLED]</div>
+            <div class="module-type">MENOR ${slot.slotNumber}</div>
+            <div class="module-empty">[VAGA_DESBLOQUEADA]</div>
             <div class="facility-price">
-              <span class="price-label">UNLOCK: </span>
+              <span class="price-label">DESBLOQUEAR: </span>
               ${modifiedPrice}
               <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon">
-              <button class="enable-slot-btn" data-slot-number="${slot.slotNumber}">[UNLOCK]</button>
+              <button class="enable-slot-btn" data-slot-number="${slot.slotNumber}">[DESBLOQUEAR]</button>
             </div>
           </div>
         `;
@@ -476,17 +476,17 @@
             <div class="module-title">${escapeHtml(slot.facilityName)}</div>
             <div class="module-description">${escapeHtml(slot.facilityDescription)}</div>
             <div class="facility-actions">
-              <button class="demolish-facility-btn" data-slot-number="${slot.slotNumber}">[DEMOLISH]</button>
+              <button class="demolish-facility-btn" data-slot-number="${slot.slotNumber}">[DEMOLIR]</button>
             </div>
           </div>
         `;
       } else {
         return `
           <div class="module-card facility-card ${disabledClass}">
-            <div class="module-type">MINOR ${slot.slotNumber}</div>
-            <div class="module-empty">[EMPTY_SLOT]</div>
+            <div class="module-type">MENOR ${slot.slotNumber}</div>
+            <div class="module-empty">[VAGA_VAZIA]</div>
             <div class="facility-actions">
-              <button class="assign-minor-facility-btn" data-slot-number="${slot.slotNumber}">[CONSTRUCT_FACILITY]</button>
+              <button class="assign-minor-facility-btn" data-slot-number="${slot.slotNumber}">[CONSTRUIR_INSTALACAO]</button>
             </div>
           </div>
         `;
@@ -574,7 +574,7 @@
           <div class="module-title">${escapeHtml(facility.facilityName)}</div>
           <div class="module-description">${escapeHtml(facility.facilityDescription)}</div>
           <div class="facility-price">
-            <span class="price-label">PRICE: </span>
+            <span class="price-label">PRECO: </span>
             ${modifiedPrice}
             <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon">
           </div>
@@ -600,7 +600,7 @@
       const modifiedPrice = applyFacilityCostModifier(upgrade.upgradePrice, modifier);
       
       const countLabel = (upgrade.maxPurchases > 1 && upgrade.upgradeCount > 0) ? 
-        `<div class="upgrade-count">CURRENT: ${upgrade.upgradeCount}/${upgrade.maxPurchases}</div>` : '';
+        `<div class="upgrade-count">ATUAL: ${upgrade.upgradeCount}/${upgrade.maxPurchases}</div>` : '';
       
       const previewHtml = `
         <div class="upgrade-preview-card">
@@ -609,7 +609,7 @@
           <div class="upgrade-description">${escapeHtml(upgrade.upgradeDescription)}</div>
           ${countLabel}
           <div class="facility-price">
-            <span class="price-label">PRICE: </span>
+            <span class="price-label">PRECO: </span>
             ${modifiedPrice}
             <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon">
           </div>
@@ -631,11 +631,11 @@
       
       const previewHtml = `
         <div class="module-card facility-card">
-          <div class="module-type">MINOR SLOT ${slotNumber}</div>
-          <div class="module-title">Expanded Renovations</div>
-          <div class="module-description">Unlock an additional minor facility slot for your base.</div>
+          <div class="module-type">VAGA MENOR ${slotNumber}</div>
+          <div class="module-title">Reformas e Expansão </div>
+          <div class="module-description">Desbloqueie uma instalação menor adicional para sua base.</div>
           <div class="facility-price">
-            <span class="price-label">PRICE: </span>
+            <span class="price-label">PRECO: </span>
             ${modifiedPrice}
             <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon">
           </div>
@@ -667,7 +667,7 @@
       const modifier = getFacilityCostModifier();
       
       if (availableOptions.length === 0) {
-        optionsList.innerHTML = '<p class="empty-message">> NO_AVAILABLE_FACILITIES_</p>';
+        optionsList.innerHTML = '<p class="empty-message">> NENHUMA_INSTALACAO_DISPONIVEL_</p>';
       } else {
         optionsList.innerHTML = availableOptions.map(option => {
           const modifiedPrice = applyFacilityCostModifier(option.minorFacilityPrice, modifier);
@@ -716,11 +716,11 @@
       
       const previewHtml = `
         <div class="module-card facility-card">
-          <div class="module-type">MINOR</div>
+          <div class="module-type">MENOR</div>
           <div class="module-title">${escapeHtml(selectedMinorFacility.minorFacilityName)}</div>
           <div class="module-description">${escapeHtml(selectedMinorFacility.minorFacilityDescription)}</div>
           <div class="facility-price">
-            <span class="price-label">PRICE: </span>
+            <span class="price-label">PRECO: </span>
             ${modifiedPrice}
             <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon">
           </div>
@@ -740,7 +740,7 @@
       if (!slot || !slot.facilityName) return;
       
       const message = document.getElementById('demolish-message');
-      message.textContent = `Are you sure you want to demolish "${slot.facilityName}"? This action is free but cannot be undone.`;
+      message.textContent = `Você tem certeza que deseja demolir "${slot.facilityName}"? Essa ação é gratuita mas não pode ser desfeita.`;
       
       // Show modal
       document.getElementById('demolish-modal').classList.add('active');
@@ -866,11 +866,11 @@
       
       // Update warning and button state
       if (insufficientPilots.length > 0) {
-        warningDiv.textContent = `Insufficient funds for: ${insufficientPilots.join(', ')}`;
+        warningDiv.textContent = `Fundos Insuficientes para: ${insufficientPilots.join(', ')}`;
         warningDiv.style.display = 'block';
         purchaseBtn.disabled = true;
       } else if (pilotCount === 0) {
-        warningDiv.textContent = 'Please select at least one pilot';
+        warningDiv.textContent = 'Por favor selecione pelo menos um piloto';
         warningDiv.style.display = 'block';
         purchaseBtn.disabled = true;
       } else {
