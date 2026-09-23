@@ -1,9 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LANCER Job Board - Reserves</title>
+  <title>Quadro de Empregos LANCER - Reservas</title>
   <link rel="stylesheet" href="/css/terminal.css">
   <link rel="stylesheet" href="/css/currency.css">
   <link rel="stylesheet" href="/css/client.css">
@@ -11,17 +12,17 @@
 <body class="<%= colorScheme %>">
   <div class="terminal-header">
     <div class="terminal-header-left">
-      <h1>> <span id="portal-heading"><%= settings.portalHeading %></span> - RESERVES_</h1>
-      <p>> USER_GROUP: <span id="user-group"><%= settings.userGroup %></span>_</p>
-      <p>> PILOTS_WITH_RESERVES: <span id="pilots-count"><%= pilots.length %></span>_</p>
-      <a href="/client/overview" class="terminal-link">[OVERVIEW]</a>
+      <h1>> <span id="portal-heading"><%= settings.portalHeading %></span> - RESERVAS_</h1>
+      <p>> GRUPO_DE_USUARIO: <span id="user-group"><%= settings.userGroup %></span>_</p>
+      <p>> PILOTOS_COM_RESERVAS: <span id="pilots-count"><%= pilots.length %></span>_</p>
+      <a href="/client/overview" class="terminal-link">[VISAO_GERAL]</a>
     </div>
     <div class="terminal-header-right">
-      <p class="terminal-info">> UNT: <span id="unt"><%= settings.unt %></span>U</p>
-      <p class="terminal-info">> CURRENT_GALACTIC_POS: <span id="galactic-pos"><%= settings.currentGalacticPos %></span></p>
+      <p class="terminal-info">> DATA: <span id="unt"><%= settings.unt %></span>U</p>
+      <p class="terminal-info">> POSICAO_GALACTICA_ATUAL: <span id="galactic-pos"><%= settings.currentGalacticPos %></span></p>
       <% if (!settings.openTable) { %>
       <div class="operation-progress">
-        <div class="operation-progress-label">> OPERATION_PROGRESS:</div>
+        <div class="operation-progress-label">> PROGRESSO_DA_OPERACAO:</div>
         <div class="progress-bar-container">
           <div class="progress-segment <%= settings.operationProgress >= 1 ? 'filled' : '' %>" id="progress-segment-1"></div>
           <div class="progress-segment <%= settings.operationProgress >= 2 ? 'filled' : '' %>" id="progress-segment-2"></div>
@@ -34,16 +35,16 @@
   
   <% if (pilots.length === 0) { %>
     <div class="reserves-empty" id="reserves-empty">
-      <p>> NO_PILOTS_WITH_RESERVES_</p>
+      <p>> NENHUM_PILOTO_COM_RESERVAS_</p>
     </div>
   <% } else { %>
     <!-- Global action buttons -->
     <div class="global-actions-bar">
       <button class="global-action-btn" id="global-transfer-btn" onclick="openTransferModal()" disabled>
-        [TRANSFER_RESERVE]
+        [TRANSFERIR_RESERVA]
       </button>
       <button class="global-action-btn trash-btn" id="global-trash-btn" onclick="confirmTrashReserve()" disabled>
-        [TRASH_RESERVE]
+        [DESCARTAR_RESERVA]
       </button>
     </div>
     
@@ -58,7 +59,7 @@
         sortedPilots.forEach(pilot => { 
       %>
         <div class="pilot-reserves-group <%= pilot.active ? 'active' : 'inactive' %>" data-pilot-id="<%= pilot.id %>">
-          <div class="pilot-label"><%= pilot.name %> (<%= pilot.callsign %>) LL<%= pilot.ll %> <%= pilot.active ? '[ACTIVE]' : '[INACTIVE]' %></div>
+          <div class="pilot-label"><%= pilot.name %> (<%= pilot.callsign %>) LL<%= pilot.ll %> <%= pilot.active ? '[ATIVO]' : '[INATIVO]' %></div>
           
           <% if (pilot.reserveObjects && pilot.reserveObjects.length > 0) { %>
             <% pilot.reserveObjects.forEach((reserveObj, index) => { %>
@@ -72,7 +73,7 @@
                 </div>
                 <div class="reserve-description">
                   <% 
-                    const description = reserveObj.reserve.description || 'NO_DESCRIPTION';
+                    const description = reserveObj.reserve.description || 'SEM_DESCRICAO';
                     const firstNewlineIndex = description.indexOf('\n');
                     if (firstNewlineIndex !== -1) {
                       const firstLine = description.substring(0, firstNewlineIndex);
@@ -90,13 +91,13 @@
                   </div>
                   <button class="cycle-btn" 
                           onclick="cycleDeploymentStatus(event, '<%= pilot.id %>', '<%= reserveObj.reserveId %>', '<%= reserveObj.deploymentStatus %>')">
-                    [CYCLE]
+                    [ALTERNAR]
                   </button>
                 </div>
               </div>
             <% }); %>
           <% } else { %>
-            <div class="empty-message">NO_RESERVES_FOR_PILOT</div>
+            <div class="empty-message">NENHUMA_RESERVA_PARA_O_PILOTO</div>
           <% } %>
         </div>
       <% }); %>
@@ -107,20 +108,20 @@
   <div class="modal-overlay" id="transfer-modal">
     <div class="modal-content">
       <div class="modal-header">
-        <h2>> TRANSFER_RESERVE_</h2>
+        <h2>> TRANSFERIR_RESERVA_</h2>
         <button class="modal-close" onclick="closeTransferModal()">[X]</button>
       </div>
       <div class="modal-body">
-        <p class="transfer-instruction">> SELECT_TARGET_PILOT:</p>
+        <p class="transfer-instruction">> SELECIONE_O_PILOTO_DE_DESTINO:</p>
         <div class="pilots-list" id="transfer-pilots-list">
           <!-- Populated by JavaScript -->
         </div>
         <div class="modal-actions">
           <button class="modal-button transfer-button" id="transfer-confirm-btn" onclick="confirmTransfer()" disabled>
-            [TRANSFER]
+            [TRANSFERIR]
           </button>
           <button class="modal-button cancel-button" onclick="closeTransferModal()">
-            [CANCEL]
+            [CANCELAR]
           </button>
         </div>
       </div>
@@ -131,18 +132,18 @@
   <div class="modal-overlay" id="trash-modal">
     <div class="modal-content">
       <div class="modal-header">
-        <h2>> CONFIRM_TRASH_RESERVE_</h2>
+        <h2>> CONFIRMAR_DESCARTE_DE_RESERVA_</h2>
         <button class="modal-close" onclick="closeTrashModal()">[X]</button>
       </div>
       <div class="modal-body">
-        <p class="trash-warning">> WARNING: This will remove the reserve from <span id="trash-pilot-name"></span>. This action cannot be undone.</p>
+        <p class="trash-warning">> AVISO: Isso removerá a reserva de <span id="trash-pilot-name"></span>. Esta ação não pode ser desfeita.</p>
         <p class="trash-reserve-info" id="trash-reserve-info"></p>
         <div class="modal-actions">
           <button class="modal-button trash-confirm-button" onclick="executeTrash()">
-            [CONFIRM_TRASH]
+            [CONFIRMAR_DESCARTE]
           </button>
           <button class="modal-button cancel-button" onclick="closeTrashModal()">
-            [CANCEL]
+            [CANCELAR]
           </button>
         </div>
       </div>
@@ -257,13 +258,13 @@
       .then(response => response.json())
       .then(data => {
         if (!data.success) {
-          alert('Error: ' + (data.message || 'Failed to cycle deployment status'));
+          alert('Erro: ' + (data.message || 'Falha ao alternar o status de implantação'));
         }
         // SSE will update the UI
       })
       .catch(error => {
         console.error('Error cycling deployment status:', error);
-        alert('Error cycling deployment status');
+        alert('Erro ao alternar o status de implantação');
       });
     }
     
@@ -272,7 +273,7 @@
      */
     function openTransferModal() {
       if (!selectedReserveId) {
-        alert('No reserve selected');
+        alert('Nenhuma reserva selecionada');
         return;
       }
       
@@ -346,7 +347,7 @@
      */
     function confirmTransfer() {
       if (!transferSourcePilotId || !transferReserveId || !transferTargetPilotId) {
-        alert('Invalid transfer parameters');
+        alert('Parâmetros de transferência inválidos');
         return;
       }
       
@@ -363,12 +364,12 @@
           closeTransferModal();
           // SSE will update the UI
         } else {
-          alert('Error: ' + (data.message || 'Failed to transfer reserve'));
+          alert('Erro: ' + (data.message || 'Falha ao transferir a reserva'));
         }
       })
       .catch(error => {
         console.error('Error transferring reserve:', error);
-        alert('Error transferring reserve');
+        alert('Erro ao transferir a reserva');
       });
     }
     
@@ -387,7 +388,7 @@
      */
     function confirmTrashReserve() {
       if (!selectedReserveId) {
-        alert('No reserve selected');
+        alert('Nenhuma reserva selecionada');
         return;
       }
       
@@ -401,7 +402,7 @@
       // Update modal content
       document.getElementById('trash-pilot-name').textContent = pilot.name;
       document.getElementById('trash-reserve-info').textContent = 
-        `Reserve: ${reserveObj.reserve.name} (Rank ${reserveObj.reserve.rank}) - Status: ${reserveObj.deploymentStatus}`;
+        `Reserva: ${reserveObj.reserve.name} (Rank ${reserveObj.reserve.rank}) - Status: ${reserveObj.deploymentStatus}`;
       
       // Show modal
       document.getElementById('trash-modal').classList.add('active');
@@ -412,7 +413,7 @@
      */
     function executeTrash() {
       if (!trashPilotId || !trashReserveId) {
-        alert('Invalid trash parameters');
+        alert('Parâmetros de descarte inválidos');
         return;
       }
       
@@ -425,12 +426,12 @@
           closeTrashModal();
           // SSE will update the UI
         } else {
-          alert('Error: ' + (data.message || 'Failed to remove reserve'));
+          alert('Erro: ' + (data.message || 'Falha ao remover a reserva'));
         }
       })
       .catch(error => {
         console.error('Error removing reserve:', error);
-        alert('Error removing reserve');
+        alert('Erro ao remover a reserva');
       });
     }
     
@@ -455,3 +456,4 @@
   </script>
 </body>
 </html>
+```
