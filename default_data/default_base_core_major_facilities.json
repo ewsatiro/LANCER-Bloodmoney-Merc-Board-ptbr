@@ -1,6 +1,6 @@
 [
     {
-        "type": "Core",
+        "type": "Principal",
         "facilityName": "Centro de Comando",
         "facilityDescription": "O coração pulsante da base. É aqui que a organização coordena suas forças em todo o teatro de operações, desde equipes de campo ativas e unidades de apoio até batedores. É também onde os jogadores escolhem suas funções e recebem as instruções para elas.",
         "facilityPrice": 0,
@@ -23,7 +23,7 @@
         ]
     },
     {
-        "type": "Core",
+        "type": "Principal",
         "facilityName": "Impressora Escala 3",
         "facilityDescription": "Uma estrutura colossal que permite à companhia construir e manter veículos, armas, armamentos e, é claro, mechs. Uma Escala 3 permite aos jogadores imprimir qualquer mech para o qual possuam licença, inclusive o poderoso Barbarossa.",
         "facilityPrice": 0,
@@ -46,7 +46,7 @@
         ]
     },
     {
-        "type": "Core",
+        "type": "Principal",
         "facilityName": "Estábulos",
         "facilityDescription": "É aqui que as naves de transporte e os mechs passam por manutenção após a impressão, e onde todas as aventuras começam e terminam.",
         "facilityPrice": 0,
@@ -69,7 +69,7 @@
         ]
     },
     {
-        "type": "Major",
+        "type": "Maior",
         "facilityName": "Enfermaria",
         "facilityDescription": "Uma instalação médica de ponta, digna de qualquer planeta do Núcleo. Sempre que os jogadores retornam à base após uma missão, seus pilotos recuperam 3 PV — ou 1 ponto de estresse, caso você esteja utilizando o sistema de Vínculos.",
         "facilityPrice": 10000,
@@ -92,7 +92,7 @@
         ]
     },
     {
-        "type": "Major",
+        "type": "Maior",
         "facilityName": "Cadeia",
         "facilityDescription": "Celas de detenção para prisioneiros de guerra, equipadas com um guarda sonolento. Agora, os jogadores podem capturar prisioneiros durante o combate e vendê-los à sua facção de origem em troca de resgate. Por padrão, a cela comporta apenas 2 prisioneiros de cada vez. Os prisioneiros são divididos em 3 categorias, cada uma representando o valor que possuem para sua facção de origem Pessoal Procurado (1 Avanço), Pessoal Importante (2 Avanços) e Pessoal Essencial (3 Avanços). O Mestre tem a palavra final sobre quais NPCs se enquadram em cada categoria — ou se sequer se enquadram — e tem liberdade para ajustar os valores do resgate conforme a necessidade da narrativa.",
         "facilityPrice": 12000,
@@ -115,7 +115,7 @@
         ]
     },
     {
-        "type": "Major",
+        "type": "Maior",
         "facilityName": "Oficina",
         "facilityDescription": "Uma oficina avançada, equipada com uma equipe de engenheiros de elite. A equipe da oficina pode desenvolver qualquer item de reserva que os jogadores desejem, a partir da seleção completa disponível, ou até mesmo reservas personalizadas, mediante aprovação do Narrador. Prepare um de três segmentos e anote a reserva desejada. Sempre que os jogadores retornarem à base após uma missão, o ganha automaticamente 1 Avanço, e podem também atribuir Avanços do de Fundos para esse relógio. Quando todas as casas estiverem preenchidas, os jogadores recebem o item.",
         "facilityPrice": 13000,
@@ -138,7 +138,7 @@
         ]
     },
     {
-        "type": "Major",
+        "type": "Maior",
         "facilityName": "Centro de Inteligência",
         "facilityDescription": "Uma sala de operações agitada, repleta de estações de monitoramento, mapas estratégicos e agentes em plena atividade. Aqui, os jogadores têm a chance de obter uma lista parcial das classes e dos modelos dos inimigos que encontrarão na próxima Missão, bem como um breve resumo de como eles são empregados taticamente. Sempre que a próxima Missão é selecionada, os jogadores escolhem alguém para rolar 1d20. Em um resultado de 1 a 9, eles obtêm informações sobre apenas um NPC. De 10 a 14, descobrem detalhes sobre dois NPCs. De 15 a 19, sobre três NPCs. Com um 20, descobrem informações sobre quatro NPCs. O Mestre sempre escolhe quais NPCs serão revelados.",
         "facilityPrice": 16000,
@@ -161,7 +161,7 @@
         ]
     },
     {
-        "type": "Major",
+        "type": "Maior",
         "facilityName": "Curso de Treinamento de Pilotos",
         "facilityDescription": "Um circuito avançado de obstáculos e tiro real, capaz de transformar um soldado de infantaria comum em um piloto de mecha de sangue frio. Os jogadores podem treinar um mercenário de sua companhia para auxiliá-los em combate. Prepare um de 3 segmentos. Sempre que os jogadores retornarem à base após uma missão, eles escolhem alguém para rolar 1d20; se o resultado for 10 ou mais, o avança uma casa, indicando o progresso do treinamento do recruta. Quando todas as casas estiverem preenchidas, o grupo pode escolher qualquer classe de NPC com uma habilidade opcional. Os jogadores podem manter até 3 aliados, mas apenas um pode ser mobilizado por vez. Uma vez que você leve um aliado a uma missão, não poderá levar outro até a próxima reparação completa.",
         "facilityPrice": 18000,
@@ -184,7 +184,7 @@
         ]
     },
     {
-        "type": "Major",
+        "type": "Maior",
         "facilityName": "Alojamento dos Escudeiros",
         "facilityDescription": "Outro alojamento que abriga uma equipe de reserva de pilotos de mechs. Os jogadores podem enviar o Esquadrão de Escudeiros para realizar uma das ofertas de trabalho que não aceitaram. Após retornarem de um trabalho, os jogadores podem rolar 1d20 para verificar o desempenho do Esquadrão de Escudeiros, com uma dificuldade de +1 para cada Nível do Trabalho. Nenhum bônus pode ser aplicado a essa rolagem, exceto através da melhoria \"Melhor Treinamento\". Com um resultado de 10 ou mais, o Esquadrão de Escudeiros obtém sucesso e cada jogador recebe 25% do pagamento oferecido pelo trabalho. Com um resultado de 5 ou menos, o Esquadrão de Escudeiros é dizimado, e os jogadores não podem utilizar essa opção novamente até o próximo reparo completo. Não se apegue.",
         "facilityPrice": 18000,
