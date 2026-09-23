@@ -1,9 +1,9 @@
-  <div id="vote-tab" class="tab-content">
+<div id="vote-tab" class="tab-content">
     <div class="settings-section">
-      <h2>Vote Configuration</h2>
+      <h2>Configuração de Votação</h2>
       <p style="color: #b0b0b0; margin-bottom: 20px;">
-        This section allows the initiation of a voting period on the Job Board for Pilots. 
-        The voting period will end when the End Time elapses, or manually by clicking "Conclude Voting".
+        Esta seção permite o início de um período de votação no Quadro de Trabalhos para os Pilotos. 
+        O período de votação terminará quando o Horário de Encerramento passar, ou manualmente ao clicar em "Concluir Votação".
       </p>
       
       <%
@@ -15,75 +15,75 @@
       <% if (ongoingPeriod) { %>
         <!-- Current Ongoing Vote Section -->
         <div style="margin-bottom: 40px;">
-          <h3 style="color: #66BB6A; margin-bottom: 15px;">Current Vote</h3>
+          <h3 style="color: #66BB6A; margin-bottom: 15px;">Votação Atual</h3>
           
           <div id="votingPeriodTimeDisplay" style="margin-bottom: 15px; padding: 15px; background-color: #1a1a1a; border-radius: 5px; border: 1px solid #444;">
             <% if (ongoingPeriod.endTime) { %>
               <div style="color: #e0e0e0; margin-bottom: 8px;">
-                <strong>Time Remaining:</strong> <span id="timeRemaining">Calculating...</span>
+                <strong>Tempo Restante:</strong> <span id="timeRemaining">Calculando...</span>
               </div>
               <div style="color: #b0b0b0;">
-                <strong>End Time:</strong> <span id="endTime"><%= new Date(ongoingPeriod.endTime).toLocaleString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/,/, ' -') %></span>
+                <strong>Horário de Encerramento:</strong> <span id="endTime"><%= new Date(ongoingPeriod.endTime).toLocaleString('pt-BR', { hour: '2-digit', minute: '2-digit', second: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/,/, ' -') %></span>
               </div>
             <% } else { %>
               <div style="color: #e0e0e0;">
-                <strong>Duration:</strong> Infinite (No end time set)
+                <strong>Duração:</strong> Infinita (Sem horário de encerramento definido)
               </div>
             <% } %>
           </div>
           
           <div style="margin-bottom: 15px;">
-            <button class="btn btn-secondary" id="conclude-vote-btn" onclick="concludeVote()">Conclude Vote</button>
+            <button class="btn btn-secondary" id="conclude-vote-btn" onclick="concludeVote()">Concluir Votação</button>
             <% if (ongoingPeriod.endTime) { %>
-              <button class="btn btn-primary" id="archive-vote-btn" onclick="archiveVote('<%= ongoingPeriod.id %>')" style="display: none;">Archive Voting Results</button>
+              <button class="btn btn-primary" id="archive-vote-btn" onclick="archiveVote('<%= ongoingPeriod.id %>')" style="display: none;">Arquivar Resultados da Votação</button>
             <% } else { %>
-              <button class="btn btn-primary" onclick="archiveVote('<%= ongoingPeriod.id %>')" disabled style="opacity: 0.5; cursor: not-allowed;" title="Cannot archive until voting concludes">Archive Voting Results</button>
+              <button class="btn btn-primary" onclick="archiveVote('<%= ongoingPeriod.id %>')" disabled style="opacity: 0.5; cursor: not-allowed;" title="Não é possível arquivar até a votação ser concluída">Arquivar Resultados da Votação</button>
             <% } %>
-            <button class="btn btn-primary" id="modify-vote-btn" onclick="openModifyVoteModal()">Modify Voting Close</button>
+            <button class="btn btn-primary" id="modify-vote-btn" onclick="openModifyVoteModal()">Modificar Encerramento da Votação</button>
           </div>
           
           <!-- Job List for Ongoing Vote -->
           <div>
-            <h4 style="color: #e0e0e0; margin-bottom: 15px;">Jobs in Current Vote</h4>
+            <h4 style="color: #e0e0e0; margin-bottom: 15px;">Trabalhos na Votação Atual</h4>
             <% 
               const ongoingJobVotes = ongoingPeriod.jobVotes || [];
               if (ongoingJobVotes.length === 0) { 
             %>
-              <p style="color: #888;">No jobs in this voting period.</p>
+              <p style="color: #888;">Nenhum trabalho neste período de votação.</p>
             <% } else {
                 ongoingJobVotes.forEach(jobVote => {
                   const job = jobs.find(j => j.id === jobVote.jobId);
                   const voteCount = (jobVote.votes || []).length;
                   const votingPilots = (jobVote.votes || []).map(pilotId => {
                     const pilot = pilots.find(p => p.id === pilotId);
-                    return pilot ? pilot.callsign : 'DELETED PILOT';
+                    return pilot ? pilot.callsign : 'PILOTO EXCLUIDO';
                   });
             %>
               <div style="margin-bottom: 15px; padding: 15px; border: 1px solid #444; border-radius: 3px; background-color: #1a1a1a;">
                 <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
                   <% if (job && job.emblem) { %>
-                    <img src="/emblems/<%= job.emblem %>" alt="Emblem" style="width: 60px; height: 60px; border: 1px solid #ddd; padding: 5px; background: white; border-radius: 3px; object-fit: contain;">
+                    <img src="/emblems/<%= job.emblem %>" alt="Emblema" style="width: 60px; height: 60px; border: 1px solid #ddd; padding: 5px; background: white; border-radius: 3px; object-fit: contain;">
                   <% } %>
                   <div style="flex: 1;">
-                    <h5 style="color: #e0e0e0; margin-bottom: 5px;"><%= job ? job.name : 'JOB DELETED' %></h5>
+                    <h5 style="color: #e0e0e0; margin-bottom: 5px;"><%= job ? job.name : 'TRABALHO EXCLUIDO' %></h5>
                     <% if (job) { %>
                       <div style="color: #b0b0b0; font-size: 13px;">
-                        <strong>Client:</strong> <%= job.faction ? job.faction.title : 'FIELD_NULL' %> | 
-                        <strong>Rank:</strong> 
+                        <strong>Cliente:</strong> <%= job.faction ? job.faction.title : 'FIELD_NULL' %> | 
+                        <strong>Nível:</strong> 
                         <span class="rank-display" style="font-size: 14px;">
                           <% for(let i = 0; i < job.rank; i++) { %><span class="star">★</span><% } %>
                           <% for(let i = job.rank; i < 3; i++) { %><span class="star">☆</span><% } %>
                         </span> | 
-                        <strong>Type:</strong> <%= job.jobType %>
+                        <strong>Tipo:</strong> <%= job.jobType %>
                       </div>
                     <% } %>
                   </div>
                 </div>
                 <div style="color: #e0e0e0; margin-bottom: 5px;">
-                  <strong>Vote Count:</strong> <%= voteCount %>
+                  <strong>Contagem de Votos:</strong> <%= voteCount %>
                 </div>
                 <div style="color: #b0b0b0;">
-                  <strong>Pilots:</strong> <%= votingPilots.length > 0 ? votingPilots.join(', ') : 'None' %>
+                  <strong>Pilotos:</strong> <%= votingPilots.length > 0 ? votingPilots.join(', ') : 'Nenhum' %>
                 </div>
               </div>
             <% 
@@ -95,53 +95,53 @@
       <% } else { %>
         <!-- Create New Voting Period Section -->
         <div style="margin-bottom: 40px;">
-          <h3 style="color: #66BB6A; margin-bottom: 15px;">Start New Voting Period</h3>
+          <h3 style="color: #66BB6A; margin-bottom: 15px;">Iniciar Novo Período de Votação</h3>
           
           <form id="newVotingPeriodForm" style="margin-bottom: 20px;">
             <div class="form-group">
-              <label for="votingEndTime">End Time</label>
+              <label for="votingEndTime">Horário de Encerramento</label>
               <div style="display: flex; align-items: center; gap: 10px;">
                 <input type="datetime-local" id="votingEndTime" name="endTime" style="flex: 1; color-scheme: dark;">
                 <label style="display: flex; align-items: center; gap: 5px; color: #b0b0b0; cursor: pointer; white-space: nowrap;">
                   <input type="checkbox" id="infiniteDuration" name="infiniteDuration" onchange="toggleEndTime(this)">
-                  No end time?
+                  Sem horário de encerramento?
                 </label>
               </div>
             </div>
           </form>
           
           <div>
-            <h4 style="color: #e0e0e0; margin-bottom: 15px;">Active Jobs</h4>
+            <h4 style="color: #e0e0e0; margin-bottom: 15px;">Trabalhos Ativos</h4>
             <% 
               const activeJobs = jobs.filter(j => j.state === 'Active');
               if (activeJobs.length === 0) {
             %>
-              <p style="color: #888;">No Active jobs available to include in voting period.</p>
+              <p style="color: #888;">Nenhum trabalho Ativo disponível para incluir no período de votação.</p>
             <% } else { %>
               <div style="margin-bottom: 15px;">
                 <% activeJobs.forEach(job => { %>
                   <div style="margin-bottom: 10px; padding: 12px; border: 1px solid #444; border-radius: 3px; background-color: #1a1a1a;">
                     <div style="display: flex; align-items: center; gap: 15px;">
                       <% if (job.emblem) { %>
-                        <img src="/emblems/<%= job.emblem %>" alt="Emblem" style="width: 50px; height: 50px; border: 1px solid #ddd; padding: 5px; background: white; border-radius: 3px; object-fit: contain;">
+                        <img src="/emblems/<%= job.emblem %>" alt="Emblema" style="width: 50px; height: 50px; border: 1px solid #ddd; padding: 5px; background: white; border-radius: 3px; object-fit: contain;">
                       <% } %>
                       <div style="flex: 1;">
                         <h5 style="color: #e0e0e0; margin-bottom: 5px;"><%= job.name %></h5>
                         <div style="color: #b0b0b0; font-size: 13px;">
-                          <strong>Client:</strong> <%= job.faction ? job.faction.title : 'FIELD_NULL' %> | 
-                          <strong>Rank:</strong> 
+                          <strong>Cliente:</strong> <%= job.faction ? job.faction.title : 'FIELD_NULL' %> | 
+                          <strong>Nível:</strong> 
                           <span class="rank-display" style="font-size: 14px;">
                             <% for(let i = 0; i < job.rank; i++) { %><span class="star">★</span><% } %>
                             <% for(let i = job.rank; i < 3; i++) { %><span class="star">☆</span><% } %>
                           </span> | 
-                          <strong>Type:</strong> <%= job.jobType %>
+                          <strong>Tipo:</strong> <%= job.jobType %>
                         </div>
                       </div>
                     </div>
                   </div>
                 <% }); %>
               </div>
-              <button type="submit" form="newVotingPeriodForm" class="btn btn-primary" onclick="startVotingPeriod(event)">Start Voting Period</button>
+              <button type="submit" form="newVotingPeriodForm" class="btn btn-primary" onclick="startVotingPeriod(event)">Iniciar Período de Votação</button>
             <% } %>
           </div>
         </div>
@@ -149,64 +149,64 @@
       
       <!-- Vote Archive Section -->
       <div>
-        <h3 style="color: #e0e0e0; margin-bottom: 15px;">Vote Archive</h3>
+        <h3 style="color: #e0e0e0; margin-bottom: 15px;">Arquivo de Votação</h3>
         
         <% if (archivedPeriods.length === 0) { %>
-          <p style="color: #888;">No archived voting periods.</p>
+          <p style="color: #888;">Nenhum período de votação arquivado.</p>
         <% } else { %>
           <% archivedPeriods.forEach((period, periodIndex) => { %>
             <div style="margin-bottom: 30px; padding: 20px; border: 1px solid #444; border-radius: 5px; background-color: #1a1a1a;">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
                 <h4 style="color: #b0b0b0; margin: 0;">
-                  Archived Vote #<%= archivedPeriods.length - periodIndex %>
+                  Votação Arquivada #<%= archivedPeriods.length - periodIndex %>
                   <% if (period.endTime) { %>
-                    - Ended: <%= new Date(period.endTime).toLocaleString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/,/, ' -') %>
+                    - Encerrada: <%= new Date(period.endTime).toLocaleString('pt-BR', { hour: '2-digit', minute: '2-digit', second: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/,/, ' -') %>
                   <% } else { %>
-                    - No End Time Set
+                    - Sem Horário de Encerramento Definido
                   <% } %>
                 </h4>
-                <button class="btn btn-delete btn-sm" onclick="deleteVoteLog('<%= period.id %>')">Delete Vote Log</button>
+                <button class="btn btn-delete btn-sm" onclick="deleteVoteLog('<%= period.id %>')">Excluir Registro de Votação</button>
               </div>
               
               <% 
                 const archivedJobVotes = period.jobVotes || [];
                 if (archivedJobVotes.length === 0) {
               %>
-                <p style="color: #888;">No jobs in this voting period.</p>
+                <p style="color: #888;">Nenhum trabalho neste período de votação.</p>
               <% } else {
                   archivedJobVotes.forEach(jobVote => {
                     const job = jobs.find(j => j.id === jobVote.jobId);
                     const voteCount = (jobVote.votes || []).length;
                     const votingPilots = (jobVote.votes || []).map(pilotId => {
                       const pilot = pilots.find(p => p.id === pilotId);
-                      return pilot ? pilot.callsign : 'DELETED PILOT';
+                      return pilot ? pilot.callsign : 'PILOTO EXCLUIDO';
                     });
               %>
                 <div style="margin-bottom: 10px; padding: 12px; border: 1px solid #333; border-radius: 3px; background-color: #0a0a0a;">
                   <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 8px;">
                     <% if (job && job.emblem) { %>
-                      <img src="/emblems/<%= job.emblem %>" alt="Emblem" style="width: 50px; height: 50px; border: 1px solid #ddd; padding: 5px; background: white; border-radius: 3px; object-fit: contain;">
+                      <img src="/emblems/<%= job.emblem %>" alt="Emblema" style="width: 50px; height: 50px; border: 1px solid #ddd; padding: 5px; background: white; border-radius: 3px; object-fit: contain;">
                     <% } %>
                     <div style="flex: 1;">
-                      <h5 style="color: #e0e0e0; margin-bottom: 5px;"><%= job ? job.name : 'JOB DELETED' %></h5>
+                      <h5 style="color: #e0e0e0; margin-bottom: 5px;"><%= job ? job.name : 'TRABALHO EXCLUIDO' %></h5>
                       <% if (job) { %>
                         <div style="color: #b0b0b0; font-size: 13px;">
-                          <strong>Client:</strong> <%= job.faction ? job.faction.title : 'FIELD_NULL' %> | 
-                          <strong>Rank:</strong> 
+                          <strong>Cliente:</strong> <%= job.faction ? job.faction.title : 'FIELD_NULL' %> | 
+                          <strong>Nível:</strong> 
                           <span class="rank-display" style="font-size: 14px;">
                             <% for(let i = 0; i < job.rank; i++) { %><span class="star">★</span><% } %>
                             <% for(let i = job.rank; i < 3; i++) { %><span class="star">☆</span><% } %>
                           </span> | 
-                          <strong>Type:</strong> <%= job.jobType %>
+                          <strong>Tipo:</strong> <%= job.jobType %>
                         </div>
                       <% } %>
                     </div>
                   </div>
                   <div style="color: #e0e0e0; margin-bottom: 5px;">
-                    <strong>Vote Count:</strong> <%= voteCount %>
+                    <strong>Contagem de Votos:</strong> <%= voteCount %>
                   </div>
                   <div style="color: #b0b0b0;">
-                    <strong>Pilots:</strong> <%= votingPilots.length > 0 ? votingPilots.join(', ') : 'None' %>
+                    <strong>Pilotos:</strong> <%= votingPilots.length > 0 ? votingPilots.join(', ') : 'Nenhum' %>
                   </div>
                 </div>
               <% 
