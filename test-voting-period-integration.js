@@ -36,7 +36,7 @@ console.log('');
 console.log('Test 2: Create and write a voting period');
 const newPeriod = {
   id: helpers.generateId(),
-  state: 'Ongoing',
+  state: 'Em Andamento',
   jobVotes: [
     {
       jobId: helpers.generateId(),
@@ -74,18 +74,18 @@ console.log('  Period state:', readBack.periods[0].state);
 console.log('  Job votes count:', readBack.periods[0].jobVotes.length);
 console.log('');
 
-// Test 4: Test ongoing period detection
-console.log('Test 4: Test ongoing period detection');
-const ongoingPeriod = helpers.getOngoingVotingPeriod(readBack.periods);
-console.log('  Found ongoing period:', ongoingPeriod !== null);
-console.log('  Ongoing period ID:', ongoingPeriod ? ongoingPeriod.id : 'N/A');
+// Test 4: Test Em Andamento period detection
+console.log('Test 4: Test Em Andamento period detection');
+const Em AndamentoPeriod = helpers.getEm AndamentoVotingPeriod(readBack.periods);
+console.log('  Found Em Andamento period:', Em AndamentoPeriod !== null);
+console.log('  Em Andamento period ID:', Em AndamentoPeriod ? Em AndamentoPeriod.id : 'N/A');
 console.log('');
 
-// Test 5: Add archived period and verify only one ongoing allowed
-console.log('Test 5: Add archived period');
-const archivedPeriod = {
+// Test 5: Add Arquivado period and verify only one Em Andamento allowed
+console.log('Test 5: Add Arquivado period');
+const ArquivadoPeriod = {
   id: helpers.generateId(),
-  state: 'Archived',
+  state: 'Arquivado',
   jobVotes: [
     {
       jobId: helpers.generateId(),
@@ -96,21 +96,21 @@ const archivedPeriod = {
 };
 
 const dataWithBothPeriods = {
-  periods: [newPeriod, archivedPeriod]
+  periods: [newPeriod, ArquivadoPeriod]
 };
 writeVotingPeriods(dataWithBothPeriods);
 
 const readWithBoth = readVotingPeriods();
 console.log('  Total periods:', readWithBoth.periods.length);
-console.log('  Ongoing periods:', readWithBoth.periods.filter(p => p.state === 'Ongoing').length);
-console.log('  Archived periods:', readWithBoth.periods.filter(p => p.state === 'Archived').length);
+console.log('  Em Andamento periods:', readWithBoth.periods.filter(p => p.state === 'Em Andamento').length);
+console.log('  Arquivado periods:', readWithBoth.periods.filter(p => p.state === 'Arquivado').length);
 console.log('');
 
 // Test 6: Test with null end time (infinite duration)
 console.log('Test 6: Test with null end time (infinite duration)');
 const infinitePeriod = {
   id: helpers.generateId(),
-  state: 'Archived',
+  state: 'Arquivado',
   jobVotes: [],
   endTime: null
 };
@@ -124,7 +124,7 @@ console.log('Test 7: Test pilot vote uniqueness constraint');
 const duplicatePilotId = helpers.generateId();
 const invalidPeriod = {
   id: helpers.generateId(),
-  state: 'Ongoing',
+  state: 'Em Andamento',
   jobVotes: [
     {
       jobId: helpers.generateId(),
