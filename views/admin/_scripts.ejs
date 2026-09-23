@@ -104,7 +104,7 @@
       const transactionsList = document.getElementById('transactionsList');
       if (transactionsList && manna.transactions) {
         if (manna.transactions.length === 0) {
-          transactionsList.innerHTML = '<p style="color: #b0b0b0;">No transactions yet.</p>';
+          transactionsList.innerHTML = '<p style="color: #b0b0b0;">Nenhuma transação ainda.</p>';
         } else {
           // Fetch pilots to build the pilot-transaction map
           fetch('/api/pilots')
@@ -127,7 +127,7 @@
               
               transactionsList.innerHTML = reversedTransactions.map(transaction => {
                 const date = new Date(transaction.date);
-                const formattedDate = date.toLocaleString('en-GB', { dateStyle: 'short', timeStyle: 'short' });
+                const formattedDate = date.toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' });
                 const amountColor = transaction.amount >= 0 ? '#66BB6A' : '#f44336';
                 const amountPrefix = transaction.amount >= 0 ? '+' : '';
                 
@@ -144,30 +144,30 @@
                 
                 const assignedText = isAssigned 
                   ? `<span style="color: #66BB6A;">${assignedPilots.map(p => p.callsign).join(', ')}</span>`
-                  : '<span style="color: #888;">Unassigned</span>';
+                  : '<span style="color: #888;">Não atribuído</span>';
                 
                 return `
                   <div class="transaction-item" data-id="${transaction.id}" data-assigned="${isAssigned ? 'true' : 'false'}"${displayStyle}>
                     <div class="transaction-item-field">
-                      <strong>Date:</strong> ${formattedDate}
+                      <strong>Data:</strong> ${formattedDate}
                     </div>
                     <div class="transaction-item-field">
-                      <strong>Amount:</strong> 
+                      <strong>Valor:</strong> 
                       <span style="color: ${amountColor}">
                         ${amountPrefix}${transaction.amount}
                       </span>
-                      <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon">
+                      <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Ícone de Moeda" class="currency-icon">
                     </div>
                     <div class="transaction-item-field">
-                      <strong>Description:</strong> ${transaction.description}
+                      <strong>Descrição:</strong> ${transaction.description}
                     </div>
                     <div class="transaction-item-field">
-                      <strong>Assigned to:</strong> ${assignedText}
+                      <strong>Atribuído a:</strong> ${assignedText}
                     </div>
                     <div class="transaction-item-actions">
-                      <button class="btn btn-secondary" onclick="editTransactionPilots('${transaction.id}')">Select Pilot(s)</button>
-                      <button class="btn btn-edit" onclick="editTransaction('${transaction.id}')">Edit</button>
-                      <button class="btn btn-delete" onclick="deleteTransaction('${transaction.id}')">Delete</button>
+                      <button class="btn btn-secondary" onclick="editTransactionPilots('${transaction.id}')">Selecionar Piloto(s)</button>
+                      <button class="btn btn-edit" onclick="editTransaction('${transaction.id}')">Editar</button>
+                      <button class="btn btn-delete" onclick="deleteTransaction('${transaction.id}')">Excluir</button>
                     </div>
                   </div>
                 `;
@@ -211,7 +211,7 @@
       
       // Validate end time if not infinite
       if (!infiniteDuration && !endTimeInput) {
-        alert('Please select an end time or check "No end time?"');
+        alert('Por favor, selecione um horário de encerramento ou marque "Sem horário de encerramento?"');
         return;
       }
       
@@ -219,7 +219,7 @@
       const activeJobs = <%- JSON.stringify(activeJobIds) %>;
       
       if (activeJobs.length === 0) {
-        alert('No Active jobs available to start a voting period');
+        alert('Nenhum trabalho Ativo disponível para iniciar um período de votação');
         return;
       }
       
@@ -244,27 +244,27 @@
         });
         
         if (response.ok) {
-          showNotification('Voting period started successfully!');
+          showNotification('Período de votação iniciado com sucesso!');
           saveScrollPositionForReload();
           setTimeout(() => location.reload(), 400);
         } else {
           const errorData = await response.json();
-          alert(errorData.message || 'Failed to start voting period');
+          alert(errorData.message || 'Falha ao iniciar o período de votação');
         }
       } catch (error) {
         console.error('Error starting voting period:', error);
-        alert('Error starting voting period');
+        alert('Erro ao iniciar o período de votação');
       }
     }
     
     // Conclude vote (set end time to 5 seconds in the past)
     async function concludeVote() {
-      if (!confirm('Are you sure you want to conclude the voting period?')) {
+      if (!confirm('Tem certeza de que deseja concluir o período de votação?')) {
         return;
       }
       
       if (!ongoingPeriod) {
-        alert('No ongoing voting period found');
+        alert('Nenhum período de votação em andamento encontrado');
         return;
       }
       
@@ -282,27 +282,27 @@
         });
         
         if (response.ok) {
-          showNotification('Voting period concluded');
+          showNotification('Período de votação concluído');
           saveScrollPositionForReload();
           setTimeout(() => location.reload(), 400);
         } else {
           const errorData = await response.json();
-          alert(errorData.message || 'Failed to conclude voting period');
+          alert(errorData.message || 'Falha ao concluir o período de votação');
         }
       } catch (error) {
         console.error('Error concluding voting period:', error);
-        alert('Error concluding voting period');
+        alert('Erro ao concluir o período de votação');
       }
     }
     
     // Archive voting period
     async function archiveVote(periodId) {
-      if (!confirm('Are you sure you want to archive this voting period?')) {
+      if (!confirm('Tem certeza de que deseja arquivar este período de votação?')) {
         return;
       }
       
       if (!ongoingPeriod || ongoingPeriod.id !== periodId) {
-        alert('Voting period not found or not ongoing');
+        alert('Período de votação não encontrado ou não está em andamento');
         return;
       }
       
@@ -317,22 +317,22 @@
         });
         
         if (response.ok) {
-          showNotification('Voting period archived');
+          showNotification('Período de votação arquivado');
           saveScrollPositionForReload();
           setTimeout(() => location.reload(), 400);
         } else {
           const errorData = await response.json();
-          alert(errorData.message || 'Failed to archive voting period');
+          alert(errorData.message || 'Falha ao arquivar o período de votação');
         }
       } catch (error) {
         console.error('Error archiving voting period:', error);
-        alert('Error archiving voting period');
+        alert('Erro ao arquivar o período de votação');
       }
     }
     
     // Delete vote log
     async function deleteVoteLog(periodId) {
-      if (!confirm('Are you sure you want to delete this vote log? This action cannot be undone.')) {
+      if (!confirm('Tem certeza de que deseja excluir este registro de votação? Esta ação não pode ser desfeita.')) {
         return;
       }
       
@@ -342,16 +342,16 @@
         });
         
         if (response.ok) {
-          showNotification('Vote log deleted');
+          showNotification('Registro de votação excluído');
           saveScrollPositionForReload();
           setTimeout(() => location.reload(), 400);
         } else {
           const errorData = await response.json();
-          alert(errorData.message || 'Failed to delete vote log');
+          alert(errorData.message || 'Falha ao excluir o registro de votação');
         }
       } catch (error) {
         console.error('Error deleting vote log:', error);
-        alert('Error deleting vote log');
+        alert('Erro ao excluir o registro de votação');
       }
     }
     
@@ -359,7 +359,7 @@
     // Open modify vote modal
     function openModifyVoteModal() {
       if (!ongoingPeriod) {
-        alert('No ongoing voting period found');
+        alert('Nenhum período de votação em andamento encontrado');
         return;
       }
       
@@ -406,7 +406,7 @@
     // Modify voting close time
     async function modifyVotingClose() {
       if (!ongoingPeriod) {
-        alert('No ongoing voting period found');
+        alert('Nenhum período de votação em andamento encontrado');
         return;
       }
       
@@ -417,7 +417,7 @@
       
       if (!infiniteCheckbox) {
         if (!endTimeInput) {
-          alert('Please select an end time or check "No end time?"');
+          alert('Por favor, selecione um horário de encerramento ou marque "Sem horário de encerramento?"');
           return;
         }
         newEndTime = new Date(endTimeInput).toISOString();
@@ -434,16 +434,16 @@
         });
         
         if (response.ok) {
-          showNotification('Voting close time updated');
+          showNotification('Horário de encerramento da votação atualizado');
           saveScrollPositionForReload();
           setTimeout(() => location.reload(), 400);
         } else {
           const errorData = await response.json();
-          alert(errorData.message || 'Failed to update voting close time');
+          alert(errorData.message || 'Falha ao atualizar o horário de encerramento da votação');
         }
       } catch (error) {
         console.error('Error updating voting close time:', error);
-        alert('Error updating voting close time');
+        alert('Erro ao atualizar o horário de encerramento da votação');
       }
     }
     
@@ -468,7 +468,7 @@
       const diff = endTime - now;
       
       if (diff <= 0) {
-        timeRemainingEl.textContent = 'Voting Concluded';
+        timeRemainingEl.textContent = 'Votação Concluída';
         timeRemainingEl.style.color = '#f44336';
         // Show archive button and hide conclude button when voting has concluded
         // Keep modify button visible to allow extending voting period
@@ -490,7 +490,7 @@
       const minutesStr = String(minutes).padStart(2, '0');
       const secondsStr = String(seconds).padStart(2, '0');
       
-      timeRemainingEl.textContent = `${hoursStr}:${minutesStr}:${secondsStr} (${hours} hours)`;
+      timeRemainingEl.textContent = `${hoursStr}:${minutesStr}:${secondsStr} (${hours} horas)`;
     }
     
     // Initialize time remaining update on page load (if on vote tab with ongoing period)
@@ -555,12 +555,12 @@
         });
         
         if (!response.ok) {
-          alert('Failed to update facility purchase status');
+          alert('Falha ao atualizar o status de compra da instalação');
           checkbox.checked = !isPurchased; // Revert
         }
       } catch (error) {
         console.error('Error updating facility purchase status:', error);
-        alert('Error updating facility purchase status');
+        alert('Erro ao atualizar o status de compra da instalação');
         checkbox.checked = !isPurchased; // Revert
       }
     }
@@ -572,7 +572,7 @@
       
       // Validate modifier
       if (isNaN(modifier) || modifier < -100 || modifier > 300) {
-        alert('Facility Cost Modifier must be between -100 and 300');
+        alert('O Modificador de Custo de Instalação deve estar entre -100 e 300');
         return;
       }
       
@@ -594,16 +594,16 @@
         });
         
         if (response.ok) {
-          alert('Facility Cost Modifier updated successfully');
+          alert('Modificador de Custo de Instalação atualizado com sucesso');
           // Refresh the displayed prices
           updateDisplayedPrices(modifier);
         } else {
           const data = await response.json();
-          alert(`Failed to update modifier: ${data.message || 'Unknown error'}`);
+          alert(`Falha ao atualizar o modificador: ${data.message || 'Erro desconhecido'}`);
         }
       } catch (error) {
         console.error('Error updating facility cost modifier:', error);
-        alert('Error updating facility cost modifier');
+        alert('Erro ao atualizar o modificador de custo de instalação');
       }
     }
     
@@ -650,7 +650,7 @@
           const modifiedPrice = applyFacilityCostModifier(basePrice, modifier);
           // Update the text content, keeping the "Price: " label and currency icon
           const iconHtml = priceEl.querySelector('.currency-icon') ? priceEl.querySelector('.currency-icon').outerHTML : '';
-          priceEl.innerHTML = 'Price: ' + modifiedPrice + iconHtml;
+          priceEl.innerHTML = 'Preço: ' + modifiedPrice + iconHtml;
         }
       });
     }
@@ -729,7 +729,7 @@
                       if (!isNaN(basePrice)) {
                         const modifiedPrice = applyFacilityCostModifier(basePrice, currentMod);
                         const iconHtml = priceEl.querySelector('.currency-icon') ? priceEl.querySelector('.currency-icon').outerHTML : '';
-                        priceEl.innerHTML = 'Price: ' + modifiedPrice + iconHtml;
+                        priceEl.innerHTML = 'Preço: ' + modifiedPrice + iconHtml;
                       }
                     });
                   }
@@ -751,7 +751,7 @@
       
       // Validate count
       if (upgradeCount < 0 || upgradeCount > maxPurchases) {
-        alert(`Upgrade count must be between 0 and ${maxPurchases}`);
+        alert(`A quantidade de melhorias deve estar entre 0 e ${maxPurchases}`);
         input.value = Math.max(0, Math.min(upgradeCount, maxPurchases));
         return;
       }
@@ -764,13 +764,13 @@
         });
         
         if (!response.ok) {
-          alert('Failed to update upgrade count');
+          alert('Falha ao atualizar a quantidade de melhorias');
           // Reload to get correct value
           location.reload();
         }
       } catch (error) {
         console.error('Error updating upgrade count:', error);
-        alert('Error updating upgrade count');
+        alert('Erro ao atualizar a quantidade de melhorias');
         location.reload();
       }
     }
@@ -788,12 +788,12 @@
         });
         
         if (!response.ok) {
-          alert('Failed to toggle slot enabled status');
+          alert('Falha ao alternar o status de ativação do slot');
           checkbox.checked = !enabled; // Revert
         }
       } catch (error) {
         console.error('Error toggling slot enabled status:', error);
-        alert('Error toggling slot enabled status');
+        alert('Erro ao alternar o status de ativação do slot');
         checkbox.checked = !enabled; // Revert
       }
     }
@@ -829,7 +829,7 @@
                 optionDiv.className = 'minor-facility-option';
                 optionDiv.innerHTML = `
                   <h4>${option.minorFacilityName}</h4>
-                  <div class="facility-price">Price: ${option.minorFacilityPrice}<img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon"></div>
+                  <div class="facility-price">Preço: ${option.minorFacilityPrice}<img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Ícone de Moeda" class="currency-icon"></div>
                   <p>${option.minorFacilityDescription}</p>
                 `;
                 optionDiv.onclick = () => assignMinorFacility(slotNumber, option);
@@ -837,13 +837,13 @@
               });
               
               if (availableOptions.length === 0) {
-                grid.innerHTML = '<p style="color: #888; text-align: center; padding: 40px;">No available facilities to assign</p>';
+                grid.innerHTML = '<p style="color: #888; text-align: center; padding: 40px;">Nenhuma instalação disponível para atribuir</p>';
               }
             });
         })
         .catch(error => {
           console.error('Error loading minor facility options:', error);
-          alert('Error loading minor facility options');
+          alert('Erro ao carregar as opções de instalação menor');
         });
       
       modal.style.display = 'block';
@@ -871,17 +871,17 @@
           closeMinorFacilityAssignModal();
           // UI will update via SSE
         } else {
-          alert('Failed to assign facility');
+          alert('Falha ao atribuir a instalação');
         }
       } catch (error) {
         console.error('Error assigning facility:', error);
-        alert('Error assigning facility');
+        alert('Erro ao atribuir a instalação');
       }
     }
     
     // Clear minor facility slot
     async function clearMinorSlot(slotNumber) {
-      if (!confirm('Are you sure you want to clear this facility slot?')) {
+      if (!confirm('Tem certeza de que deseja limpar este slot de instalação?')) {
         return;
       }
       
@@ -891,12 +891,12 @@
         });
         
         if (!response.ok) {
-          alert('Failed to clear facility slot');
+          alert('Falha ao limpar o slot de instalação');
         }
         // UI will update via SSE
       } catch (error) {
         console.error('Error clearing facility slot:', error);
-        alert('Error clearing facility slot');
+        alert('Erro ao limpar o slot de instalação');
       }
     }
     
@@ -948,14 +948,14 @@
       // Client-side date validation
       const datePattern = /^\d{2}\/\d{2}\/\d{4}$/;
       if (data.unt && !datePattern.test(data.unt)) {
-        alert('Invalid date format. Please use DD/MM/YYYY');
+        alert('Formato de data inválido. Por favor, use DD/MM/AAAA');
         return;
       }
       
       if (data.unt && datePattern.test(data.unt)) {
         const [day, month, year] = data.unt.split('/').map(Number);
         if (month < 1 || month > 12 || day < 1) {
-          alert('Invalid date values. Day must be at least 1, month must be 1-12');
+          alert('Valores de data inválidos. O dia deve ser pelo menos 1, o mês deve ser 1-12');
           return;
         }
         
@@ -968,7 +968,7 @@
         }
         
         if (day > daysInMonth[month - 1]) {
-          alert(`Invalid day for month ${month}. Maximum is ${daysInMonth[month - 1]} days.`);
+          alert(`Dia inválido para o mês ${month}. O máximo é ${daysInMonth[month - 1]} dias.`);
           return;
         }
       }
@@ -984,7 +984,7 @@
           // Visual feedback on button
           const btn = document.querySelector('button[type="submit"]');
           const originalText = btn.textContent;
-          btn.textContent = '✓ Saved!';
+          btn.textContent = '✓ Salvo!';
           btn.style.backgroundColor = '#28a745';
           setTimeout(() => {
             btn.textContent = originalText;
@@ -992,10 +992,10 @@
           }, 2000);
         } else {
           const errorData = await response.json();
-          alert(errorData.message || 'Failed to save settings');
+          alert(errorData.message || 'Falha ao salvar as configurações');
         }
       } catch (error) {
-        alert('Error saving settings');
+        alert('Erro ao salvar as configurações');
       }
     });
 
@@ -1055,7 +1055,7 @@
       const selectedIcon = document.getElementById('settingsCurrencyIcon').value;
       
       if (!selectedIcon) {
-        alert('Please select a currency icon');
+        alert('Por favor, selecione um ícone de moeda');
         return;
       }
       
@@ -1068,7 +1068,7 @@
       // Close the modal
       closeCurrencyIconModal();
       
-      showNotification('Currency icon updated in form. Click "Save Settings" to apply.');
+      showNotification('Ícone de moeda atualizado no formulário. Clique em "Salvar Configurações" para aplicar.');
     }
     
     // Flag to prevent auto-selection during programmatic job edit form population
@@ -1193,11 +1193,11 @@
           data = await response.json();
         } catch (jsonError) {
           console.error('Failed to parse JSON response:', jsonError);
-          alert('Server returned an invalid response. Please try again or contact support.');
+          alert('O servidor retornou uma resposta inválida. Por favor, tente novamente ou entre em contato com o suporte.');
           return;
         }
         if (!response.ok) {
-          alert((data && data.message) || 'Upload failed');
+          alert((data && data.message) || 'Falha no upload');
           return;
         }
 
@@ -1218,9 +1218,9 @@
         addOption.classList.add('selected');
         document.getElementById('jobEmblem').value = emblem;
 
-        showNotification(`Emblem uploaded: ${emblem}`);
+        showNotification(`Emblema enviado: ${emblem}`);
       } catch (error) {
-        alert('Network error during upload: ' + error.message);
+        alert('Erro de rede durante o upload: ' + error.message);
       } finally {
         this.value = '';
       }
@@ -1240,12 +1240,12 @@
         });
         
         if (response.ok) {
-          showNotification('Job added successfully!');
+          showNotification('Trabalho adicionado com sucesso!');
           saveScrollPositionForReload();
           setTimeout(() => location.reload(), 400);
         }
       } catch (error) {
-        alert('Error adding job');
+        alert('Erro ao adicionar o trabalho');
       }
     });
 
@@ -1303,12 +1303,12 @@
         });
         
         if (response.ok) {
-          showNotification('Changes successfully saved');
+          showNotification('Alterações salvas com sucesso');
           closeEditModal();
           saveScrollPositionForReload();
           setTimeout(() => location.reload(), 400);
         } else {
-          let errorMsg = 'Failed to update job';
+          let errorMsg = 'Falha ao atualizar o trabalho';
           try {
             const errorData = await response.json();
             if (errorData && errorData.message) {
@@ -1320,13 +1320,13 @@
           showNotification(errorMsg);
         }
       } catch (error) {
-        alert('Error updating job');
+        alert('Erro ao atualizar o trabalho');
       }
     });
 
     // Delete job
     async function deleteJob(id) {
-      if (confirm('Are you sure you want to delete this job?')) {
+      if (confirm('Tem certeza de que deseja excluir este trabalho?')) {
         try {
           const response = await fetch(`/api/jobs/${id}`, {
             method: 'DELETE'
@@ -1337,7 +1337,7 @@
             location.reload();
           }
         } catch (error) {
-          alert('Error deleting job');
+          alert('Erro ao excluir o trabalho');
         }
       }
     }
@@ -1361,10 +1361,10 @@
           setTimeout(() => location.reload(), 400);
         } else {
           const errorData = await response.json();
-          showNotification(errorData.message || 'Failed to update job state');
+          showNotification(errorData.message || 'Falha ao atualizar o estado do trabalho');
         }
       } catch (error) {
-        showNotification('Error updating job state');
+        showNotification('Erro ao atualizar o estado do trabalho');
       }
     }
 
@@ -1373,8 +1373,8 @@
       return updateJobState(
         id,
         'Complete',
-        'Mark this job as Completed?',
-        'Job marked as Completed!'
+        'Marcar este trabalho como Concluído?',
+        'Trabalho marcado como Concluído!'
       );
     }
     
@@ -1383,8 +1383,8 @@
       return updateJobState(
         id,
         'Failed',
-        'Mark this job as Failed?',
-        'Job marked as Failed!'
+        'Marcar este trabalho como Falho?',
+        'Trabalho marcado como Falho!'
       );
     }
     
@@ -1504,11 +1504,11 @@
       const selectedEmblem = document.getElementById('jobEmblem').value;
       
       if (!selectedEmblem) {
-        alert('Please select an emblem to delete');
+        alert('Por favor, selecione um emblema para excluir');
         return;
       }
       
-      if (confirm(`Are you sure you want to delete the emblem "${formatEmblemTitle(selectedEmblem)}"?\n\nThis action cannot be undone.`)) {
+      if (confirm(`Tem certeza de que deseja excluir o emblema "${formatEmblemTitle(selectedEmblem)}"?\n\nEsta ação não pode ser desfeita.`)) {
         try {
           const response = await fetch(`/api/emblems/${encodeURIComponent(selectedEmblem)}`, {
             method: 'DELETE'
@@ -1517,14 +1517,14 @@
           const data = await response.json();
           
           if (response.ok) {
-            showNotification('Emblem deleted successfully!');
+            showNotification('Emblema excluído com sucesso!');
             saveScrollPositionForReload();
             setTimeout(() => location.reload(), 400);
           } else {
-            alert(data.message || 'Failed to delete emblem');
+            alert(data.message || 'Falha ao excluir o emblema');
           }
         } catch (error) {
-          alert('Error deleting emblem: ' + error.message);
+          alert('Erro ao excluir o emblema: ' + error.message);
         }
       }
     }
@@ -1560,7 +1560,7 @@
           .catch(error => {
             console.error('Error fetching pilot data:', error);
             // Do not open modal on error; inform user via alert
-            alert('Failed to load pilot data. Please try again.');
+            alert('Falha ao carregar os dados do piloto. Por favor, tente novamente.');
           });
       } else {
         pilotSelectionContext = 'add';
@@ -1592,10 +1592,10 @@
         
         // Update the display text
         if (selectedPilotIds.length === 0) {
-          document.getElementById('selectedPilotsText').textContent = 'No pilots selected (will assign to all active pilots)';
+          document.getElementById('selectedPilotsText').textContent = 'Nenhum piloto selecionado (será atribuído a todos os pilotos ativos)';
         } else {
           const pilotNames = Array.from(checkboxes).map(cb => cb.parentElement.textContent.trim());
-          document.getElementById('selectedPilotsText').textContent = `Selected: ${pilotNames.join(', ')}`;
+          document.getElementById('selectedPilotsText').textContent = `Selecionados: ${pilotNames.join(', ')}`;
         }
       } else if (pilotSelectionContext && pilotSelectionContext.type === 'edit') {
         // Update the transaction's pilot associations
@@ -1614,14 +1614,14 @@
         });
         
         if (response.ok) {
-          showNotification('Transaction pilot assignments updated!');
+          showNotification('Atribuições de pilotos da transação atualizadas!');
         } else {
           const errorData = await response.json();
-          alert(errorData.message || 'Failed to update pilot assignments');
+          alert(errorData.message || 'Falha ao atualizar as atribuições de pilotos');
         }
       } catch (error) {
         console.error('Error updating transaction pilots:', error);
-        alert('Error updating pilot assignments');
+        alert('Erro ao atualizar as atribuições de pilotos');
       }
     }
     
@@ -1678,15 +1678,15 @@
             const result = await response.json();
             document.getElementById('overviewMannaForm').reset();
             document.getElementById('selectedPilotIds').value = '';
-            document.getElementById('selectedPilotsText').textContent = 'No pilots selected (will assign to all active pilots)';
-            showNotification('Transaction added successfully!');
+            document.getElementById('selectedPilotsText').textContent = 'Nenhum piloto selecionado (será atribuído a todos os pilotos ativos)';
+            showNotification('Transação adicionada com sucesso!');
           } else {
             const errorData = await response.json();
-            alert(errorData.message || 'Failed to add transaction');
+            alert(errorData.message || 'Falha ao adicionar a transação');
           }
         } catch (error) {
           console.error('Error adding transaction:', error);
-          alert('Error adding transaction');
+          alert('Erro ao adicionar a transação');
         }
       });
     }
@@ -1709,13 +1709,13 @@
             const result = await response.json();
             document.getElementById('mannaBalance').textContent = result.manna.balance;
             document.getElementById('mannaForm').reset();
-            showNotification('Transaction added successfully!');
+            showNotification('Transação adicionada com sucesso!');
           } else {
             const errorData = await response.json();
-            alert(errorData.message || 'Failed to add transaction');
+            alert(errorData.message || 'Falha ao adicionar a transação');
           }
         } catch (error) {
-          alert('Error adding transaction');
+          alert('Erro ao adicionar a transação');
         }
       });
     }
@@ -1735,15 +1735,15 @@
           });
           
           if (response.ok) {
-            showNotification('Faction added successfully!');
+            showNotification('Facção adicionada com sucesso!');
             saveScrollPositionForReload();
             setTimeout(() => location.reload(), 400);
           } else {
             const errorData = await response.json();
-            alert(errorData.message || 'Failed to add faction');
+            alert(errorData.message || 'Falha ao adicionar a facção');
           }
         } catch (error) {
-          alert('Error adding faction');
+          alert('Erro ao adicionar a facção');
         }
       });
     }
@@ -1790,36 +1790,36 @@
           });
           
           if (response.ok) {
-            showNotification('Faction updated successfully');
+            showNotification('Facção atualizada com sucesso');
             closeEditFactionModal();
             saveScrollPositionForReload();
             setTimeout(() => location.reload(), 400);
           } else {
             const errorData = await response.json();
-            alert(errorData.message || 'Failed to update faction');
+            alert(errorData.message || 'Falha ao atualizar a facção');
           }
         } catch (error) {
-          alert('Error updating faction');
+          alert('Erro ao atualizar a facção');
         }
       });
     }
     
     async function deleteFaction(id) {
-      if (confirm('Are you sure you want to delete this faction?')) {
+      if (confirm('Tem certeza de que deseja excluir esta facção?')) {
         try {
           const response = await fetch(`/api/factions/${id}`, {
             method: 'DELETE'
           });
           
           if (response.ok) {
-            showNotification('Faction deleted successfully!');
+            showNotification('Facção excluída com sucesso!');
             saveScrollPositionForReload();
             setTimeout(() => location.reload(), 400);
           } else {
-            alert('Failed to delete faction');
+            alert('Falha ao excluir a facção');
           }
         } catch (error) {
-          alert('Error deleting faction');
+          alert('Erro ao excluir a facção');
         }
       }
     }
@@ -1829,7 +1829,7 @@
       const transactionData = <%- JSON.stringify(manna.transactions) %>.find(t => t.id === id);
       
       if (!transactionData) {
-        alert('Transaction not found');
+        alert('Transação não encontrada');
         return;
       }
       
@@ -1865,7 +1865,7 @@
         // Validate amount
         const amount = parseInt(data.amount);
         if (isNaN(amount)) {
-          alert('Invalid amount. Please enter a valid number.');
+          alert('Valor inválido. Por favor, insira um número válido.');
           return;
         }
         
@@ -1881,37 +1881,37 @@
           });
           
           if (response.ok) {
-            showNotification('Transaction updated successfully');
+            showNotification('Transação atualizada com sucesso');
             closeEditTransactionModal();
             saveScrollPositionForReload();
             setTimeout(() => location.reload(), 400);
           } else {
             const errorData = await response.json();
-            alert(errorData.message || 'Failed to update transaction');
+            alert(errorData.message || 'Falha ao atualizar a transação');
           }
         } catch (error) {
-          alert('Error updating transaction');
+          alert('Erro ao atualizar a transação');
         }
       });
     }
     
     async function deleteTransaction(id) {
-      if (confirm('Are you sure you want to delete this transaction?\n\nNote: This will NOT affect the current balance value.')) {
+      if (confirm('Tem certeza de que deseja excluir esta transação?\n\nNota: Isso NÃO afetará o valor do saldo atual.')) {
         try {
           const response = await fetch(`/api/manna/transaction/${id}`, {
             method: 'DELETE'
           });
           
           if (response.ok) {
-            showNotification('Transaction deleted successfully!');
+            showNotification('Transação excluída com sucesso!');
             saveScrollPositionForReload();
             setTimeout(() => location.reload(), 400);
           } else {
             const errorData = await response.json();
-            alert(errorData.message || 'Failed to delete transaction');
+            alert(errorData.message || 'Falha ao excluir a transação');
           }
         } catch (error) {
-          alert('Error deleting transaction');
+          alert('Erro ao excluir a transação');
         }
       }
     }
@@ -1939,15 +1939,15 @@
           });
           
           if (response.ok) {
-            showNotification('Pilot added successfully!');
+            showNotification('Piloto adicionado com sucesso!');
             saveScrollPositionForReload();
             setTimeout(() => location.reload(), 400);
           } else {
             const errorData = await response.json();
-            alert(errorData.message || 'Failed to add pilot');
+            alert(errorData.message || 'Falha ao adicionar o piloto');
           }
         } catch (error) {
-          alert('Error adding pilot');
+          alert('Erro ao adicionar o piloto');
         }
       });
     }
@@ -1956,7 +1956,7 @@
       const pilotData = <%- JSON.stringify(pilots) %>.find(p => p.id === id);
       
       if (!pilotData) {
-        alert('Pilot not found');
+        alert('Piloto não encontrado');
         return;
       }
       
@@ -2013,36 +2013,36 @@
           });
           
           if (response.ok) {
-            showNotification('Pilot updated successfully');
+            showNotification('Piloto atualizado com sucesso');
             closeEditPilotModal();
             saveScrollPositionForReload();
             setTimeout(() => location.reload(), 400);
           } else {
             const errorData = await response.json();
-            alert(errorData.message || 'Failed to update pilot');
+            alert(errorData.message || 'Falha ao atualizar o piloto');
           }
         } catch (error) {
-          alert('Error updating pilot');
+          alert('Erro ao atualizar o piloto');
         }
       });
     }
     
     async function deletePilot(id) {
-      if (confirm('Are you sure you want to delete this pilot?')) {
+      if (confirm('Tem certeza de que deseja excluir este piloto?')) {
         try {
           const response = await fetch(`/api/pilots/${id}`, {
             method: 'DELETE'
           });
           
           if (response.ok) {
-            showNotification('Pilot deleted successfully!');
+            showNotification('Piloto excluído com sucesso!');
             saveScrollPositionForReload();
             setTimeout(() => location.reload(), 400);
           } else {
-            alert('Failed to delete pilot');
+            alert('Falha ao excluir o piloto');
           }
         } catch (error) {
-          alert('Error deleting pilot');
+          alert('Erro ao excluir o piloto');
         }
       }
     }
@@ -2052,7 +2052,7 @@
       const allJobs = <%- JSON.stringify(jobs) %>;
       
       if (!pilotData) {
-        alert('Pilot not found');
+        alert('Piloto não encontrado');
         return;
       }
       
@@ -2075,7 +2075,7 @@
       }).join('');
       
       document.getElementById('pilotRelatedJobsPilotId').value = pilotId;
-      document.getElementById('pilotRelatedJobsList').innerHTML = listHtml || '<p style="color: #b0b0b0;">No non-Pending jobs available</p>';
+      document.getElementById('pilotRelatedJobsList').innerHTML = listHtml || '<p style="color: #b0b0b0;">Nenhum trabalho não-Pendente disponível</p>';
       document.getElementById('pilotRelatedJobsModal').style.display = 'block';
     }
     
@@ -2088,7 +2088,7 @@
       const pilotData = <%- JSON.stringify(pilots) %>.find(p => p.id === pilotId);
       
       if (!pilotData) {
-        alert('Pilot not found');
+        alert('Piloto não encontrado');
         return;
       }
       
@@ -2107,16 +2107,16 @@
         });
         
         if (response.ok) {
-          showNotification('Related jobs updated successfully');
+          showNotification('Trabalhos relacionados atualizados com sucesso');
           closePilotRelatedJobsModal();
           saveScrollPositionForReload();
           setTimeout(() => location.reload(), 400);
         } else {
           const errorData = await response.json();
-          alert(errorData.message || 'Failed to update related jobs');
+          alert(errorData.message || 'Falha ao atualizar os trabalhos relacionados');
         }
       } catch (error) {
-        alert('Error updating related jobs');
+        alert('Erro ao atualizar os trabalhos relacionados');
       }
     }
     
@@ -2126,7 +2126,7 @@
         // Fetch pilot balance and transaction history from API
         const response = await fetch(`/api/pilots/${pilotId}/balance`);
         if (!response.ok) {
-          alert('Failed to load pilot balance history');
+          alert('Falha ao carregar o histórico de saldo do piloto');
           return;
         }
         
@@ -2134,7 +2134,7 @@
         const pilotData = <%- JSON.stringify(pilots) %>.find(p => p.id === pilotId);
         
         if (!pilotData) {
-          alert('Pilot not found');
+          alert('Piloto não encontrado');
           return;
         }
         
@@ -2146,10 +2146,10 @@
         const transactions = data.transactions || [];
         
         if (transactions.length === 0) {
-          document.getElementById('pilotBalanceHistoryList').innerHTML = '<p style="color: #b0b0b0;">No transactions associated with this pilot</p>';
+          document.getElementById('pilotBalanceHistoryList').innerHTML = '<p style="color: #b0b0b0;">Nenhuma transação associada a este piloto</p>';
         } else {
           const listHtml = transactions.map(transaction => {
-            const date = new Date(transaction.date).toLocaleString('en-GB', { dateStyle: 'short', timeStyle: 'short' });
+            const date = new Date(transaction.date).toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' });
             const amountColor = transaction.amount >= 0 ? '#66BB6A' : '#f44336';
             const amountSign = transaction.amount >= 0 ? '+' : '';
             
@@ -2158,16 +2158,16 @@
                 <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
                   <input type="checkbox" value="${transaction.id}" checked class="pilot-balance-transaction-checkbox" style="margin-top: 3px; flex-shrink: 0;">
                   <div style="flex-grow: 1;">
-                    <div style="color: #b0b0b0; margin-bottom: 5px;"><strong>Date:</strong> ${date}</div>
+                    <div style="color: #b0b0b0; margin-bottom: 5px;"><strong>Data:</strong> ${date}</div>
                     <div style="color: #b0b0b0; margin-bottom: 5px;">
-                      <strong>Amount:</strong> 
+                      <strong>Valor:</strong> 
                       <span style="color: ${amountColor}">${amountSign}${transaction.amount}</span>
-                      <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon">
+                      <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Ícone de Moeda" class="currency-icon">
                     </div>
-                    <div style="color: #b0b0b0; margin-bottom: 5px;"><strong>Description:</strong> ${transaction.description}</div>
+                    <div style="color: #b0b0b0; margin-bottom: 5px;"><strong>Descrição:</strong> ${transaction.description}</div>
                     <div style="color: #b0b0b0;">
-                      <strong>Balance After:</strong> ${transaction.pilotBalance}
-                      <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon">
+                      <strong>Saldo Após:</strong> ${transaction.pilotBalance}
+                      <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Ícone de Moeda" class="currency-icon">
                     </div>
                   </div>
                 </label>
@@ -2181,7 +2181,7 @@
         document.getElementById('pilotBalanceHistoryModal').style.display = 'block';
       } catch (error) {
         console.error('Error loading pilot balance history:', error);
-        alert('Error loading pilot balance history');
+        alert('Erro ao carregar o histórico de saldo do piloto');
       }
     }
     
@@ -2206,17 +2206,17 @@
         });
         
         if (response.ok) {
-          showNotification('Balance history updated successfully');
+          showNotification('Histórico de saldo atualizado com sucesso');
           closePilotBalanceHistoryModal();
           saveScrollPositionForReload();
           setTimeout(() => location.reload(), 400);
         } else {
           const errorData = await response.json();
-          alert(errorData.message || 'Failed to update balance history');
+          alert(errorData.message || 'Falha ao atualizar o histórico de saldo');
         }
       } catch (error) {
         console.error('Error updating balance history:', error);
-        alert('Error updating balance history');
+        alert('Erro ao atualizar o histórico de saldo');
       }
     }
     
@@ -2234,7 +2234,7 @@
         
         const pilot = pilotsData.find(p => p.id === pilotId);
         if (!pilot) {
-          alert('Pilot not found');
+          alert('Piloto não encontrado');
           return;
         }
         
@@ -2249,7 +2249,7 @@
         const grid = document.getElementById('pilotReservesGrid');
         
         if (!pilot.reserves || pilot.reserves.length === 0) {
-          grid.innerHTML = '<p style="color: #888; font-style: italic; margin: 20px 0;">No reserves owned by this pilot.</p>';
+          grid.innerHTML = '<p style="color: #888; font-style: italic; margin: 20px 0;">Nenhuma reserva pertencente a este piloto.</p>';
         } else {
           // Get full reserve details and sort by rank then name
           const pilotReservesWithDetails = pilot.reserves.map(pr => {
@@ -2290,7 +2290,7 @@
             const rankDiv = document.createElement('div');
             rankDiv.className = 'job-item-field';
             const rankStrong = document.createElement('strong');
-            rankStrong.textContent = 'Rank:';
+            rankStrong.textContent = 'Nível:';
             rankDiv.appendChild(rankStrong);
             rankDiv.appendChild(document.createTextNode(' R' + reserve.rank));
             card.appendChild(rankDiv);
@@ -2299,12 +2299,12 @@
             const priceDiv = document.createElement('div');
             priceDiv.className = 'job-item-field';
             const priceStrong = document.createElement('strong');
-            priceStrong.textContent = 'Price:';
+            priceStrong.textContent = 'Preço:';
             priceDiv.appendChild(priceStrong);
             priceDiv.appendChild(document.createTextNode(' ' + reserve.price + ' '));
             const priceImg = document.createElement('img');
             priceImg.src = '/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>';
-            priceImg.alt = 'Currency Icon';
+            priceImg.alt = 'Ícone de Moeda';
             priceImg.className = 'currency-icon';
             priceDiv.appendChild(priceImg);
             card.appendChild(priceDiv);
@@ -2328,7 +2328,7 @@
               const descDiv = document.createElement('div');
               descDiv.className = 'job-item-field';
               const descStrong = document.createElement('strong');
-              descStrong.textContent = 'Description:';
+              descStrong.textContent = 'Descrição:';
               descDiv.appendChild(descStrong);
               descDiv.appendChild(document.createElement('br'));
               descDiv.appendChild(document.createTextNode(reserve.description));
@@ -2343,7 +2343,7 @@
         document.getElementById('pilotReservesModal').style.display = 'block';
       } catch (error) {
         console.error('Error opening pilot reserves modal:', error);
-        alert('Error loading pilot reserves');
+        alert('Erro ao carregar as reservas do piloto');
       }
     }
     
@@ -2387,7 +2387,7 @@
         const pilot = pilotsData.find(p => p.id === pilotId);
         
         if (!pilot) {
-          alert('Pilot not found');
+          alert('Piloto não encontrado');
           return;
         }
         
@@ -2406,17 +2406,17 @@
         });
         
         if (response.ok) {
-          showNotification(`Deployment status updated to "${newStatus}"`);
+          showNotification(`Status de implantação atualizado para "${newStatus}"`);
           selectedPilotReserves.clear();
           saveScrollPositionForReload();
           setTimeout(() => location.reload(), 400);
         } else {
           const errorData = await response.json();
-          alert(errorData.message || 'Failed to update reserves');
+          alert(errorData.message || 'Falha ao atualizar as reservas');
         }
       } catch (error) {
         console.error('Error updating reserves:', error);
-        alert('Error updating reserves');
+        alert('Erro ao atualizar as reservas');
       }
     }
     
@@ -2425,7 +2425,7 @@
         return;
       }
       
-      if (!confirm(`Remove ${selectedPilotReserves.size} reserve(s) from this pilot?`)) {
+      if (!confirm(`Remover ${selectedPilotReserves.size} reserva(s) deste piloto?`)) {
         return;
       }
       
@@ -2434,7 +2434,7 @@
       const pilot = pilotsData.find(p => p.id === pilotId);
       
       if (!pilot) {
-        alert('Pilot not found');
+        alert('Piloto não encontrado');
         return;
       }
       
@@ -2449,17 +2449,17 @@
         });
         
         if (response.ok) {
-          showNotification('Reserves removed from pilot');
+          showNotification('Reservas removidas do piloto');
           selectedPilotReserves.clear();
           saveScrollPositionForReload();
           setTimeout(() => location.reload(), 400);
         } else {
           const errorData = await response.json();
-          alert(errorData.message || 'Failed to remove reserves');
+          alert(errorData.message || 'Falha ao remover as reservas');
         }
       } catch (error) {
         console.error('Error removing reserves:', error);
-        alert('Error removing reserves');
+        alert('Erro ao remover as reservas');
       }
     }
     
@@ -2484,7 +2484,7 @@
         const grid = document.getElementById('addReservesStockGrid');
         
         if (!reservesData || reservesData.length === 0) {
-          grid.innerHTML = '<p style="color: #888; font-style: italic; margin: 20px 0;">No reserves available.</p>';
+          grid.innerHTML = '<p style="color: #888; font-style: italic; margin: 20px 0;">Nenhuma reserva disponível.</p>';
         } else {
           // Sort by rank then name
           const sortedReserves = [...reservesData].sort((a, b) => {
@@ -2521,7 +2521,7 @@
             const rankDiv = document.createElement('div');
             rankDiv.className = 'job-item-field';
             const rankStrong = document.createElement('strong');
-            rankStrong.textContent = 'Rank:';
+            rankStrong.textContent = 'Nível:';
             rankDiv.appendChild(rankStrong);
             rankDiv.appendChild(document.createTextNode(' R' + reserve.rank));
             card.appendChild(rankDiv);
@@ -2530,12 +2530,12 @@
             const priceDiv = document.createElement('div');
             priceDiv.className = 'job-item-field';
             const priceStrong = document.createElement('strong');
-            priceStrong.textContent = 'Price:';
+            priceStrong.textContent = 'Preço:';
             priceDiv.appendChild(priceStrong);
             priceDiv.appendChild(document.createTextNode(' ' + reserve.price + ' '));
             const priceImg = document.createElement('img');
             priceImg.src = '/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>';
-            priceImg.alt = 'Currency Icon';
+            priceImg.alt = 'Ícone de Moeda';
             priceImg.className = 'currency-icon';
             priceDiv.appendChild(priceImg);
             card.appendChild(priceDiv);
@@ -2545,7 +2545,7 @@
               const descDiv = document.createElement('div');
               descDiv.className = 'job-item-field';
               const descStrong = document.createElement('strong');
-              descStrong.textContent = 'Description:';
+              descStrong.textContent = 'Descrição:';
               descDiv.appendChild(descStrong);
               descDiv.appendChild(document.createElement('br'));
               descDiv.appendChild(document.createTextNode(reserve.description));
@@ -2556,9 +2556,9 @@
             const typeDiv = document.createElement('div');
             typeDiv.className = 'job-item-field';
             const typeStrong = document.createElement('strong');
-            typeStrong.textContent = 'Type:';
+            typeStrong.textContent = 'Tipo:';
             typeDiv.appendChild(typeStrong);
-            typeDiv.appendChild(document.createTextNode(' ' + (reserve.isCustom ? 'Custom' : 'Default')));
+            typeDiv.appendChild(document.createTextNode(' ' + (reserve.isCustom ? 'Personalizada' : 'Padrão')));
             card.appendChild(typeDiv);
             
             grid.appendChild(card);
@@ -2569,7 +2569,7 @@
         document.getElementById('addReservesToPilotModal').style.display = 'block';
       } catch (error) {
         console.error('Error opening add reserves modal:', error);
-        alert('Error loading reserves');
+        alert('Erro ao carregar as reservas');
       }
     }
     
@@ -2689,7 +2689,7 @@
       const pilot = pilotsData.find(p => p.id === pilotId);
       
       if (!pilot) {
-        alert('Pilot not found');
+        alert('Piloto não encontrado');
         return;
       }
       
@@ -2709,18 +2709,18 @@
         });
         
         if (response.ok) {
-          showNotification(`${newReserves.length} reserve(s) added to pilot`);
+          showNotification(`${newReserves.length} reserva(s) adicionada(s) ao piloto`);
           closeAddReservesToPilotModal();
           selectedPilotReserves.clear();
           saveScrollPositionForReload();
           setTimeout(() => location.reload(), 400);
         } else {
           const errorData = await response.json();
-          alert(errorData.message || 'Failed to add reserves');
+          alert(errorData.message || 'Falha ao adicionar as reservas');
         }
       } catch (error) {
         console.error('Error adding reserves:', error);
-        alert('Error adding reserves');
+        alert('Erro ao adicionar as reservas');
       }
     }
     
@@ -2731,7 +2731,7 @@
       const factionData = <%- JSON.stringify(factions) %>.find(f => f.id === factionId);
       
       if (!factionData) {
-        alert('Faction not found');
+        alert('Facção não encontrada');
         return;
       }
       
@@ -2739,21 +2739,21 @@
       const relatedJobs = allJobs.filter(job => job.factionId === factionId);
       
       if (relatedJobs.length === 0) {
-        document.getElementById('factionRelatedJobsList').innerHTML = '<p style="color: #b0b0b0;">No jobs related to this faction</p>';
+        document.getElementById('factionRelatedJobsList').innerHTML = '<p style="color: #b0b0b0;">Nenhum trabalho relacionado a esta facção</p>';
       } else {
         const listHtml = relatedJobs.map(job => {
           // Find pilots related to this job
           const relatedPilots = allPilots.filter(pilot => 
             (pilot.relatedJobs || []).includes(job.id)
-          ).map(p => p.callsign).join(', ') || 'None';
+          ).map(p => p.callsign).join(', ') || 'Nenhum';
           
           const stateClass = job.state ? job.state.toLowerCase() : 'pending';
           
           return `
             <div style="margin-bottom: 15px; padding: 15px; border: 1px solid #444; border-radius: 3px; background-color: #1a1a1a;">
               <h4 style="color: #e0e0e0; margin-bottom: 8px;">${job.name}</h4>
-              <div style="color: #b0b0b0; margin-bottom: 5px;"><strong>State:</strong> <span class="state-badge state-badge-${stateClass}">${job.state}</span></div>
-              <div style="color: #b0b0b0;"><strong>Related Pilots:</strong> ${relatedPilots}</div>
+              <div style="color: #b0b0b0; margin-bottom: 5px;"><strong>Estado:</strong> <span class="state-badge state-badge-${stateClass}">${job.state}</span></div>
+              <div style="color: #b0b0b0;"><strong>Pilotos Relacionados:</strong> ${relatedPilots}</div>
             </div>
           `;
         }).join('');
@@ -2778,7 +2778,7 @@
       // Populate the job list
       const jobListDiv = document.getElementById('progressAllJobsList');
       if (affectedJobs.length === 0) {
-        jobListDiv.innerHTML = '<p style="color: #999; text-align: center;">No jobs will be affected.</p>';
+        jobListDiv.innerHTML = '<p style="color: #999; text-align: center;">Nenhum trabalho será afetado.</p>';
       } else {
         jobListDiv.innerHTML = affectedJobs.map(job => {
           const currentState = job.state || 'Pending';
@@ -2793,10 +2793,10 @@
                 <strong style="color: #e0e0e0;">${job.name}</strong>
               </div>
               <div style="margin-bottom: 5px; color: #b0b0b0;">
-                <strong>Faction:</strong> ${factionName}
+                <strong>Facção:</strong> ${factionName}
               </div>
               <div style="color: #b0b0b0;">
-                <strong>State:</strong> 
+                <strong>Estado:</strong> 
                 <span class="state-badge state-badge-${currentStateClass}">${currentState}</span>
                 <span style="margin: 0 5px;">→</span>
                 <span class="state-badge state-badge-${newStateClass}">${newState}</span>
@@ -2823,15 +2823,15 @@
         if (response.ok) {
           const result = await response.json();
           closeProgressAllJobsModal();
-          showNotification(`Jobs progressed successfully! ${result.newlyActiveJobs} jobs became active, ${result.pilotsUpdated} active pilots updated.`);
+          showNotification(`Trabalhos avançados com sucesso! ${result.newlyActiveJobs} trabalhos ficaram ativos, ${result.pilotsUpdated} pilotos ativos atualizados.`);
           saveScrollPositionForReload();
           setTimeout(() => location.reload(), 400);
         } else {
           const errorData = await response.json();
-          alert(errorData.message || 'Failed to progress jobs');
+          alert(errorData.message || 'Falha ao avançar os trabalhos');
         }
       } catch (error) {
-        alert('Error progressing jobs');
+        alert('Erro ao avançar os trabalhos');
       }
     }
     
@@ -2867,14 +2867,14 @@
       // Populate the pilot list in the modal
       const pilotListDiv = document.getElementById('progressOperationPilotList');
       if (activePilots.length === 0) {
-        pilotListDiv.innerHTML = '<p style="color: #999; text-align: center;">No active pilots found.</p>';
+        pilotListDiv.innerHTML = '<p style="color: #999; text-align: center;">Nenhum piloto ativo encontrado.</p>';
       } else {
         pilotListDiv.innerHTML = activePilots.map(pilot => `
           <div style="margin-bottom: 10px; padding: 10px; border-bottom: 1px solid #333;">
             <div><strong>${pilot.name} ("${pilot.callsign}")</strong></div>
             <div style="margin-top: 5px; font-size: 0.9em;">
-              <span style="margin-right: 15px;">License Level: ${pilot.ll}</span>
-              <span>Operation Progress: ${pilot.currentProgress} → ${pilot.newProgress}</span>
+              <span style="margin-right: 15px;">Nível de Licença: ${pilot.ll}</span>
+              <span>Progresso da Operação: ${pilot.currentProgress} → ${pilot.newProgress}</span>
             </div>
           </div>
         `).join('');
@@ -2898,10 +2898,10 @@
           const result = await response.json();
           closeProgressOperationModal();
           
-          let message = `Operation progressed successfully! ${result.pilotsProgressed} active pilot(s) updated.`;
+          let message = `Operação avançada com sucesso! ${result.pilotsProgressed} piloto(s) ativo(s) atualizado(s).`;
           if (result.resetPilots && result.resetPilots.length > 0) {
             const resetNames = result.resetPilots.map(p => `${p.name} ("${p.callsign}")`).join(', ');
-            message += ` Reset to 0: ${resetNames}`;
+            message += ` Redefinidos para 0: ${resetNames}`;
           }
           
           showNotification(message);
@@ -2909,10 +2909,10 @@
           setTimeout(() => location.reload(), 400);
         } else {
           const errorData = await response.json();
-          alert(errorData.message || 'Failed to progress operation');
+          alert(errorData.message || 'Falha ao avançar a operação');
         }
       } catch (error) {
-        alert('Error progressing operation');
+        alert('Erro ao avançar a operação');
       }
     }
     
@@ -2996,13 +2996,13 @@
           });
           
           if (response.ok) {
-            showNotification('Resupply settings saved successfully!');
+            showNotification('Configurações de reabastecimento salvas com sucesso!');
           } else {
             const errorData = await response.json();
-            alert(errorData.message || 'Failed to save resupply settings');
+            alert(errorData.message || 'Falha ao salvar as configurações de reabastecimento');
           }
         } catch (error) {
-          alert('Error saving resupply settings');
+          alert('Erro ao salvar as configurações de reabastecimento');
         }
       });
     }
@@ -3044,12 +3044,12 @@
     // Remove selected reserves from stock
     async function removeSelectedReserves(removeAll) {
       if (selectedStockReserveIds.length === 0) {
-        alert('No reserves selected');
+        alert('Nenhuma reserva selecionada');
         return;
       }
       
-      const action = removeAll ? 'Remove all selected reserves' : 'Remove first occurrence of selected reserves';
-      if (!confirm(`${action} from stock?`)) {
+      const action = removeAll ? 'Remover todas as reservas selecionadas' : 'Remover a primeira ocorrência das reservas selecionadas';
+      if (!confirm(`${action} do estoque?`)) {
         return;
       }
       
@@ -3066,18 +3066,18 @@
         if (response.ok) {
           const data = await response.json();
           const message = removeAll 
-            ? `Removed ${data.removedCount} reserve(s) from stock`
-            : 'Reserve removed from stock';
+            ? `Removidas ${data.removedCount} reserva(s) do estoque`
+            : 'Reserva removida do estoque';
           showNotification(message);
           selectedStockReserveIds = [];
           saveScrollPositionForReload();
           setTimeout(() => location.reload(), 400);
         } else {
           const errorData = await response.json();
-          alert(errorData.message || 'Failed to remove reserves from stock');
+          alert(errorData.message || 'Falha ao remover as reservas do estoque');
         }
       } catch (error) {
-        alert('Error removing reserves from stock');
+        alert('Erro ao remover as reservas do estoque');
       }
     }
     
@@ -3185,22 +3185,22 @@
         
         if (response.ok) {
           const data = await response.json();
-          showNotification(`${data.addedReserve.name} Reserve was added to the Reserve Stock`);
+          showNotification(`${data.addedReserve.name} Reserva foi adicionada ao Estoque de Reservas`);
           saveScrollPositionForReload();
           setTimeout(() => location.reload(), 400);
         } else {
           const errorData = await response.json();
-          alert(errorData.message || 'Failed to add random reserve');
+          alert(errorData.message || 'Falha ao adicionar uma reserva aleatória');
         }
       } catch (error) {
-        alert('Error adding random reserve');
+        alert('Erro ao adicionar uma reserva aleatória');
       }
     }
     
     // Add selected reserve to stock
     async function addSelectedToStock() {
       if (!selectedAvailableReserveId) {
-        alert('No reserve selected');
+        alert('Nenhuma reserva selecionada');
         return;
       }
       
@@ -3216,15 +3216,15 @@
         });
         
         if (response.ok) {
-          showNotification('Reserve added to stock');
+          showNotification('Reserva adicionada ao estoque');
           saveScrollPositionForReload();
           setTimeout(() => location.reload(), 400);
         } else {
           const errorData = await response.json();
-          alert(errorData.message || 'Failed to add reserve to stock');
+          alert(errorData.message || 'Falha ao adicionar a reserva ao estoque');
         }
       } catch (error) {
-        alert('Error adding reserve to stock');
+        alert('Erro ao adicionar a reserva ao estoque');
       }
     }
     
@@ -3257,16 +3257,16 @@
           });
           
           if (response.ok) {
-            showNotification('Reserve created successfully!');
+            showNotification('Reserva criada com sucesso!');
             closeCreateReserveModal();
             saveScrollPositionForReload();
             setTimeout(() => location.reload(), 400);
           } else {
             const errorData = await response.json();
-            alert(errorData.message || 'Failed to create reserve');
+            alert(errorData.message || 'Falha ao criar a reserva');
           }
         } catch (error) {
-          alert('Error creating reserve');
+          alert('Erro ao criar a reserva');
         }
       });
     }
@@ -3274,7 +3274,7 @@
     // Edit Reserve Modal
     async function openEditReserveModal() {
       if (!selectedAvailableReserveId) {
-        alert('No reserve selected');
+        alert('Nenhuma reserva selecionada');
         return;
       }
       
@@ -3284,7 +3284,7 @@
         const reserve = reserves.find(r => r.id === selectedAvailableReserveId);
         
         if (!reserve) {
-          alert('Reserve not found');
+          alert('Reserva não encontrada');
           return;
         }
         
@@ -3297,7 +3297,7 @@
         
         document.getElementById('editReserveModal').style.display = 'block';
       } catch (error) {
-        alert('Error loading reserve data');
+        alert('Erro ao carregar os dados da reserva');
       }
     }
     
@@ -3326,16 +3326,16 @@
           });
           
           if (response.ok) {
-            showNotification('Reserve updated successfully');
+            showNotification('Reserva atualizada com sucesso');
             closeEditReserveModal();
             saveScrollPositionForReload();
             setTimeout(() => location.reload(), 400);
           } else {
             const errorData = await response.json();
-            alert(errorData.message || 'Failed to update reserve');
+            alert(errorData.message || 'Falha ao atualizar a reserva');
           }
         } catch (error) {
-          alert('Error updating reserve');
+          alert('Erro ao atualizar a reserva');
         }
       });
     }
@@ -3343,11 +3343,11 @@
     // Delete Reserve
     async function deleteSelectedReserve() {
       if (!selectedAvailableReserveId) {
-        alert('No reserve selected');
+        alert('Nenhuma reserva selecionada');
         return;
       }
       
-      if (!confirm('Are you sure you want to delete this reserve? This action cannot be undone.')) {
+      if (!confirm('Tem certeza de que deseja excluir esta reserva? Esta ação não pode ser desfeita.')) {
         return;
       }
       
@@ -3357,16 +3357,16 @@
         });
         
         if (response.ok) {
-          showNotification('Reserve deleted successfully!');
+          showNotification('Reserva excluída com sucesso!');
           selectedAvailableReserveId = null;
           saveScrollPositionForReload();
           setTimeout(() => location.reload(), 400);
         } else {
           const errorData = await response.json();
-          alert(errorData.message || 'Failed to delete reserve');
+          alert(errorData.message || 'Falha ao excluir a reserva');
         }
       } catch (error) {
-        alert('Error deleting reserve');
+        alert('Erro ao excluir a reserva');
       }
     }
     
