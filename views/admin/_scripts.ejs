@@ -231,7 +231,7 @@
       
       // Create voting period object
       const votingPeriod = {
-        state: 'Ongoing',
+        state: 'Em Andamento',
         jobVotes: jobVotes,
         endTime: infiniteDuration ? null : new Date(endTimeInput).toISOString()
       };
@@ -312,7 +312,7 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             ...ongoingPeriod,
-            state: 'Archived'
+            state: 'Arquivado'
           })
         });
         
