@@ -155,7 +155,7 @@ router.post('/purchase', requireClientAuth, async (req, res) => {
       // Add reserve as object with default "In Reserve" deployment status
       assigneePilot.reserves.push({
         reserveId: itemId,
-        deploymentStatus: 'In Reserve'
+        deploymentStatus: 'Em Reserva'
       });
       
       // Remove from stock (first occurrence)
