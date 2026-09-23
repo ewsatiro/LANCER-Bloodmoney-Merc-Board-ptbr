@@ -8,8 +8,8 @@ console.log('Testing Voting Period Validation Functions\n');
 
 // Test 1: Validate voting period state
 console.log('Test 1: Validate voting period state');
-console.log('  Valid state (Ongoing):', helpers.validateVotingPeriodState('Ongoing'));
-console.log('  Valid state (Archived):', helpers.validateVotingPeriodState('Archived'));
+console.log('  Valid state (Em Andamento):', helpers.validateVotingPeriodState('Em Andamento'));
+console.log('  Valid state (Arquivado):', helpers.validateVotingPeriodState('Arquivado'));
 console.log('  Invalid state:', helpers.validateVotingPeriodState('Invalid'));
 console.log('  Missing state:', helpers.validateVotingPeriodState(null));
 console.log('');
@@ -67,7 +67,7 @@ console.log('');
 // Test 4: Validate complete voting period data
 console.log('Test 4: Validate complete voting period data');
 const validVotingPeriod = {
-  state: 'Ongoing',
+  state: 'Em Andamento',
   jobVotes: [
     { jobId: 'job-uuid-1', votes: ['pilot-1', 'pilot-2'] },
     { jobId: 'job-uuid-2', votes: ['pilot-3'] }
@@ -86,20 +86,20 @@ const invalidVotingPeriod = {
 console.log('  Invalid voting period (bad state):', helpers.validateVotingPeriodData(invalidVotingPeriod));
 console.log('');
 
-// Test 5: Get ongoing voting period
-console.log('Test 5: Get ongoing voting period');
-const periodsWithOngoing = [
-  { id: '1', state: 'Archived', jobVotes: [], endTime: null },
-  { id: '2', state: 'Ongoing', jobVotes: [], endTime: null },
-  { id: '3', state: 'Archived', jobVotes: [], endTime: null }
+// Test 5: Get Em Andamento voting period
+console.log('Test 5: Get Em Andamento voting period');
+const periodsWithEm Andamento = [
+  { id: '1', state: 'Arquivado', jobVotes: [], endTime: null },
+  { id: '2', state: 'Em Andamento', jobVotes: [], endTime: null },
+  { id: '3', state: 'Arquivado', jobVotes: [], endTime: null }
 ];
-console.log('  Find ongoing period:', helpers.getOngoingVotingPeriod(periodsWithOngoing));
+console.log('  Find Em Andamento period:', helpers.getEm AndamentoVotingPeriod(periodsWithEm Andamento));
 
-const periodsWithoutOngoing = [
-  { id: '1', state: 'Archived', jobVotes: [], endTime: null },
-  { id: '2', state: 'Archived', jobVotes: [], endTime: null }
+const periodsWithoutEm Andamento = [
+  { id: '1', state: 'Arquivado', jobVotes: [], endTime: null },
+  { id: '2', state: 'Arquivado', jobVotes: [], endTime: null }
 ];
-console.log('  No ongoing period:', helpers.getOngoingVotingPeriod(periodsWithoutOngoing));
+console.log('  No Em Andamento period:', helpers.getEm AndamentoVotingPeriod(periodsWithoutEm Andamento));
 console.log('');
 
 console.log('All tests completed!');
