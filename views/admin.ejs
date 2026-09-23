@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LANCER Job Board - Admin</title>
+  <title>>Quadro de Empregos LANCER - Administração</title>
   <link rel="stylesheet" href="/css/currency.css">
   <%- include('admin/_styles') %>
 </head><body><div class="admin-header">
-    <h1>LANCER Job Board - Admin Panel</h1>
-    <p>Manage job postings, base modules, factions, and global settings</p>
-    <a href="/logout" class="logout-link">Logout</a>
+    <h1>Quadro de Empregos LANCER - Painel Administrativo</h1>
+    <p>Gerencie anúncios de trabalhos, instalações da base, facções e configurações globais</p>
+    <a href="/logout" class="logout-link">Sair</a>
   </div>
-  <!-- Tab Navigation -->
+  <!-- Navegação por Abas -->
   <div class="tab-navigation">
-    <button class="tab-button active" onclick="switchTab('overview', event)">Overview Config</button>
-    <button class="tab-button" onclick="switchTab('transactions', event)">Transaction Management</button>
-    <button class="tab-button" onclick="switchTab('jobs', event)">Job Board Config</button>
-    <button class="tab-button" onclick="switchTab('vote', event)">Vote Config</button>
-    <button class="tab-button" onclick="switchTab('factions', event)">Faction Config</button>
-    <button class="tab-button" onclick="switchTab('base', event)">Base Config</button>
-    <button class="tab-button" onclick="switchTab('pilots', event)">Pilot Config</button>
-    <button class="tab-button" onclick="switchTab('store', event)">Shop & Reserves Config</button>
+    <button class="tab-button active" onclick="switchTab('overview', event)">Configuração de Visão Geral</button>
+    <button class="tab-button" onclick="switchTab('transactions', event)">Gerenciamento de Transações</button>
+    <button class="tab-button" onclick="switchTab('jobs', event)">Configuração do Quadro de Empregos</button>
+    <button class="tab-button" onclick="switchTab('vote', event)">Configuração de Votação</button>
+    <button class="tab-button" onclick="switchTab('factions', event)">Configuração de Facções</button>
+    <button class="tab-button" onclick="switchTab('base', event)">Configuração de Base</button>
+    <button class="tab-button" onclick="switchTab('pilots', event)">Configuração de Pilotos</button>
+    <button class="tab-button" onclick="switchTab('store', event)">Configuração de Loja e Reservas</button>
   </div>
 
   <%- include('admin/_tab-overview') %>
