@@ -1,26 +1,27 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LANCER Job Board - Factions</title>
+  <title>Quadro de Empregos LANCER - Facções</title>
   <link rel="stylesheet" href="/css/terminal.css">
   <link rel="stylesheet" href="/css/client.css">
 </head>
 <body class="<%= colorScheme %>">
   <div class="terminal-header">
     <div class="terminal-header-left">
-      <h1>> <span id="portal-heading"><%= settings.portalHeading %></span> - FACTION RELATIONS_</h1>
-      <p>> USER_GROUP: <span id="user-group"><%= settings.userGroup %></span>_</p>
-      <p>> KNOWN_FACTIONS: <span id="factions-count"><%= factions.length %></span>_</p>
-      <a href="/client/overview" class="terminal-link">[OVERVIEW]</a>
+      <h1>> <span id="portal-heading"><%= settings.portalHeading %></span> - RELAÇÕES_DE_FACÇÕES_</h1>
+      <p>> GRUPO_DE_USUÁRIO: <span id="user-group"><%= settings.userGroup %></span>_</p>
+      <p>> FACÇÕES_CONHECIDAS: <span id="factions-count"><%= factions.length %></span>_</p>
+      <a href="/client/overview" class="terminal-link">[VISÃO_GERAL]</a>
     </div>
     <div class="terminal-header-right">
-      <p class="terminal-info">> UNT: <span id="unt"><%= settings.unt %></span>U</p>
-      <p class="terminal-info">> CURRENT_GALACTIC_POS: <span id="galactic-pos"><%= settings.currentGalacticPos %></span></p>
+      <p class="terminal-info">> UNID: <span id="unt"><%= settings.unt %></span>U</p>
+      <p class="terminal-info">> POSIÇÃO_GALÁCTICA_ATUAL: <span id="galactic-pos"><%= settings.currentGalacticPos %></span></p>
       <% if (!settings.openTable) { %>
       <div class="operation-progress">
-        <div class="operation-progress-label">> OPERATION_PROGRESS:</div>
+        <div class="operation-progress-label">> PROGRESSO_DA_OPERAÇÃO:</div>
         <div class="progress-bar-container">
           <div class="progress-segment <%= settings.operationProgress >= 1 ? 'filled' : '' %>" id="progress-segment-1"></div>
           <div class="progress-segment <%= settings.operationProgress >= 2 ? 'filled' : '' %>" id="progress-segment-2"></div>
@@ -33,42 +34,42 @@
   
   <% if (factions.length === 0) { %>
     <div class="empty-state" id="empty-state">
-      <p>> NO_FACTION_DATA_AVAILABLE_</p>
+      <p>> NENHUM_DADO_DE_FACÇÃO_DISPONÍVEL_</p>
     </div>
   <% } else { %>
     <div class="factions-grid" id="factions-grid">
       <% factions.forEach(faction => { 
-        const standingLabels = ['DISTRUSTED', 'WARY', 'NEUTRAL', 'RESPECTED', 'TRUSTED'];
-        const standingLabel = standingLabels[faction.standing] || 'UNKNOWN';
+        const standingLabels = ['DESCONFIADO', 'CAUTELOSO', 'NEUTRO', 'RESPEITADO', 'CONFIÁVEL'];
+        const standingLabel = standingLabels[faction.standing] || 'DESCONHECIDO';
       %>
         <div class="faction-card" data-faction-id="<%= faction.id %>">
           <% if (faction.emblem) { %>
             <div class="faction-emblem">
-              <img src="/emblems/<%= faction.emblem %>" alt="Emblem">
+              <img src="/emblems/<%= faction.emblem %>" alt="Emblema">
             </div>
           <% } %>
           <div class="faction-card-header">
             <h2>> <%= faction.title %></h2>
-            <div class="faction-standing">STANDING: <span class="standing-value standing-<%= faction.standing %>"><%= standingLabel %></span></div>
+            <div class="faction-standing">REPUTAÇÃO: <span class="standing-value standing-<%= faction.standing %>"><%= standingLabel %></span></div>
           </div>
           
           <div class="faction-field">
-            <span class="field-label">JOBS_COMPLETED:</span>
+            <span class="field-label">TRABALHOS_CONCLUÍDOS:</span>
             <span class="field-value"><%= faction.jobsCompleted || 0 %></span>
           </div>
           
           <div class="faction-field">
-            <span class="field-label">JOBS_FAILED:</span>
+            <span class="field-label">TRABALHOS_FALHOS:</span>
             <span class="field-value"><%= faction.jobsFailed || 0 %></span>
           </div>
           
           <div class="faction-field">
-            <span class="field-label">BRIEF:</span>
+            <span class="field-label">RESUMO:</span>
             <span class="field-value"><%= faction.brief %></span>
           </div>
           
           <button class="faction-button" onclick="openFactionJobHistory('<%= faction.id %>', '<%= faction.title %>')">
-            [VIEW_JOB_HISTORY]
+            [VER_HISTÓRICO_DE_TRABALHOS]
           </button>
         </div>
       <% }); %>
@@ -84,7 +85,7 @@
   </script>
   <script src="/js/sse-client.js"></script>
   <script>
-    const standingLabels = ['DISTRUSTED', 'WARY', 'NEUTRAL', 'RESPECTED', 'TRUSTED'];
+    const standingLabels = ['DESCONFIADO', 'CAUTELOSO', 'NEUTRO', 'RESPEITADO', 'CONFIÁVEL'];
     
     // Handle factions update from SSE
     function handleFactionsUpdate(data) {
@@ -109,7 +110,7 @@
           const newEmptyState = document.createElement('div');
           newEmptyState.id = 'empty-state';
           newEmptyState.className = 'empty-state';
-          newEmptyState.innerHTML = '<p>> NO_FACTION_DATA_AVAILABLE_</p>';
+          newEmptyState.innerHTML = '<p>> NENHUM_DADO_DE_FACÇÃO_DISPONÍVEL_</p>';
           document.body.appendChild(newEmptyState);
         } else {
           emptyState.style.display = 'block';
@@ -126,13 +127,13 @@
         const grid = document.getElementById('factions-grid');
         grid.style.display = 'grid';
         grid.innerHTML = factions.map(faction => {
-          const standingLabel = standingLabels[faction.standing] || 'UNKNOWN';
+          const standingLabel = standingLabels[faction.standing] || 'DESCONHECIDO';
           
           let emblemHtml = '';
           if (faction.emblem) {
             emblemHtml = `
               <div class="faction-emblem">
-                <img src="/emblems/${faction.emblem}" alt="Emblem">
+                <img src="/emblems/${faction.emblem}" alt="Emblema">
               </div>
             `;
           }
@@ -142,26 +143,26 @@
               ${emblemHtml}
               <div class="faction-card-header">
                 <h2>> ${faction.title}</h2>
-                <div class="faction-standing">STANDING: <span class="standing-value standing-${faction.standing}">${standingLabel}</span></div>
+                <div class="faction-standing">REPUTAÇÃO: <span class="standing-value standing-${faction.standing}">${standingLabel}</span></div>
               </div>
               
               <div class="faction-field">
-                <span class="field-label">JOBS_COMPLETED:</span>
+                <span class="field-label">TRABALHOS_CONCLUÍDOS:</span>
                 <span class="field-value">${faction.jobsCompleted || 0}</span>
               </div>
               
               <div class="faction-field">
-                <span class="field-label">JOBS_FAILED:</span>
+                <span class="field-label">TRABALHOS_FALHOS:</span>
                 <span class="field-value">${faction.jobsFailed || 0}</span>
               </div>
               
               <div class="faction-field">
-                <span class="field-label">BRIEF:</span>
+                <span class="field-label">RESUMO:</span>
                 <span class="field-value">${faction.brief}</span>
               </div>
               
               <button class="faction-button" onclick="openFactionJobHistory('${faction.id}', '${faction.title}')">
-                [VIEW_JOB_HISTORY]
+                [VER_HISTÓRICO_DE_TRABALHOS]
               </button>
             </div>
           `;
@@ -193,15 +194,15 @@
       const jobListTitle = document.getElementById('job-list-title');
       const jobListContainer = document.getElementById('job-list-container');
       
-      jobListTitle.textContent = `${factionTitle} - JOB HISTORY`;
+      jobListTitle.textContent = `${factionTitle} - HISTÓRICO DE TRABALHOS`;
       
       if (factionJobs.length === 0) {
-        jobListContainer.innerHTML = '<p style="text-align: center; opacity: 0.7;">> NO_JOBS_FOUND_</p>';
+        jobListContainer.innerHTML = '<p style="text-align: center; opacity: 0.7;">> NENHUM_TRABALHO_ENCONTRADO_</p>';
       } else {
         jobListContainer.innerHTML = factionJobs.map(job => {
           const emblemHtml = job.emblem ? `
             <div class="job-list-emblem">
-              <img src="/emblems/${job.emblem}" alt="Emblem">
+              <img src="/emblems/${job.emblem}" alt="Emblema">
             </div>
           ` : '';
           
@@ -230,7 +231,7 @@
   <div id="job-list-modal" class="modal-overlay">
     <div class="modal-content">
       <div class="modal-header">
-        <h2 id="job-list-title">JOB HISTORY</h2>
+        <h2 id="job-list-title">HISTÓRICO DE TRABALHOS</h2>
         <button class="modal-close" onclick="closeModal('job-list-modal')">[X]</button>
       </div>
       <div class="modal-body">
@@ -243,7 +244,7 @@
   <div id="job-details-modal" class="modal-overlay">
     <div class="modal-content">
       <div class="modal-header">
-        <h2>JOB DETAILS</h2>
+        <h2>DETALHES DO TRABALHO</h2>
         <button class="modal-close" onclick="closeModal('job-details-modal')">[X]</button>
       </div>
       <div class="modal-body">
@@ -253,3 +254,4 @@
   </div>
 </body>
 </html>
+```
