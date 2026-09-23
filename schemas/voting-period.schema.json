@@ -14,7 +14,7 @@
     "state": {
       "type": "string",
       "description": "Voting period state. Only one period may be Ongoing at a time.",
-      "enum": ["Ongoing", "Archived"]
+      "enum": ["Em Andamento", "Arquivado"]
     },
     "jobVotes": {
       "type": "array",
