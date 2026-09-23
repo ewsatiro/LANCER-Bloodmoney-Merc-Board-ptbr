@@ -90,7 +90,7 @@
                   </div>
                   <button class="cycle-btn" 
                           onclick="cycleDeploymentStatus(event, '<%= pilot.id %>', '<%= reserveObj.reserveId %>', '<%= reserveObj.deploymentStatus %>')">
-                    [ALTERNAR]
+                    [CICLAR]
                   </button>
                 </div>
               </div>
@@ -257,13 +257,13 @@
       .then(response => response.json())
       .then(data => {
         if (!data.success) {
-          alert('Erro: ' + (data.message || 'Falha ao alternar o status de implantação'));
+          alert('Erro: ' + (data.message || 'Falha ao ciclar o status de implantação'));
         }
         // SSE will update the UI
       })
       .catch(error => {
         console.error('Error cycling deployment status:', error);
-        alert('Erro ao alternar o status de implantação');
+        alert('Erro ao ciclar o status de implantação');
       });
     }
     
