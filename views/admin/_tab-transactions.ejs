@@ -1,51 +1,51 @@
-  <div id="transactions-tab" class="tab-content">
+<div id="transactions-tab" class="tab-content">
     <div class="settings-section">
-      <h2>Manna Balance Management</h2>
+      <h2>Gerenciamento de Saldo de Manna</h2>
       <div class="manna-display">
         <div style="margin-bottom: 10px;">
-          <strong>Active Balance:</strong> <span id="activeBalance" style="font-size: 1.3em;"><%= balances.activeBalance %></span>
-          <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon">
+          <strong>Saldo Ativo:</strong> <span id="activeBalance" style="font-size: 1.3em;"><%= balances.activeBalance %></span>
+          <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Ícone de Moeda" class="currency-icon">
         </div>
         <div style="font-size: 0.9em; color: #b0b0b0;">
-          Total Balance: <span id="totalBalance"><%= balances.totalBalance %></span>
-          <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon" style="width: 20px; height: 20px;">
+          Saldo Total: <span id="totalBalance"><%= balances.totalBalance %></span>
+          <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Ícone de Moeda" class="currency-icon" style="width: 20px; height: 20px;">
         </div>
       </div>
       
-      <h3 style="color: #e0e0e0; margin: 20px 0 15px;">Add Transaction</h3>
+      <h3 style="color: #e0e0e0; margin: 20px 0 15px;">Adicionar Transação</h3>
       <p style="color: #FFD700; margin-bottom: 10px; font-size: 0.9em;">
-        <strong>Note:</strong> Each pilot will be affected by the full transaction amount.
+        <strong>Nota:</strong> Cada piloto será afetado pelo valor total da transação.
       </p>
       <form id="overviewMannaForm">
         <div class="form-group">
-          <label for="overviewMannaAmount">Amount (+ or -)</label>
+          <label for="overviewMannaAmount">Valor (+ ou -)</label>
           <input type="number" id="overviewMannaAmount" name="amount" required>
         </div>
         <div class="form-group">
-          <label for="overviewMannaDescription">Transaction Description</label>
+          <label for="overviewMannaDescription">Descrição da Transação</label>
           <input type="text" id="overviewMannaDescription" name="description" required>
         </div>
         <div class="form-group">
-          <button type="button" class="btn btn-secondary" onclick="openPilotSelectionModal()">Select Pilot(s)</button>
+          <button type="button" class="btn btn-secondary" onclick="openPilotSelectionModal()">Selecionar Piloto(s)</button>
           <input type="hidden" id="selectedPilotIds" name="pilotIds" value="">
           <p style="color: #b0b0b0; margin-top: 5px; font-size: 0.9em;">
-            <span id="selectedPilotsText">No pilots selected (will assign to all active pilots)</span>
+            <span id="selectedPilotsText">Nenhum piloto selecionado (será atribuído a todos os pilotos ativos)</span>
           </p>
         </div>
-        <button type="submit" class="btn btn-primary">Add Transaction</button>
+        <button type="submit" class="btn btn-primary">Adicionar Transação</button>
       </form>
       
-      <h3 style="color: #e0e0e0; margin: 20px 0 15px;">Transaction History</h3>
+      <h3 style="color: #e0e0e0; margin: 20px 0 15px;">Histórico de Transações</h3>
       
       <div style="margin-bottom: 15px;">
-        <button class="filter-pill active" data-filter="all" onclick="filterTransactions('all', event)">All</button>
-        <button class="filter-pill" data-filter="assigned" onclick="filterTransactions('assigned', event)">Assigned</button>
-        <button class="filter-pill" data-filter="unassigned" onclick="filterTransactions('unassigned', event)">Unassigned</button>
+        <button class="filter-pill active" data-filter="all" onclick="filterTransactions('all', event)">Todas</button>
+        <button class="filter-pill" data-filter="assigned" onclick="filterTransactions('assigned', event)">Atribuídas</button>
+        <button class="filter-pill" data-filter="unassigned" onclick="filterTransactions('unassigned', event)">Não Atribuídas</button>
       </div>
       
       <div id="transactionsList">
         <% if (manna.transactions.length === 0) { %>
-          <p style="color: #b0b0b0;">No transactions yet.</p>
+          <p style="color: #b0b0b0;">Nenhuma transação ainda.</p>
         <% } else { %>
           <% 
           // Create a map of which pilots have which transactions
@@ -79,32 +79,32 @@
             %>
             <div class="transaction-item" data-id="<%= transaction.id %>" data-assigned="<%= isAssigned ? 'true' : 'false' %>">
               <div class="transaction-item-field">
-                <strong>Date:</strong> <%= new Date(transaction.date).toLocaleString('en-GB', { dateStyle: 'short', timeStyle: 'short' }) %>
+                <strong>Data:</strong> <%= new Date(transaction.date).toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' }) %>
               </div>
               <div class="transaction-item-field">
-                <strong>Total amount:</strong> 
+                <strong>Valor total:</strong> 
                 <span style="color: <%= totalAmount >= 0 ? '#66BB6A' : '#f44336' %>">
                   <%= totalAmount >= 0 ? '+' : '' %><%= totalAmount %>
                 </span>
-                <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon">
+                <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Ícone de Moeda" class="currency-icon">
                 <span style="color: #888; font-size: 0.9em; margin-left: 5px;">
-                  (<%= activePilotCount %> active pilot<%= activePilotCount !== 1 ? 's' : '' %>)
+                  (<%= activePilotCount %> piloto<%= activePilotCount !== 1 ? 's' : '' %> ativo<%= activePilotCount !== 1 ? 's' : '' %>)
                 </span>
               </div>
               <div class="transaction-item-field">
-                <strong>Individual amount:</strong> 
+                <strong>Valor individual:</strong> 
                 <span style="color: <%= transaction.amount >= 0 ? '#66BB6A' : '#f44336' %>">
                   <%= transaction.amount >= 0 ? '+' : '' %><%= transaction.amount %>
                 </span>
-                <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon">
+                <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Ícone de Moeda" class="currency-icon">
               </div>
               <div class="transaction-item-field">
-                <strong>Description:</strong> <%= transaction.description %>
+                <strong>Descrição:</strong> <%= transaction.description %>
               </div>
               <div class="transaction-item-field">
-                <strong>Assigned to:</strong> 
+                <strong>Atribuída a:</strong> 
                 <% if (sortedPilots.length === 0) { %>
-                  <span style="color: #888;">Unassigned</span>
+                  <span style="color: #888;">Não Atribuída</span>
                 <% } else { %>
                   <% sortedPilots.forEach((pilot, index) => { %>
                     <span style="color: <%= pilot.active ? '#66BB6A' : '#888' %>;">
@@ -114,9 +114,9 @@
                 <% } %>
               </div>
               <div class="transaction-item-actions">
-                <button class="btn btn-secondary" onclick="editTransactionPilots('<%= transaction.id %>')">Select Pilot(s)</button>
-                <button class="btn btn-edit" onclick="editTransaction('<%= transaction.id %>')">Edit</button>
-                <button class="btn btn-delete" onclick="deleteTransaction('<%= transaction.id %>')">Delete</button>
+                <button class="btn btn-secondary" onclick="editTransactionPilots('<%= transaction.id %>')">Selecionar Piloto(s)</button>
+                <button class="btn btn-edit" onclick="editTransaction('<%= transaction.id %>')">Editar</button>
+                <button class="btn btn-delete" onclick="deleteTransaction('<%= transaction.id %>')">Excluir</button>
               </div>
             </div>
           <% }); %>
