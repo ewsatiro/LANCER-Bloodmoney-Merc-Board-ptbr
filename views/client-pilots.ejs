@@ -347,7 +347,7 @@
       // Filter jobs: only Active, Complete, Failed (not Ignored)
       const pilotJobs = currentJobs.filter(job => 
         pilot.relatedJobs.includes(job.id) &&
-        ['Active', 'Complete', 'Failed'].includes(job.state)
+        ['Ativo', 'Completo', 'Fracasso'].includes(job.state)
       );
       
       const jobListModal = document.getElementById('job-list-modal');
