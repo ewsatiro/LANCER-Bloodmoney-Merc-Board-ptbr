@@ -9,14 +9,14 @@ const fs = require('fs');
 /**
  * Constants
  */
-const STANDING_LABELS = ['DISTRUSTED', 'WARY', 'NEUTRAL', 'RESPECTED', 'TRUSTED'];
+const STANDING_LABELS = ['DESCONFIADO', 'CAUTELOSO', 'NEUTRO', 'RESPEITADO', 'CONFIAVEL'];
 const VALID_COLOR_SCHEMES = ['grey', 'orange', 'green', 'blue'];
 const DATE_PATTERN = /^\d{2}\/\d{2}\/\d{4}$/;
 const SAFE_EMBLEM_PATTERN = /^[A-Za-z0-9_-]+\.svg$/;
-const JOB_STATES = ['Pending', 'Active', 'Complete', 'Failed', 'Ignored'];
-const DEFAULT_JOB_STATE = 'Pending';
-const VOTING_PERIOD_STATES = ['Ongoing', 'Archived'];
-const DEFAULT_VOTING_PERIOD_STATE = 'Ongoing';
+const JOB_STATES = ['Pendente', 'Ativo', 'Finalizado', 'Fracasso', 'Ignorado'];
+const DEFAULT_JOB_STATE = 'Pendente';
+const VOTING_PERIOD_STATES = ['Em Andamento', 'Arquivado'];
+const DEFAULT_VOTING_PERIOD_STATE = 'Em Andamento';
 
 /**
  * Get the label for a faction standing level (0-4)
@@ -24,7 +24,7 @@ const DEFAULT_VOTING_PERIOD_STATE = 'Ongoing';
  * @returns {string} Standing label
  */
 function getStandingLabel(standing) {
-  return STANDING_LABELS[standing] || 'UNKNOWN';
+  return STANDING_LABELS[standing] || 'DESCONHECIDO';
 }
 
 /**
@@ -86,7 +86,7 @@ function validateDate(dateStr) {
   }
 
   if (!DATE_PATTERN.test(dateStr)) {
-    return { valid: false, message: 'Invalid date format. Use DD/MM/YYYY' };
+    return { valid: false, message: 'Formato de data inválido. Use DD/MM/AAAA' };
   }
 
   const [day, month, year] = dateStr.split('/').map(Number);
@@ -94,7 +94,7 @@ function validateDate(dateStr) {
   if (month < 1 || month > 12 || day < 1) {
     return { 
       valid: false, 
-      message: 'Invalid date values. Day must be at least 1, month must be 1-12' 
+      message: 'Valores de data inválidos. O dia deve ser pelo menos 1, o mês deve ser 1-12' 
     };
   }
 
@@ -108,7 +108,7 @@ function validateDate(dateStr) {
   if (day > daysInMonth[month - 1]) {
     return { 
       valid: false, 
-      message: `Invalid day for month ${month}. Maximum is ${daysInMonth[month - 1]} days.`
+      message: `Dia inválido para o mês ${month}. O máximo é ${daysInMonth[month - 1]} dias.`
     };
   }
 
@@ -136,11 +136,11 @@ function validateEmblem(emblem, uploadDir) {
   }
 
   if (!isSafeEmblemFilename(emblem)) {
-    return { valid: false, message: 'Invalid emblem filename' };
+    return { valid: false, message: 'Nome de arquivo de emblema inválido' };
   }
 
   if (!fs.existsSync(path.join(uploadDir, emblem))) {
-    return { valid: false, message: 'Invalid emblem selection' };
+    return { valid: false, message: 'Seleção de emblema inválida' };
   }
 
   return { valid: true };
@@ -157,13 +157,13 @@ function validateRequiredString(value, fieldName, maxLength = null) {
   const trimmed = (typeof value === 'string' ? value : '').trim();
   
   if (trimmed.length === 0) {
-    return { valid: false, message: `${fieldName} cannot be empty` };
+    return { valid: false, message: `${fieldName} não pode estar vazio` };
   }
 
   if (maxLength && trimmed.length > maxLength) {
     return { 
       valid: false, 
-      message: `${fieldName} must be ${maxLength} characters or less` 
+      message: `${fieldName} deve ter ${maxLength} caracteres ou menos` 
     };
   }
 
@@ -182,15 +182,15 @@ function validateInteger(value, fieldName, min = null, max = null) {
   const parsed = parseInt(value);
   
   if (isNaN(parsed)) {
-    return { valid: false, message: `${fieldName} must be a valid number` };
+    return { valid: false, message: `${fieldName} deve ser um número válido` };
   }
 
   if (min !== null && parsed < min) {
-    return { valid: false, message: `${fieldName} must be at least ${min}` };
+    return { valid: false, message: `${fieldName} deve ser pelo menos ${min}` };
   }
 
   if (max !== null && parsed > max) {
-    return { valid: false, message: `${fieldName} must be at most ${max}` };
+    return { valid: false, message: `${fieldName} deve ser no máximo ${max}` };
   }
 
   return { valid: true, value: parsed };
@@ -216,7 +216,7 @@ function validatePassword(password, fieldName) {
   if (!alphanumericPattern.test(pwd)) {
     return { 
       valid: false, 
-      message: `${fieldName} must contain only alphanumeric characters (letters and numbers)` 
+      message: `${fieldName} deve conter apenas caracteres alfanuméricos (letras e números)` 
     };
   }
   
@@ -236,7 +236,7 @@ function validateJobState(state) {
   if (!JOB_STATES.includes(state)) {
     return { 
       valid: false, 
-      message: `Invalid job state. Must be one of: ${JOB_STATES.join(', ')}` 
+      message: `Estado de trabalho inválido. Deve ser um dos seguintes: ${JOB_STATES.join(', ')}` 
     };
   }
   
@@ -260,7 +260,7 @@ function validateFactionId(factionId, factions) {
   if (!factionExists) {
     return { 
       valid: false, 
-      message: 'Invalid faction ID. Faction does not exist.' 
+      message: 'ID de facção inválido. A facção não existe.' 
     };
   }
   
@@ -293,7 +293,7 @@ function validateTransactionIds(transactionIds, manna) {
   if (invalidIds.length > 0) {
     return {
       valid: false,
-      message: `Invalid transaction UUID(s): ${invalidIds.join(', ')}. Transaction(s) do not exist.`
+      message: `UUID(s) de transação inválido(s): ${invalidIds.join(', ')}. A(s) transação(ões) não existe(m).`
     };
   }
   
@@ -306,16 +306,16 @@ function validateTransactionIds(transactionIds, manna) {
  * @returns {Object} { valid: boolean, value?: string, message?: string }
  */
 function validateDeploymentStatus(status) {
-  const validStatuses = ['In Reserve', 'Deployed', 'Expended'];
+  const validStatuses = ['Em Reserva', 'Em Uso', 'Gasto'];
   
   if (!status || typeof status !== 'string') {
-    return { valid: false, message: 'Deployment status is required and must be a string' };
+    return { valid: false, message: 'O status de implantação é obrigatório e deve ser uma string' };
   }
   
   if (!validStatuses.includes(status)) {
     return { 
       valid: false, 
-      message: `Invalid deployment status: "${status}". Must be one of: ${validStatuses.join(', ')}` 
+      message: `Status de implantação inválido: "${status}". Deve ser um dos seguintes: ${validStatuses.join(', ')}` 
     };
   }
   
@@ -331,12 +331,12 @@ function validateDeploymentStatus(status) {
 function validateReserveObject(reserveObj, reserves) {
   // Check if object has required structure
   if (!reserveObj || typeof reserveObj !== 'object') {
-    return { valid: false, message: 'Reserve entry must be an object' };
+    return { valid: false, message: 'A entrada de reserva deve ser um objeto' };
   }
   
   // Check for required reserveId field
   if (!reserveObj.reserveId || typeof reserveObj.reserveId !== 'string') {
-    return { valid: false, message: 'Reserve object must have a reserveId (UUID string)' };
+    return { valid: false, message: 'O objeto de reserva deve ter um reserveId (string UUID)' };
   }
   
   // Validate reserveId exists in reserves data
@@ -345,7 +345,7 @@ function validateReserveObject(reserveObj, reserves) {
     if (!existingReserveIds.has(reserveObj.reserveId)) {
       return {
         valid: false,
-        message: `Invalid reserve UUID: ${reserveObj.reserveId}. Reserve does not exist.`
+        message: `UUID de reserva inválido: ${reserveObj.reserveId}. A reserva não existe.`
       };
     }
   }
@@ -379,7 +379,7 @@ function validatePilotReserves(pilotReserves, reserves) {
   
   // Must be an array
   if (!Array.isArray(pilotReserves)) {
-    return { valid: false, message: 'Pilot reserves must be an array' };
+    return { valid: false, message: 'As reservas do piloto devem ser um array' };
   }
   
   // Check if reserves data exists
@@ -402,7 +402,7 @@ function validatePilotReserves(pilotReserves, reserves) {
     // Convert to new format with default "In Reserve" status
     const convertedReserves = pilotReserves.map(reserveId => ({
       reserveId: reserveId,
-      deploymentStatus: 'In Reserve'
+      deploymentStatus: 'Em Reserva'
     }));
     
     return { valid: true, value: convertedReserves };
@@ -415,7 +415,7 @@ function validatePilotReserves(pilotReserves, reserves) {
       if (!validation.valid) {
         return { 
           valid: false, 
-          message: `Reserve at index ${i}: ${validation.message}` 
+          message: `Reserva no índice ${i}: ${validation.message}` 
         };
       }
       validatedReserves.push(validation.value);
@@ -451,7 +451,7 @@ function validateReserveIds(reserveIds, reserves) {
   if (invalidIds.length > 0) {
     return {
       valid: false,
-      message: `Invalid reserve UUID(s): ${invalidIds.join(', ')}. Reserve(s) do not exist.`
+      message: `UUID(s) de reserva inválido(s): ${invalidIds.join(', ')}. A(s) reserva(s) não existe(m).`
     };
   }
   
@@ -465,19 +465,19 @@ function validateReserveIds(reserveIds, reserves) {
  */
 function validateReserveData(reserveData) {
   // Validate rank (1-3)
-  const rankValidation = validateInteger(reserveData.rank, 'Rank', 1, 3);
+  const rankValidation = validateInteger(reserveData.rank, 'Nível', 1, 3);
   if (!rankValidation.valid) {
     return rankValidation;
   }
   
   // Validate name (required, non-empty)
-  const nameValidation = validateRequiredString(reserveData.name, 'Name');
+  const nameValidation = validateRequiredString(reserveData.name, 'Nome');
   if (!nameValidation.valid) {
     return nameValidation;
   }
   
   // Validate price (non-negative integer)
-  const priceValidation = validateInteger(reserveData.price, 'Price', 0);
+  const priceValidation = validateInteger(reserveData.price, 'Preço', 0);
   if (!priceValidation.valid) {
     return priceValidation;
   }
@@ -508,8 +508,8 @@ function validateReserveData(reserveData) {
  */
 function calculateFactionJobCounts(factionId, jobs) {
   const factionJobs = jobs.filter(job => job.factionId === factionId);
-  const completed = factionJobs.filter(job => job.state === 'Complete').length;
-  const failed = factionJobs.filter(job => job.state === 'Failed').length;
+  const completed = factionJobs.filter(job => job.state === 'Finalizado').length;
+  const failed = factionJobs.filter(job => job.state === 'Fracasso').length;
   return { completed, failed };
 }
 
@@ -694,7 +694,7 @@ function enrichPilotsWithReserves(pilots, reserves) {
       const reserve = reserves.find(r => r.id === reserveObj.reserveId);
       return {
         ...reserveObj,
-        reserve: reserve || { rank: 0, name: 'UNKNOWN', description: 'Reserve not found' }
+        reserve: reserve || { rank: 0, name: 'DESCONHECIDO', description: 'Reserva não encontrada' }
       };
     });
     
@@ -712,7 +712,7 @@ function enrichPilotsWithReserves(pilots, reserves) {
  */
 function validateFacilityUpgrade(upgradeData) {
   // Validate upgrade name (required, non-empty)
-  const nameValidation = validateRequiredString(upgradeData.upgradeName, 'Upgrade Name');
+  const nameValidation = validateRequiredString(upgradeData.upgradeName, 'Nome da Melhoria');
   if (!nameValidation.valid) {
     return nameValidation;
   }
@@ -723,19 +723,19 @@ function validateFacilityUpgrade(upgradeData) {
     : '';
   
   // Validate upgrade price (non-negative integer)
-  const priceValidation = validateInteger(upgradeData.upgradePrice, 'Upgrade Price', 0);
+  const priceValidation = validateInteger(upgradeData.upgradePrice, 'Preço da Melhoria', 0);
   if (!priceValidation.valid) {
     return priceValidation;
   }
   
   // Validate max purchases (positive integer)
-  const maxPurchasesValidation = validateInteger(upgradeData.maxPurchases, 'Max Purchases', 1);
+  const maxPurchasesValidation = validateInteger(upgradeData.maxPurchases, 'Máximo de Compras', 1);
   if (!maxPurchasesValidation.valid) {
     return maxPurchasesValidation;
   }
   
   // Validate upgrade count (non-negative integer, cannot exceed maxPurchases)
-  const upgradeCountValidation = validateInteger(upgradeData.upgradeCount, 'Upgrade Count', 0);
+  const upgradeCountValidation = validateInteger(upgradeData.upgradeCount, 'Quantidade de Melhorias', 0);
   if (!upgradeCountValidation.valid) {
     return upgradeCountValidation;
   }
@@ -743,7 +743,7 @@ function validateFacilityUpgrade(upgradeData) {
   if (upgradeCountValidation.value > maxPurchasesValidation.value) {
     return {
       valid: false,
-      message: `Upgrade count (${upgradeCountValidation.value}) cannot exceed max purchases (${maxPurchasesValidation.value})`
+      message: `A quantidade de melhorias (${upgradeCountValidation.value}) não pode exceder o máximo de compras (${maxPurchasesValidation.value})`
     };
   }
   
@@ -764,12 +764,12 @@ function validateFacilityUpgrade(upgradeData) {
  */
 function validateCoreMajorFacility(facilityData) {
   // Validate type (Core or Major)
-  if (!facilityData.type || !['Core', 'Major'].includes(facilityData.type)) {
-    return { valid: false, message: 'Facility type must be "Core" or "Major"' };
+  if (!facilityData.type || !['Principal', 'Maior'].includes(facilityData.type)) {
+    return { valid: false, message: 'O tipo de instalação deve ser "Principal" ou "Maior"' };
   }
   
   // Validate facility name (required, non-empty)
-  const nameValidation = validateRequiredString(facilityData.facilityName, 'Facility Name');
+  const nameValidation = validateRequiredString(facilityData.facilityName, 'Nome da Instalação');
   if (!nameValidation.valid) {
     return nameValidation;
   }
@@ -780,7 +780,7 @@ function validateCoreMajorFacility(facilityData) {
     : '';
   
   // Validate facility price (non-negative integer)
-  const priceValidation = validateInteger(facilityData.facilityPrice, 'Facility Price', 0);
+  const priceValidation = validateInteger(facilityData.facilityPrice, 'Preço da Instalação', 0);
   if (!priceValidation.valid) {
     return priceValidation;
   }
@@ -790,7 +790,7 @@ function validateCoreMajorFacility(facilityData) {
   
   // Validate upgrades array
   if (!Array.isArray(facilityData.upgrades)) {
-    return { valid: false, message: 'Upgrades must be an array' };
+    return { valid: false, message: 'As melhorias devem ser um array' };
   }
   
   const validatedUpgrades = [];
@@ -799,7 +799,7 @@ function validateCoreMajorFacility(facilityData) {
     if (!upgradeValidation.valid) {
       return {
         valid: false,
-        message: `Upgrade at index ${i}: ${upgradeValidation.message}`
+        message: `Melhoria no índice ${i}: ${upgradeValidation.message}`
       };
     }
     validatedUpgrades.push({
@@ -829,7 +829,7 @@ function validateCoreMajorFacility(facilityData) {
  */
 function validateMinorFacilitySlot(slotData) {
   // Validate slot number (1-6)
-  const slotValidation = validateInteger(slotData.slotNumber, 'Slot Number', 1, 6);
+  const slotValidation = validateInteger(slotData.slotNumber, 'Número da Vaga', 1, 6);
   if (!slotValidation.valid) {
     return slotValidation;
   }
@@ -911,13 +911,13 @@ function applyFacilityCostModifier(basePrice, modifier) {
  */
 function validateVotingPeriodState(state) {
   if (!state || typeof state !== 'string') {
-    return { valid: false, message: 'Voting period state is required' };
+    return { valid: false, message: 'O estado do período de votação é obrigatório' };
   }
   
   if (!VOTING_PERIOD_STATES.includes(state)) {
     return { 
       valid: false, 
-      message: `Invalid voting period state. Must be one of: ${VOTING_PERIOD_STATES.join(', ')}` 
+      message: `Estado de período de votação inválido. Deve ser um dos seguintes: ${VOTING_PERIOD_STATES.join(', ')}` 
     };
   }
   
@@ -932,7 +932,7 @@ function validateVotingPeriodState(state) {
  */
 function validateJobVotes(jobVotes, jobs = null) {
   if (!Array.isArray(jobVotes)) {
-    return { valid: false, message: 'jobVotes must be an array' };
+    return { valid: false, message: 'jobVotes deve ser um array' };
   }
   
   // Track pilot UUIDs to ensure no duplicates across jobs
@@ -943,35 +943,35 @@ function validateJobVotes(jobVotes, jobs = null) {
     
     // Validate jobId
     if (!jobVote.jobId || typeof jobVote.jobId !== 'string') {
-      return { valid: false, message: `jobVotes[${i}]: jobId is required and must be a string` };
+      return { valid: false, message: `jobVotes[${i}]: jobId é obrigatório e deve ser uma string` };
     }
     
     // Validate job exists and is Active state (if jobs array provided)
     if (jobs && Array.isArray(jobs)) {
       const job = jobs.find(j => j.id === jobVote.jobId);
       if (!job) {
-        return { valid: false, message: `jobVotes[${i}]: Job with id ${jobVote.jobId} not found` };
+        return { valid: false, message: `jobVotes[${i}]: Trabalho com id ${jobVote.jobId} não encontrado` };
       }
-      if (job.state !== 'Active') {
-        return { valid: false, message: `jobVotes[${i}]: Only Active jobs can be included in voting periods (job "${job.name}" is ${job.state})` };
+      if (job.state !== 'Ativo') {
+        return { valid: false, message: `jobVotes[${i}]: Apenas trabalhos Ativos podem ser incluídos em períodos de votação (o trabalho "${job.name}" está ${job.state})` };
       }
     }
     
     // Validate votes array
     if (!Array.isArray(jobVote.votes)) {
-      return { valid: false, message: `jobVotes[${i}]: votes must be an array` };
+      return { valid: false, message: `jobVotes[${i}]: votes deve ser um array` };
     }
     
     // Check for pilot UUID duplicates within this voting period
     for (const pilotId of jobVote.votes) {
       if (typeof pilotId !== 'string' || !pilotId) {
-        return { valid: false, message: `jobVotes[${i}]: All votes must be non-empty strings` };
+        return { valid: false, message: `jobVotes[${i}]: Todos os votos devem ser strings não vazias` };
       }
       
       if (seenPilotIds.has(pilotId)) {
         return { 
           valid: false, 
-          message: `Pilot ${pilotId} appears in multiple job vote lists. Each pilot may only vote for one job per voting period.` 
+          message: `O piloto ${pilotId} aparece em múltiplas listas de votos de trabalhos. Cada piloto pode votar em apenas um trabalho por período de votação.` 
         };
       }
       
@@ -995,13 +995,13 @@ function validateEndTime(endTime) {
   
   // If provided, must be a string
   if (typeof endTime !== 'string') {
-    return { valid: false, message: 'endTime must be a string (ISO 8601 date-time) or null' };
+    return { valid: false, message: 'endTime deve ser uma string (data-hora ISO 8601) ou null' };
   }
   
   // Validate ISO 8601 date-time format
   const date = new Date(endTime);
   if (isNaN(date.getTime())) {
-    return { valid: false, message: 'endTime must be a valid ISO 8601 date-time string or null' };
+    return { valid: false, message: 'endTime deve ser uma string de data-hora ISO 8601 válida ou null' };
   }
   
   return { valid: true };
@@ -1051,7 +1051,7 @@ function getOngoingVotingPeriod(votingPeriods) {
     return null;
   }
   
-  return votingPeriods.find(period => period.state === 'Ongoing') || null;
+  return votingPeriods.find(period => period.state === 'Em andamento') || null;
 }
 
 module.exports = {
