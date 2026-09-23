@@ -82,7 +82,7 @@ router.put('/:id', requireAdminAuth, async (req, res) => {
     }
     
     // If changing state to Ongoing, check if there's already another ongoing period
-    if (validation.state === 'Ongoing' && votingPeriodsData.periods[index].state !== 'Ongoing') {
+    if (validation.state === 'Em Andamento' && votingPeriodsData.periods[index].state !== 'Em Andamento') {
       const existingOngoing = helpers.getOngoingVotingPeriod(votingPeriodsData.periods);
       if (existingOngoing && existingOngoing.id !== req.params.id) {
         return res.status(400).json({ 
@@ -170,7 +170,7 @@ router.post('/:id/cast-vote', requireClientAuth, async (req, res) => {
     }
     
     // Validate voting period is ongoing
-    if (votingPeriod.state !== 'Ongoing') {
+    if (votingPeriod.state !== 'Em Andamento') {
       return res.status(400).json({ success: false, message: 'Voting period is not ongoing' });
     }
     
@@ -194,7 +194,7 @@ router.post('/:id/cast-vote', requireClientAuth, async (req, res) => {
     if (!job) {
       return res.status(400).json({ success: false, message: 'Job not found' });
     }
-    if (job.state !== 'Active') {
+    if (job.state !== 'Ativo') {
       return res.status(400).json({ success: false, message: 'Can only vote for Active jobs' });
     }
     
