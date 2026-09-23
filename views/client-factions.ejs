@@ -11,17 +11,17 @@
 <body class="<%= colorScheme %>">
   <div class="terminal-header">
     <div class="terminal-header-left">
-      <h1>> <span id="portal-heading"><%= settings.portalHeading %></span> - RELAÇÕES_DE_FACÇÕES_</h1>
-      <p>> GRUPO_DE_USUÁRIO: <span id="user-group"><%= settings.userGroup %></span>_</p>
-      <p>> FACÇÕES_CONHECIDAS: <span id="factions-count"><%= factions.length %></span>_</p>
-      <a href="/client/overview" class="terminal-link">[VISÃO_GERAL]</a>
+      <h1>> <span id="portal-heading"><%= settings.portalHeading %></span> - RELACOES_DE_FACCOES_</h1>
+      <p>> GRUPO_DE_USUARIO: <span id="user-group"><%= settings.userGroup %></span>_</p>
+      <p>> FACCOES_CONHECIDAS: <span id="factions-count"><%= factions.length %></span>_</p>
+      <a href="/client/overview" class="terminal-link">[VISAO_GERAL]</a>
     </div>
     <div class="terminal-header-right">
       <p class="terminal-info">> UNID: <span id="unt"><%= settings.unt %></span>U</p>
-      <p class="terminal-info">> POSIÇÃO_GALÁCTICA_ATUAL: <span id="galactic-pos"><%= settings.currentGalacticPos %></span></p>
+      <p class="terminal-info">> POSICAO_GALACTICA_ATUAL: <span id="galactic-pos"><%= settings.currentGalacticPos %></span></p>
       <% if (!settings.openTable) { %>
       <div class="operation-progress">
-        <div class="operation-progress-label">> PROGRESSO_DA_OPERAÇÃO:</div>
+        <div class="operation-progress-label">> PROGRESSO_DA_OPERACAO:</div>
         <div class="progress-bar-container">
           <div class="progress-segment <%= settings.operationProgress >= 1 ? 'filled' : '' %>" id="progress-segment-1"></div>
           <div class="progress-segment <%= settings.operationProgress >= 2 ? 'filled' : '' %>" id="progress-segment-2"></div>
@@ -34,12 +34,12 @@
   
   <% if (factions.length === 0) { %>
     <div class="empty-state" id="empty-state">
-      <p>> NENHUM_DADO_DE_FACÇÃO_DISPONÍVEL_</p>
+      <p>> NENHUM_DADO_DE_FACCAO_DISPONIVEL_</p>
     </div>
   <% } else { %>
     <div class="factions-grid" id="factions-grid">
       <% factions.forEach(faction => { 
-        const standingLabels = ['DESCONFIADO', 'CAUTELOSO', 'NEUTRO', 'RESPEITADO', 'CONFIÁVEL'];
+        const standingLabels = ['DESCONFIADO', 'CAUTELOSO', 'NEUTRO', 'RESPEITADO', 'CONFIAVEL'];
         const standingLabel = standingLabels[faction.standing] || 'DESCONHECIDO';
       %>
         <div class="faction-card" data-faction-id="<%= faction.id %>">
@@ -50,11 +50,11 @@
           <% } %>
           <div class="faction-card-header">
             <h2>> <%= faction.title %></h2>
-            <div class="faction-standing">REPUTAÇÃO: <span class="standing-value standing-<%= faction.standing %>"><%= standingLabel %></span></div>
+            <div class="faction-standing">REPUTACAO: <span class="standing-value standing-<%= faction.standing %>"><%= standingLabel %></span></div>
           </div>
           
           <div class="faction-field">
-            <span class="field-label">TRABALHOS_CONCLUÍDOS:</span>
+            <span class="field-label">TRABALHOS_CONCLUIDOS:</span>
             <span class="field-value"><%= faction.jobsCompleted || 0 %></span>
           </div>
           
@@ -69,7 +69,7 @@
           </div>
           
           <button class="faction-button" onclick="openFactionJobHistory('<%= faction.id %>', '<%= faction.title %>')">
-            [VER_HISTÓRICO_DE_TRABALHOS]
+            [VER_HISTORICO_DE_TRABALHOS]
           </button>
         </div>
       <% }); %>
@@ -85,7 +85,7 @@
   </script>
   <script src="/js/sse-client.js"></script>
   <script>
-    const standingLabels = ['DESCONFIADO', 'CAUTELOSO', 'NEUTRO', 'RESPEITADO', 'CONFIÁVEL'];
+    const standingLabels = ['DESCONFIADO', 'CAUTELOSO', 'NEUTRO', 'RESPEITADO', 'CONFIAVEL'];
     
     // Handle factions update from SSE
     function handleFactionsUpdate(data) {
@@ -110,7 +110,7 @@
           const newEmptyState = document.createElement('div');
           newEmptyState.id = 'empty-state';
           newEmptyState.className = 'empty-state';
-          newEmptyState.innerHTML = '<p>> NENHUM_DADO_DE_FACÇÃO_DISPONÍVEL_</p>';
+          newEmptyState.innerHTML = '<p>> NENHUM_DADO_DE_FACCAO_DISPONIVEL_</p>';
           document.body.appendChild(newEmptyState);
         } else {
           emptyState.style.display = 'block';
@@ -143,11 +143,11 @@
               ${emblemHtml}
               <div class="faction-card-header">
                 <h2>> ${faction.title}</h2>
-                <div class="faction-standing">REPUTAÇÃO: <span class="standing-value standing-${faction.standing}">${standingLabel}</span></div>
+                <div class="faction-standing">REPUTACAO: <span class="standing-value standing-${faction.standing}">${standingLabel}</span></div>
               </div>
               
               <div class="faction-field">
-                <span class="field-label">TRABALHOS_CONCLUÍDOS:</span>
+                <span class="field-label">TRABALHOS_CONCLUIDOS:</span>
                 <span class="field-value">${faction.jobsCompleted || 0}</span>
               </div>
               
@@ -162,7 +162,7 @@
               </div>
               
               <button class="faction-button" onclick="openFactionJobHistory('${faction.id}', '${faction.title}')">
-                [VER_HISTÓRICO_DE_TRABALHOS]
+                [VER_HISTORICO_DE_TRABALHOS]
               </button>
             </div>
           `;
@@ -194,7 +194,7 @@
       const jobListTitle = document.getElementById('job-list-title');
       const jobListContainer = document.getElementById('job-list-container');
       
-      jobListTitle.textContent = `${factionTitle} - HISTÓRICO DE TRABALHOS`;
+      jobListTitle.textContent = `${factionTitle} - HISTORICO DE TRABALHOS`;
       
       if (factionJobs.length === 0) {
         jobListContainer.innerHTML = '<p style="text-align: center; opacity: 0.7;">> NENHUM_TRABALHO_ENCONTRADO_</p>';
@@ -231,7 +231,7 @@
   <div id="job-list-modal" class="modal-overlay">
     <div class="modal-content">
       <div class="modal-header">
-        <h2 id="job-list-title">HISTÓRICO DE TRABALHOS</h2>
+        <h2 id="job-list-title">HISTORICO DE TRABALHOS</h2>
         <button class="modal-close" onclick="closeModal('job-list-modal')">[X]</button>
       </div>
       <div class="modal-body">
