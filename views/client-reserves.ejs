@@ -238,12 +238,12 @@
       
       // Cycle: In Reserve -> Deployed -> Expended -> In Reserve
       let newStatus;
-      if (currentStatus === 'In Reserve') {
-        newStatus = 'Deployed';
-      } else if (currentStatus === 'Deployed') {
-        newStatus = 'Expended';
+      if (currentStatus === 'Em Reserva') {
+        newStatus = 'Em Uso';
+      } else if (currentStatus === 'Em Uso') {
+        newStatus = 'Gasto';
       } else {
-        newStatus = 'In Reserve';
+        newStatus = 'Em Reserva';
       }
       
       // Send API request
