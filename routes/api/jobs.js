@@ -60,7 +60,7 @@ router.put('/:id', requireAdminAuth, async (req, res) => {
   
   // Store old job state to check for Active -> other state transitions
   const oldJob = jobs[index];
-  const wasActive = oldJob.state === 'Active';
+  const wasActive = oldJob.state === 'Ativo';
   
   // Validate job data
   const validation = dataStore.validateJobData(req.body, factions, dataStore.getLogoArtDir());
@@ -87,7 +87,7 @@ router.put('/:id', requireAdminAuth, async (req, res) => {
   dataStore.writeJobs(jobs);
   
   // Auto-archive ongoing voting period if Active job changes to another state
-  if (wasActive && newJob.state !== 'Active') {
+  if (wasActive && newJob.state !== 'Ativo') {
     await dataStore.archiveOngoingVotingPeriod('Active job state changed');
   }
   
@@ -119,7 +119,7 @@ router.put('/:id/state', requireAdminAuth, async (req, res) => {
   
   // Store old job state to check for Active -> other state transitions
   const oldJob = jobs[index];
-  const wasActive = oldJob.state === 'Active';
+  const wasActive = oldJob.state === 'Ativo';
   
   // Validate job state
   const stateValidation = helpers.validateJobState(req.body.state);
@@ -132,7 +132,7 @@ router.put('/:id/state', requireAdminAuth, async (req, res) => {
   dataStore.writeJobs(jobs);
   
   // Auto-archive ongoing voting period if Active job changes to another state
-  if (wasActive && stateValidation.value !== 'Active') {
+  if (wasActive && stateValidation.value !== 'Ativo') {
     await dataStore.archiveOngoingVotingPeriod('Active job state changed');
   }
   
