@@ -512,7 +512,7 @@
     function togglePilotFilter() {
       currentPilotFilter = currentPilotFilter === 'active' ? 'all' : 'active';
       const toggleButton = document.getElementById('pilot-filter-text');
-      toggleButton.textContent = currentPilotFilter === 'active' ? '[PILOTOS_ATIVOS]' : '[TODOS_OS_PILOTOS]';
+      toggleButton.textContent = currentPilotFilter === 'active' ? '[TODOS_OS_PILOTOS]' : '[PILOTOS_ATIVOS]';
       renderJobHistory(applyAllFilters(currentAllJobs));
     }
     
