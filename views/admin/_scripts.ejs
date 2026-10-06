@@ -510,16 +510,16 @@
     function switchTab(tabName, eventOrButton) {
       // Hide all tabs
       document.querySelectorAll('.tab-content').forEach(tab => {
-        tab.classList.remove('active');
+        tab.classList.remove('Ativo');
       });
       
       // Remove active class from all buttons
       document.querySelectorAll('.tab-button').forEach(btn => {
-        btn.classList.remove('active');
+        btn.classList.remove('Ativo');
       });
       
       // Show selected tab
-      document.getElementById(tabName + '-tab').classList.add('active');
+      document.getElementById(tabName + '-tab').classList.add('Ativo');
       
       // Set button as active
       // If eventOrButton has a target property, it's an event object
@@ -532,7 +532,7 @@
       }
       
       if (button) {
-        button.classList.add('active');
+        button.classList.add('Ativo');
       }
       
       // Update URL hash to persist tab state across page reloads
@@ -1396,9 +1396,9 @@
       // Update active pill
       filterPills.forEach(pill => {
         if (pill.getAttribute('data-state') === state) {
-          pill.classList.add('active');
+          pill.classList.add('Ativo');
         } else {
-          pill.classList.remove('active');
+          pill.classList.remove('Ativo');
         }
       });
       
@@ -1490,9 +1490,9 @@
       // Update active pill
       filterPills.forEach(pill => {
         if (pill.getAttribute('data-state') === state) {
-          pill.classList.add('active');
+          pill.classList.add('Ativo');
         } else {
-          pill.classList.remove('active');
+          pill.classList.remove('Ativo');
         }
       });
       
@@ -1633,9 +1633,9 @@
     function filterTransactions(filter, event) {
       // Update active pill
       document.querySelectorAll('.filter-pill').forEach(pill => {
-        pill.classList.remove('active');
+        pill.classList.remove('Ativo');
       });
-      event.target.classList.add('active');
+      event.target.classList.add('Ativo');
       
       // Filter transactions
       const transactions = document.querySelectorAll('.transaction-item');
@@ -1924,7 +1924,7 @@
         const data = Object.fromEntries(formData);
         
         // Ensure checkbox state is always captured explicitly
-        data.active = formData.get('active') === 'true' || formData.has('active');
+        data.active = formData.get('Ativo') === 'true' || formData.has('Ativo');
         
         // Ensure personalOperationProgress has a value (default to 0 if field doesn't exist)
         if (data.personalOperationProgress === undefined || data.personalOperationProgress === null) {
@@ -1990,7 +1990,7 @@
         const id = document.getElementById('editPilotId').value;
         
         // Ensure checkbox state is always captured explicitly
-        data.active = formData.get('active') === 'true' || formData.has('active');
+        data.active = formData.get('Ativo') === 'true' || formData.has('Ativo');
         
         // Get current pilot's related jobs
         const pilotData = <%- JSON.stringify(pilots) %>.find(p => p.id === id);
@@ -2474,11 +2474,11 @@
         // Reset filters
         document.getElementById('pilotAddReserveSearchInput').value = '';
         document.querySelectorAll('#addReservesToPilotModal .filter-pill').forEach(pill => {
-          pill.classList.remove('active');
+          pill.classList.remove('Ativo');
         });
-        document.getElementById('pilotAddFilterAll').classList.add('active');
+        document.getElementById('pilotAddFilterAll').classList.add('Ativo');
         document.getElementById('pilotAddHideDefaultPill').dataset.hideDefault = 'false';
-        document.getElementById('pilotAddHideDefaultPill').classList.remove('active');
+        document.getElementById('pilotAddHideDefaultPill').classList.remove('Ativo');
         
         // Build reserves grid - show ALL reserves
         const grid = document.getElementById('addReservesStockGrid');
@@ -2581,9 +2581,9 @@
     function filterPilotAddReserves(rank, event) {
       // Update active pill
       document.querySelectorAll('#addReservesToPilotModal .filter-pill[data-rank]').forEach(pill => {
-        pill.classList.remove('active');
+        pill.classList.remove('Ativo');
       });
-      event.target.classList.add('active');
+      event.target.classList.add('Ativo');
       
       // Apply filter
       const cards = document.querySelectorAll('#addReservesStockGrid .stock-reserve-card');
@@ -2618,7 +2618,7 @@
     function togglePilotAddHideDefault(event) {
       const currentState = event.target.dataset.hideDefault === 'true';
       event.target.dataset.hideDefault = currentState ? 'false' : 'true';
-      event.target.classList.toggle('active');
+      event.target.classList.toggle('Ativo');
       
       // Re-apply current rank filter
       const activeRankPill = document.querySelector('#addReservesToPilotModal .filter-pill[data-rank].active');
@@ -3114,9 +3114,9 @@
     function filterAvailableReserves(rank, event) {
       // Update filter pills (except Hide Default which is independent)
       document.querySelectorAll('.filter-pill[data-rank]').forEach(pill => {
-        pill.classList.remove('active');
+        pill.classList.remove('Ativo');
       });
-      event.target.classList.add('active');
+      event.target.classList.add('Ativo');
       
       currentRankFilter = rank;
       applyReserveFilters();
@@ -3127,9 +3127,9 @@
       hideDefaultReservesFilter = !hideDefaultReservesFilter;
       
       if (hideDefaultReservesFilter) {
-        event.target.classList.add('active');
+        event.target.classList.add('Ativo');
       } else {
-        event.target.classList.remove('active');
+        event.target.classList.remove('Ativo');
       }
       
       applyReserveFilters();
