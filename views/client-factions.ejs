@@ -187,7 +187,7 @@
     // Open faction job history modal
     function openFactionJobHistory(factionId, factionTitle) {
       const factionJobs = currentJobs.filter(job => job.factionId === factionId && 
-        ['Active', 'Complete', 'Failed', 'Ignored'].includes(job.state));
+        ['Ativo', 'Finalizado', 'Fracasso', 'Ignorado'].includes(job.state));
       
       const jobListModal = document.getElementById('job-list-modal');
       const jobListTitle = document.getElementById('job-list-title');
@@ -219,7 +219,7 @@
         }).join('');
       }
       
-      jobListModal.classList.add('active');
+      jobListModal.classList.add('Ativo');
     }
     
     // Initialize modal handlers on page load
