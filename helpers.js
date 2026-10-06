@@ -15,8 +15,8 @@ const DATE_PATTERN = /^\d{2}\/\d{2}\/\d{4}$/;
 const SAFE_EMBLEM_PATTERN = /^[A-Za-z0-9_-]+\.svg$/;
 const JOB_STATES = ['Pendente', 'Ativo', 'Finalizado', 'Fracasso', 'Ignorado'];
 const DEFAULT_JOB_STATE = 'Pendente';
-const VOTING_PERIOD_STATES = ['Em Andamento', 'Arquivado'];
-const DEFAULT_VOTING_PERIOD_STATE = 'Em Andamento';
+const VOTING_PERIOD_STATES = ['Active', 'Archived'];
+const DEFAULT_VOTING_PERIOD_STATE = 'Active';
 
 /**
  * Get the label for a faction standing level (0-4)
@@ -1051,7 +1051,7 @@ function getOngoingVotingPeriod(votingPeriods) {
     return null;
   }
   
-  return votingPeriods.find(period => period.state === 'Em andamento') || null;
+  return votingPeriods.find(period => period.state === 'Active') || null;
 }
 
 module.exports = {
