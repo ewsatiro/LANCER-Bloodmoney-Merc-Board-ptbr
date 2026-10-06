@@ -114,7 +114,7 @@
       </button>
       <div class="job-status-filters">
         <span class="filter-label">STATUS_DO_TRABALHO:</span>
-        <button class="filter-pill-status active" data-status="all" onclick="filterByStatus('Todos')">[TODOS]</button>
+        <button class="filter-pill-status active" data-status="all" onclick="filterByStatus('all')">[TODOS]</button>
         <button class="filter-pill-status" data-status="Ativo" onclick="filterByStatus('Ativo')">[ATIVO]</button>
         <button class="filter-pill-status" data-status="Finalizado" onclick="filterByStatus('Finalizado')">[FINALIZADO]</button>
         <button class="filter-pill-status" data-status="Fracasso" onclick="filterByStatus('Fracasso')">[FRACASSO]</button>
@@ -142,9 +142,9 @@
     let currentVotingPeriods = null;
     let currentOngoingVotingPeriod = null;
     let currentJobHistorySearchTerm = '';
-    let currentJobHistorySearchField = 'Todos';
-    let currentPilotFilter = 'Todos'; // 'Ativo' or 'Todos'
-    let currentStatusFilter = 'Todos'; // 'Todos' or specific status
+    let currentJobHistorySearchField = 'all';
+    let currentPilotFilter = 'all'; // 'active' or 'all'
+    let currentStatusFilter = 'all'; // 'all' or specific status
     let selectedVotingJobId = null;
     let selectedVotingPilotId = null;
     
@@ -438,7 +438,7 @@
         if (!job) return false;
         
         // Search by field
-        if (field === 'Todos') {
+        if (field === 'all') {
           // Search all fields
           const name = (job.name || '').toLowerCase();
           const description = (job.description || '').toLowerCase();
@@ -501,16 +501,16 @@
       const searchFieldSelect = document.getElementById('job-history-search-field');
       
       searchInput.value = '';
-      searchFieldSelect.value = 'Todos';
+      searchFieldSelect.value = 'all';
       currentJobHistorySearchTerm = '';
-      currentJobHistorySearchField = 'Todos';
+      currentJobHistorySearchField = 'all';
       
       renderJobHistory(applyAllFilters(currentAllJobs));
     }
     
     // Toggle pilot filter between active and all
     function togglePilotFilter() {
-      currentPilotFilter = currentPilotFilter === 'Ativo' ? 'Todos' : 'Ativo';
+      currentPilotFilter = currentPilotFilter === 'Ativo' ? 'all' : 'Ativo';
       const toggleButton = document.getElementById('pilot-filter-text');
       toggleButton.textContent = currentPilotFilter === 'Ativo' ? '[TODOS_OS_PILOTOS]' : '[PILOTOS_ATIVOS]';
       renderJobHistory(applyAllFilters(currentAllJobs));
@@ -535,7 +535,7 @@
     
     // Filter by pilot (active vs all)
     function filterByPilot(jobs) {
-      if (currentPilotFilter === 'Todos') {
+      if (currentPilotFilter === 'all') {
         return jobs;
       }
       
@@ -550,7 +550,7 @@
     
     // Filter by status
     function filterByJobStatus(jobs) {
-      if (currentStatusFilter === 'Todos') {
+      if (currentStatusFilter === 'all') {
         return jobs;
       }
       
