@@ -248,7 +248,7 @@ function openJobDetails(jobId, jobs, factions) {
     </div>
   `;
   
-  jobDetailsModal.classList.add('active');
+  jobDetailsModal.classList.add('Ativo');
 }
 
 /**
@@ -258,7 +258,7 @@ function openJobDetails(jobId, jobs, factions) {
 function closeModal(modalId) {
   const modal = document.getElementById(modalId);
   if (modal) {
-    modal.classList.remove('active');
+    modal.classList.remove('Ativo');
   }
 }
 
@@ -269,7 +269,7 @@ function closeModal(modalId) {
 function initializeModalHandlers() {
   document.addEventListener('click', (e) => {
     if (e.target.classList.contains('modal-overlay')) {
-      e.target.classList.remove('active');
+      e.target.classList.remove('Ativo');
     }
   });
 }
