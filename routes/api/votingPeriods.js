@@ -194,7 +194,7 @@ router.post('/:id/cast-vote', requireClientAuth, async (req, res) => {
     if (!job) {
       return res.status(400).json({ success: false, message: 'Job not found' });
     }
-    if (job.state !== 'Active') {
+    if (job.state !== 'Ativo') {
       return res.status(400).json({ success: false, message: 'Can only vote for Active jobs' });
     }
     
