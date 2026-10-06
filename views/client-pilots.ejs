@@ -57,8 +57,8 @@
           // Balance is already calculated server-side
           const pilotBalance = pilot.balance || 0;
       %>
-        <div class="pilot-card <%= pilot.active ? 'active' : 'inactive' %>" data-pilot-id="<%= pilot.id %>">
-          <button class="pilot-status-button <%= pilot.active ? 'active' : 'inactive' %>" onclick="openToggleActiveModal('<%= pilot.id %>', '<%= pilot.name.replace(/'/g, "\\'") %>', <%= pilot.active %>)">
+        <div class="pilot-card <%= pilot.active ? 'Ativo' : 'Inativo' %>" data-pilot-id="<%= pilot.id %>">
+          <button class="pilot-status-button <%= pilot.active ? 'Ativo' : 'Inativo' %>" onclick="openToggleActiveModal('<%= pilot.id %>', '<%= pilot.name.replace(/'/g, "\\'") %>', <%= pilot.active %>)">
             [<%= pilot.active ? 'ATIVO' : 'INATIVO' %>]
             <img src="/emblems/power-symbol.svg" alt="Power" class="power-icon">
           </button>
@@ -260,8 +260,8 @@
           }
           
           return `
-            <div class="pilot-card ${pilot.active ? 'active' : 'inactive'}" data-pilot-id="${pilot.id}">
-              <button class="pilot-status-button ${pilot.active ? 'active' : 'inactive'}" onclick="openToggleActiveModal('${pilot.id}', '${escapedNameForOnclick}', ${pilot.active})">
+            <div class="pilot-card ${pilot.active ? 'Ativo' : 'Inativo'}" data-pilot-id="${pilot.id}">
+              <button class="pilot-status-button ${pilot.active ? 'Ativo' : 'Inativo'}" onclick="openToggleActiveModal('${pilot.id}', '${escapedNameForOnclick}', ${pilot.active})">
                 [${pilot.active ? 'ATIVO' : 'INATIVO'}]
                 <img src="/emblems/power-symbol.svg" alt="Power" class="power-icon">
               </button>
@@ -336,7 +336,7 @@
         }
       };
       
-      modal.classList.add('active');
+      modal.classList.add('Ativo');
     }
     
     // Open pilot job history modal
@@ -385,7 +385,7 @@
         }).join('');
       }
       
-      jobListModal.classList.add('active');
+      jobListModal.classList.add('Ativo');
     }
     
     // Open pilot balance history modal
@@ -410,7 +410,7 @@
         
         balanceHistoryTitle.textContent = `${pilotName} - HISTORICO DE SALDO`;
         balanceHistoryContainer.innerHTML = '<p style="text-align: center; opacity: 0.7;">> NENHUMA_TRANSACAO_ENCONTRADA_</p>';
-        balanceHistoryModal.classList.add('active');
+        balanceHistoryModal.classList.add('Ativo');
         return;
       }
       
@@ -453,7 +453,7 @@
         }).join('');
       }
       
-      balanceHistoryModal.classList.add('active');
+      balanceHistoryModal.classList.add('Ativo');
     }
     
     // Toggle active/inactive modal state
@@ -478,7 +478,7 @@
       modalMessage.textContent = `Alterar ${pilotName} de ${currentStateText} para ${newState}?`;
       
       // Show modal
-      modal.classList.add('active');
+      modal.classList.add('Ativo');
     }
     
     /**
@@ -516,7 +516,7 @@
      */
     function closeToggleActiveModal() {
       const modal = document.getElementById('toggle-active-modal');
-      modal.classList.remove('active');
+      modal.classList.remove('Ativo');
       
       // Reset state
       toggleActivePilotId = null;
