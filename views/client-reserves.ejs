@@ -318,7 +318,7 @@
       document.getElementById('transfer-confirm-btn').disabled = true;
       
       // Show modal
-      document.getElementById('transfer-modal').classList.add('Ativo');
+      document.getElementById('transfer-modal').classList.add('active');
     }
     
     /**
@@ -376,7 +376,7 @@
      * Close transfer modal
      */
     function closeTransferModal() {
-      document.getElementById('transfer-modal').classList.remove('Ativo');
+      document.getElementById('transfer-modal').classList.remove('active');
       transferSourcePilotId = null;
       transferReserveId = null;
       transferTargetPilotId = null;
@@ -404,7 +404,7 @@
         `Reserva: ${reserveObj.reserve.name} (Rank ${reserveObj.reserve.rank}) - Status: ${reserveObj.deploymentStatus}`;
       
       // Show modal
-      document.getElementById('trash-modal').classList.add('Ativo');
+      document.getElementById('trash-modal').classList.add('active');
     }
     
     /**
@@ -438,7 +438,7 @@
      * Close trash modal
      */
     function closeTrashModal() {
-      document.getElementById('trash-modal').classList.remove('Ativo');
+      document.getElementById('trash-modal').classList.remove('active');
       trashPilotId = null;
       trashReserveId = null;
     }
