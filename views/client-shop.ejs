@@ -274,7 +274,7 @@
       updatePurchaseUI();
       
       // Show modal
-      document.getElementById('purchase-modal').classList.add('Ativo');
+      document.getElementById('purchase-modal').classList.add('active');
     }
     
     /**
@@ -552,7 +552,7 @@
         
         const purchaseModal = document.getElementById('purchase-modal');
         // If the purchase modal is open, update the purchase UI in place to avoid interrupting the user.
-        if (purchaseModal && purchaseModal.classList.contains('Ativo')) {
+        if (purchaseModal && purchaseModal.classList.contains('active')) {
           updatePurchaseUI();
         } else {
           // Otherwise, reload page to refresh the full stock display.
@@ -597,14 +597,14 @@
       
       document.addEventListener('keydown', (e) => {
         // Close modal on Escape key
-        if (e.key === 'Escape' && purchaseModal.classList.contains('Ativo')) {
+        if (e.key === 'Escape' && purchaseModal.classList.contains('active')) {
           closeModal('purchase-modal');
         }
       });
       
       // Focus trap within modal when active
       purchaseModal.addEventListener('keydown', (e) => {
-        if (!purchaseModal.classList.contains('Ativo')) return;
+        if (!purchaseModal.classList.contains('active')) return;
         
         if (e.key === 'Tab') {
           const focusableElements = purchaseModal.querySelectorAll(
