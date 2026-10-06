@@ -301,7 +301,7 @@
                           modalType === 'upgrade' ? 'purchase-upgrade-modal' : 'purchase-minor-facility-modal';
           const modal = document.getElementById(modalId);
           
-          if (modal && modal.classList.contains('Ativo')) {
+          if (modal && modal.classList.contains('active')) {
             renderExpensePilotsList(modalType);
             updatePurchaseUI(modalType);
           }
@@ -331,7 +331,7 @@
                           modalType === 'upgrade' ? 'purchase-upgrade-modal' : 'purchase-minor-facility-modal';
           const modal = document.getElementById(modalId);
           
-          if (modal && modal.classList.contains('Ativo')) {
+          if (modal && modal.classList.contains('active')) {
             updatePurchaseUI(modalType);
           }
         });
@@ -553,7 +553,7 @@
       
       document.getElementById(previewId).innerHTML = previewHtml;
       renderExpensePilotsList(modalType);
-      document.getElementById(modalId).classList.add('Ativo');
+      document.getElementById(modalId).classList.add('active');
     }
     
     /**
@@ -698,7 +698,7 @@
       }
       
       // Show modal
-      document.getElementById('assign-minor-facility-modal').classList.add('Ativo');
+      document.getElementById('assign-minor-facility-modal').classList.add('active');
     }
     
     /**
@@ -743,7 +743,7 @@
       message.textContent = `Você tem certeza que deseja demolir "${slot.facilityName}"? Essa ação é gratuita mas não pode ser desfeita.`;
       
       // Show modal
-      document.getElementById('demolish-modal').classList.add('Ativo');
+      document.getElementById('demolish-modal').classList.add('active');
     }
     
     /**
@@ -970,7 +970,7 @@
      */
     function closeAllModals() {
       document.querySelectorAll('.modal-overlay').forEach(modal => {
-        modal.classList.remove('Ativo');
+        modal.classList.remove('active');
       });
     }
     
@@ -979,7 +979,7 @@
     document.getElementById('upgrade-cancel-button').addEventListener('click', closeAllModals);
     document.getElementById('minor-cancel-button').addEventListener('click', () => {
       // Close purchase modal, return to selection modal (which is still active underneath)
-      document.getElementById('purchase-minor-facility-modal').classList.remove('Ativo');
+      document.getElementById('purchase-minor-facility-modal').classList.remove('active');
     });
     document.getElementById('assign-cancel-button').addEventListener('click', closeAllModals);
     document.getElementById('demolish-cancel-button').addEventListener('click', closeAllModals);
