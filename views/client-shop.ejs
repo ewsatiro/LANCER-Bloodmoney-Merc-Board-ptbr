@@ -274,7 +274,7 @@
       updatePurchaseUI();
       
       // Show modal
-      document.getElementById('purchase-modal').classList.add('active');
+      document.getElementById('purchase-modal').classList.add('Ativo');
     }
     
     /**
@@ -311,7 +311,7 @@
         const isSelected = selectedExpensePilots.has(pilot.id);
         
         const pilotRow = document.createElement('div');
-        pilotRow.className = `pilot-row ${isSelected ? 'selected' : ''} ${!pilot.active ? 'inactive' : ''}`;
+        pilotRow.className = `pilot-row ${isSelected ? 'selected' : ''} ${!pilot.active ? 'Inativo' : ''}`;
         pilotRow.dataset.pilotId = pilot.id;
         
         const pilotInfo = document.createElement('div');
@@ -418,7 +418,7 @@
         const isAssignee = selectedAssignee === pilot.id;
         
         const pill = document.createElement('div');
-        pill.className = `assignee-pill ${isAssignee ? 'selected' : ''} ${!pilot.active ? 'inactive' : ''}`;
+        pill.className = `assignee-pill ${isAssignee ? 'selected' : ''} ${!pilot.active ? 'Inativo' : ''}`;
         pill.dataset.pilotId = pilot.id;
         pill.textContent = `${pilot.name} (${pilot.callsign})`;
         
@@ -539,7 +539,7 @@
         currentPilots = data.pilots;
         
         // If purchase modal is open, refresh pilots list
-        if (document.getElementById('purchase-modal').classList.contains('active')) {
+        if (document.getElementById('purchase-modal').classList.contains('Ativo')) {
           renderExpensePilotsList();
           updatePurchaseUI();
         }
@@ -552,7 +552,7 @@
         
         const purchaseModal = document.getElementById('purchase-modal');
         // If the purchase modal is open, update the purchase UI in place to avoid interrupting the user.
-        if (purchaseModal && purchaseModal.classList.contains('active')) {
+        if (purchaseModal && purchaseModal.classList.contains('Ativo')) {
           updatePurchaseUI();
         } else {
           // Otherwise, reload page to refresh the full stock display.
@@ -597,14 +597,14 @@
       
       document.addEventListener('keydown', (e) => {
         // Close modal on Escape key
-        if (e.key === 'Escape' && purchaseModal.classList.contains('active')) {
+        if (e.key === 'Escape' && purchaseModal.classList.contains('Ativo')) {
           closeModal('purchase-modal');
         }
       });
       
       // Focus trap within modal when active
       purchaseModal.addEventListener('keydown', (e) => {
-        if (!purchaseModal.classList.contains('active')) return;
+        if (!purchaseModal.classList.contains('Ativo')) return;
         
         if (e.key === 'Tab') {
           const focusableElements = purchaseModal.querySelectorAll(
