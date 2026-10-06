@@ -57,7 +57,7 @@
         
         sortedPilots.forEach(pilot => { 
       %>
-        <div class="pilot-reserves-group <%= pilot.active ? 'active' : 'inactive' %>" data-pilot-id="<%= pilot.id %>">
+        <div class="pilot-reserves-group <%= pilot.active ? 'Ativo' : 'Inativo' %>" data-pilot-id="<%= pilot.id %>">
           <div class="pilot-label"><%= pilot.name %> (<%= pilot.callsign %>) LL<%= pilot.ll %> <%= pilot.active ? '[ATIVO]' : '[INATIVO]' %></div>
           
           <% if (pilot.reserveObjects && pilot.reserveObjects.length > 0) { %>
@@ -292,7 +292,7 @@
       
       sortedPilots.forEach(pilot => {
         const pilotRow = document.createElement('div');
-        pilotRow.className = `pilot-row ${!pilot.active ? 'inactive' : ''}`;
+        pilotRow.className = `pilot-row ${!pilot.active ? 'Inativo' : ''}`;
         pilotRow.dataset.pilotId = pilot.id;
         pilotRow.onclick = () => selectTransferTarget(pilot.id);
         
@@ -318,7 +318,7 @@
       document.getElementById('transfer-confirm-btn').disabled = true;
       
       // Show modal
-      document.getElementById('transfer-modal').classList.add('active');
+      document.getElementById('transfer-modal').classList.add('Ativo');
     }
     
     /**
@@ -376,7 +376,7 @@
      * Close transfer modal
      */
     function closeTransferModal() {
-      document.getElementById('transfer-modal').classList.remove('active');
+      document.getElementById('transfer-modal').classList.remove('Ativo');
       transferSourcePilotId = null;
       transferReserveId = null;
       transferTargetPilotId = null;
@@ -404,7 +404,7 @@
         `Reserva: ${reserveObj.reserve.name} (Rank ${reserveObj.reserve.rank}) - Status: ${reserveObj.deploymentStatus}`;
       
       // Show modal
-      document.getElementById('trash-modal').classList.add('active');
+      document.getElementById('trash-modal').classList.add('Ativo');
     }
     
     /**
@@ -438,7 +438,7 @@
      * Close trash modal
      */
     function closeTrashModal() {
-      document.getElementById('trash-modal').classList.remove('active');
+      document.getElementById('trash-modal').classList.remove('Ativo');
       trashPilotId = null;
       trashReserveId = null;
     }
