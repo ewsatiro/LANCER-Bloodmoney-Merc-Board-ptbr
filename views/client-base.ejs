@@ -399,7 +399,7 @@
                     </div>` : ''}
                     <div class="upgrade-actions">
                       ${canPurchase ? 
-                        `<button class="purchase-upgrade-btn" data-facility-index="${index}" data-upgrade-index="${upgradeIdx}">[PURCHASE]</button>` :
+                        `<button class="purchase-upgrade-btn" data-facility-index="${index}" data-upgrade-index="${upgradeIdx}">[COMPRAR]</button>` :
                         isMaxed ? '<span class="maxed-label">[FULLY_UPGRADED]</span>' : ''
                       }
                     </div>
@@ -419,7 +419,7 @@
             <span class="price-label">PRICE: </span>
             ${modifiedPrice}
             <img src="/emblems/<%= settings.currencyIcon || 'manna_symbol.svg' %>" alt="Currency Icon" class="currency-icon">
-            <button class="purchase-facility-btn" data-facility-index="${index}">[PURCHASE]</button>
+            <button class="purchase-facility-btn" data-facility-index="${index}">[COMPRAR]</button>
           </div>
         `;
       }
