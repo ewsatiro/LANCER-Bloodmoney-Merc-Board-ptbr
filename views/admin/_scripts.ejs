@@ -510,16 +510,16 @@
     function switchTab(tabName, eventOrButton) {
       // Hide all tabs
       document.querySelectorAll('.tab-content').forEach(tab => {
-        tab.classList.remove('Ativo');
+        tab.classList.remove('active');
       });
       
       // Remove active class from all buttons
       document.querySelectorAll('.tab-button').forEach(btn => {
-        btn.classList.remove('Ativo');
+        btn.classList.remove('active');
       });
       
       // Show selected tab
-      document.getElementById(tabName + '-tab').classList.add('Ativo');
+      document.getElementById(tabName + '-tab').classList.add('active');
       
       // Set button as active
       // If eventOrButton has a target property, it's an event object
@@ -532,7 +532,7 @@
       }
       
       if (button) {
-        button.classList.add('Ativo');
+        button.classList.add('active');
       }
       
       // Update URL hash to persist tab state across page reloads
